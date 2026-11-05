@@ -1,10 +1,13 @@
-// Tech MeoW · link da bio. Mesmas animações do site do Iron Check: rolagem suave (Lenis), entradas por seção e
-// linha dos passos (GSAP + ScrollTrigger), blocos que aproximam ao aparecer e o selo que bate no papel.
+// Tech MeoW · site e link da bio. Mesmas animações do site do Iron Check: rolagem suave (Lenis), entradas por seção e
+// linha dos passos (GSAP + ScrollTrigger), blocos que aproximam ao aparecer e os selos que batem na foto.
 // A abertura usa a Interposer Tech MeoW em 3D do site do PS5 HDMI Tool (cena3d.js), carregada à parte.
+// Anúncios: lugar "bio-site" da aba Publicidade do CRM (banners.js), com o aviso de cookies (consent.js).
 // Sem script, ou com "reduzir movimento", a página mostra tudo parado e continua funcionando.
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
+import { mountAdPairs } from "./banners.js";
+import { mountConsent } from "./consent.js";
 
 gsap.registerPlugin(ScrollTrigger);
 const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -18,10 +21,11 @@ if (!still) {
   gsap.ticker.lagSmoothing(0);
 }
 
-// ---------- Abertura: o título sobe linha por linha e a peça entra girando ----------
+// ---------- Abertura: o selo, o título linha por linha e a peça entrando ----------
 if (!still) {
-  gsap.from(".h1-line", { y: 40, opacity: 0, duration: 0.9, stagger: 0.12, ease: "power3.out" });
-  gsap.from(".hero-copy .lead, .hero-copy .cta, .hero-copy .fine", { y: 22, opacity: 0, duration: 0.7, stagger: 0.08, delay: 0.25, ease: "power3.out" });
+  gsap.from(".promo-pill", { y: -14, opacity: 0, duration: 0.6, ease: "power3.out" });
+  gsap.from(".h1-line", { y: 40, opacity: 0, duration: 0.9, stagger: 0.12, delay: 0.1, ease: "power3.out" });
+  gsap.from(".hero-copy .lead, .hero-copy .cta, .hero-copy .fine", { y: 22, opacity: 0, duration: 0.7, stagger: 0.08, delay: 0.3, ease: "power3.out" });
   gsap.from(".stage3d", { y: 40, opacity: 0, scale: 0.94, duration: 1.1, delay: 0.15, ease: "power3.out" });
   gsap.to(".hero-glow", { xPercent: 4, yPercent: -3, scale: 1.08, duration: 9, ease: "sine.inOut", yoyo: true, repeat: -1 });
 }
@@ -51,7 +55,33 @@ if (!still) {
   });
 }
 
-// ---------- Serviços: a tecla escolhida troca a dica, a tela e o exemplo; o botão monta a mensagem ----------
+// ---------- Blocos: a foto aproxima devagar, a barrinha corre e o vídeo só baixa e toca com o bloco na tela ----------
+document.querySelectorAll(".tile").forEach((tile) => {
+  const v = tile.querySelector("video");
+  new IntersectionObserver(
+    ([en]) => {
+      tile.classList.toggle("is-in", en.isIntersecting);
+      if (!v || still) return;
+      if (en.isIntersecting) {
+        if (!v.getAttribute("src")) v.src = v.dataset.src;
+        v.play().catch(() => {});
+      } else v.pause();
+    },
+    { threshold: 0.35 },
+  ).observe(tile);
+});
+
+// ---------- Soluções: a categoria escolhida esconde as outras (CSS); aqui só a entrada dos blocos que ficam ----------
+const filtros = document.querySelector(".filtros");
+if (filtros) {
+  filtros.addEventListener("change", () => {
+    const visiveis = [...document.querySelectorAll(".solucoes .tile")].filter((t) => t.offsetParent !== null);
+    if (!still) gsap.fromTo(visiveis, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.45, stagger: 0.04, ease: "power3.out", clearProps: "transform,opacity" });
+    ScrollTrigger.refresh();
+  });
+}
+
+// ---------- Contato: a tecla escolhida troca a dica e o exemplo; o botão monta a mensagem ----------
 const form = document.querySelector(".pedido");
 if (form) {
   const texto = form.querySelector("textarea");
@@ -59,32 +89,16 @@ if (form) {
     reparo: "Ex.: PS5 Slim sem imagem na TV",
     desbloqueio: "Ex.: Switch OLED",
     interposer: "Ex.: quero 2 unidades",
+    curso: "Ex.: já mexo com Switch, quero aprender o desbloqueio",
     parceria: "Ex.: tenho uma assistência técnica",
   };
-  const video = form.querySelector(".tela video");
-  const tela = form.querySelector(".pedido-tela");
-  const escolhido = () => form.querySelector("input[name=assunto]:checked");
-  const tocaVideo = () => {
-    if (!video || still) return;
-    const ligado = tela.classList.contains("is-in") && escolhido()?.value === "reparo";
-    if (ligado) {
-      if (!video.getAttribute("src")) video.src = video.dataset.src;
-      video.play().catch(() => {});
-    } else video.pause();
-  };
   form.addEventListener("change", (e) => {
-    if (e.target.name !== "assunto") return;
-    texto.placeholder = exemplos[e.target.value] || "";
-    tocaVideo();
+    if (e.target.name === "assunto") texto.placeholder = exemplos[e.target.value] || "";
   });
-  new IntersectionObserver(([en]) => {
-    tela.classList.toggle("is-in", en.isIntersecting);
-    tocaVideo();
-  }, { threshold: 0.3 }).observe(tela);
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const frase = escolhido()?.getAttribute("data-frase") ?? "";
-    let msg = `Olá, Tech MeoW! Vim pelo link da bio e ${frase}.`;
+    const frase = form.querySelector("input[name=assunto]:checked")?.getAttribute("data-frase") ?? "";
+    let msg = `Olá, Tech MeoW! Vim pelo site e ${frase}.`;
     const extra = texto.value.trim();
     if (extra) msg += `\n${extra}`;
     const url = `https://wa.me/${form.dataset.whats}?text=${encodeURIComponent(msg)}`;
@@ -95,25 +109,20 @@ if (form) {
   });
 }
 
-// ---------- Blocos dos projetos: a foto aproxima devagar e a barrinha corre enquanto estão na tela ----------
-document.querySelectorAll(".tile").forEach((tile) => {
-  new IntersectionObserver(([en]) => tile.classList.toggle("is-in", en.isIntersecting), { threshold: 0.35 }).observe(tile);
-});
-
-// ---------- Passos e loja: a linha se desenha com a rolagem e os selos batem na foto ----------
+// ---------- Passos e selos: a linha se desenha com a rolagem e os selos batem na foto ----------
 if (!still) {
   const line = document.querySelector(".flow-line");
   if (line) gsap.fromTo(line, { scaleX: 0 }, { scaleX: 1, ease: "none", scrollTrigger: { trigger: ".flow", start: "top 78%", end: "bottom 58%", scrub: 0.4 } });
   document.querySelectorAll(".stamp").forEach((stamp) => {
     const giro = stamp.classList.contains("stamp-nfc") ? 26 : -26;
-    gsap.from(stamp, { scale: 1.4, rotate: giro, opacity: 0, duration: 0.5, ease: "back.out(2)", scrollTrigger: { trigger: stamp, start: "top 78%", once: true } });
+    gsap.from(stamp, { scale: 1.4, rotate: giro, opacity: 0, duration: 0.5, ease: "back.out(2)", scrollTrigger: { trigger: stamp, start: "top 82%", once: true } });
   });
 }
 
 // ---------- Entradas de seção: nada fica escondido sem script, porque só o script esconde ----------
 if (!still) {
   document.querySelectorAll("main > section:not(.hero)").forEach((section) => {
-    const parts = section.querySelectorAll("h2, .lead, .stats > div, .teclas, .pedido-dica, .pedido textarea, .btn-grande, .pedido-tela, .produto .paper-wrap, .produto-texto > *, .tile, .flow li, details, .cta");
+    const parts = section.querySelectorAll("h2, .lead, .stats > div, .reparos .tile, .flow li, .promo-texto > *, .promo-foto, .sub-titulo, .plan, .filtros, .produto .paper-wrap, .produto-texto > *, .teclas, .pedido-dica, .pedido textarea, .btn-grande, .endereco, details, .final .cta");
     if (!parts.length) return;
     gsap.set(parts, { opacity: 0, y: 22 });
     ScrollTrigger.batch(parts, {
@@ -122,5 +131,19 @@ if (!still) {
       onEnter: (batch) => gsap.to(batch, { opacity: 1, y: 0, duration: 0.6, stagger: 0.06, ease: "power3.out", clearProps: "transform,opacity" }),
     });
   });
+  // Os blocos das soluções entram em lote também, mas fora da lista acima: o filtro precisa deles sem estilo preso.
+  const solucoes = document.querySelectorAll(".solucoes .tile");
+  gsap.set(solucoes, { opacity: 0, y: 22 });
+  ScrollTrigger.batch(solucoes, { start: "top 92%", once: true, onEnter: (b) => gsap.to(b, { opacity: 1, y: 0, duration: 0.6, stagger: 0.06, ease: "power3.out", clearProps: "transform,opacity" }) });
   addEventListener("load", () => ScrollTrigger.refresh());
 }
+
+// ---------- Anúncios do CRM e aviso de cookies ----------
+mountConsent("");
+const espacos = [
+  ["adSolucoes", "adSolucoesMidia"],
+  ["adLoja", "adLojaMidia"],
+]
+  .map(([a, b]) => [document.getElementById(a), document.getElementById(b)])
+  .filter(([a, b]) => a && b);
+if (espacos.length) mountAdPairs(espacos, "bio-site");

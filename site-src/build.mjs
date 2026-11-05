@@ -13,7 +13,7 @@ const require = createRequire(path.join(modulos, "x.js"));
 const esbuild = require("esbuild");
 
 await esbuild.build({
-  entryPoints: [path.join(aqui, "main.js")],
+  entryPoints: [path.join(aqui, "main.js"), path.join(aqui, "consent.js")],
   bundle: true,
   splitting: true,
   format: "esm",

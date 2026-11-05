@@ -1,0 +1,8 @@
+# Vale para todos os sites em meowdev-mod.github.io (o Google só lê o robots.txt da raiz).
+User-agent: *
+Allow: /
+
+Sitemap: https://meowdev-mod.github.io/sitemap.xml
+Sitemap: https://meowdev-mod.github.io/ps5-hdmi-tool/sitemap.xml
+Sitemap: https://meowdev-mod.github.io/Control-PS-5/sitemap.xml
+Sitemap: https://meowdev-mod.github.io/ps5-controle-test/sitemap.xml
