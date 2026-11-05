@@ -319,3 +319,4 @@ a.tile-go:hover svg{transform:translateX(4px)}
 @media (max-width:860px){.hero .h1-line{display:inline}}
 .nw{white-space:nowrap}
 .endereco-texto .perto{color:var(--muted);font-size:.95rem}
+.endereco-texto .horario{color:var(--text)}

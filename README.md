@@ -15,4 +15,4 @@ Mesmo padrão visual do site do [Iron Check](https://meowdev-mod.github.io/Iron-
 - `img/` e `video/`: imagens e o trecho da bancada. Fotos de terceiros (Steam Deck e placa de vídeo) são do Wikimedia Commons, CC BY-SA 4.0, com crédito no rodapé.
 - Google: `robots.txt` e `sitemap.xml` ficam na raiz e valem para todos os sites de `meowdev-mod.github.io`; o `robots.txt` aponta também os mapas do PS5 HDMI Tool, do Control PS-5 e do PS-5 Controle Test, e o `sitemap.xml` lista esta página, o Iron Check e o BancadaSync. `googleb5e2407b23f88743.html` é o arquivo de verificação do Search Console (o mesmo do PS-5 Controle Test), para a propriedade `https://meowdev-mod.github.io/`. Os dados da loja para o Google (endereço, mapa, telefone e serviços) ficam no `<script type="application/ld+json">` do `index.html`.
 
-Contato: [WhatsApp (21) 96654-7296](https://wa.me/5521966547296) · Rua Sergio Silva, 50, Engenho da Rainha, Rio de Janeiro - RJ, 20766-670
+Contato: [WhatsApp (21) 96654-7296](https://wa.me/5521966547296) · Rua Sergio Silva, 50, Engenho da Rainha, Rio de Janeiro - RJ, 20766-670 · Segunda a sexta, das 10h às 18h
