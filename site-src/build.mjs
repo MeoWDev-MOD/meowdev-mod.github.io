@@ -5,12 +5,16 @@ import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { createHash } from "node:crypto";
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, rmSync } from "node:fs";
 
 const aqui = path.dirname(fileURLToPath(import.meta.url));
 const modulos = process.env.MODULOS || "F:/PROJECT IDE/iron-check-site/site-src/node_modules";
 const require = createRequire(path.join(modulos, "x.js"));
 const esbuild = require("esbuild");
+
+// Apaga os pedaços da montagem anterior (o nome muda com o conteúdo), para não acumular arquivo sem uso em js/.
+const saida = path.join(aqui, "..", "js");
+for (const f of readdirSync(saida)) if (/^(chunk|cena3d)-[A-Z0-9]+\.js$/.test(f)) rmSync(path.join(saida, f));
 
 await esbuild.build({
   entryPoints: [path.join(aqui, "main.js"), path.join(aqui, "consent.js")],
