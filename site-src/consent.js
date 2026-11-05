@@ -4,7 +4,7 @@
 "use strict";
 
 // Mudou os termos? Troque esta data: o site pede um novo aceite.
-export const TERMS_VERSION = "2026-11-05";
+export const TERMS_VERSION = "2026-11-05.2"; // .2: o mapa do Google entrou nos opcionais
 const KEY = "bio.consent";
 
 // O que só fica salvo com "Aceitar tudo". Tema e a própria escolha são necessários.
@@ -67,7 +67,7 @@ let bar = null;
 
 function draw() {
   bar.innerHTML = `<b>Cookies</b>
-    <p>Esta página não guarda nada sobre você sem pedir. Os cookies opcionais lembram o último anúncio visto e contam, sem identificar você, as exibições e os cliques dos anúncios. Veja <a href="${rootPath}privacidade/" target="_blank" rel="noopener">Privacidade e cookies</a>.</p>
+    <p>Esta página não guarda nada sobre você sem pedir. Os cookies opcionais lembram o último anúncio visto, contam, sem identificar você, as exibições e os cliques dos anúncios, e abrem o mapa do Google Maps, que grava cookies do Google. Veja <a href="${rootPath}privacidade/" target="_blank" rel="noopener">Privacidade e cookies</a>.</p>
     <div class="ck-btns"><button type="button" class="ck-no">Aceitar só o necessário</button><button type="button" class="ck-yes">Aceitar tudo</button></div>`;
   bar.querySelector(".ck-no").onclick = () => choose(false);
   bar.querySelector(".ck-yes").onclick = () => choose(true);
@@ -90,9 +90,11 @@ function showBar() {
 }
 
 function choose(optional) {
-  saveConsent(optional);
+  const choice = saveConsent(optional);
   bar?.remove();
   bar = null;
+  // Avisa a página (o mapa do Google abre na hora com "Aceitar tudo").
+  document.dispatchEvent(new CustomEvent("bio-consent", { detail: choice }));
 }
 
 // root: caminho até a raiz do site, a partir da página atual ("" na inicial, "../" nas outras).

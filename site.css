@@ -320,3 +320,12 @@ a.tile-go:hover svg{transform:translateX(4px)}
 .nw{white-space:nowrap}
 .endereco-texto .perto{color:var(--muted);font-size:.95rem}
 .endereco-texto .horario{color:var(--text)}
+.mapa-capa{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:20px;text-align:center;text-decoration:none;color:var(--text);background:radial-gradient(circle at 50% 42%,rgba(123,69,240,.35),transparent 62%),#0d0622;transition:background-color .2s ease}
+.mapa-capa svg{width:42px;height:42px;color:var(--pale);margin-bottom:4px}
+.mapa-capa b{font-size:1.15rem;padding:10px 20px;border-radius:99px;background:#7b45f0;color:#fff;transition:transform .16s ease}
+.mapa-capa span{color:var(--pale)}
+.mapa-capa small{color:var(--muted);font-size:.82rem}
+.mapa-capa:focus-visible{outline:2px solid var(--pale);outline-offset:-4px}
+.mapa-capa:active b{transform:scale(.97)}
+@media (hover:hover) and (pointer:fine){.mapa-capa:hover b{background:#6631db}}
+.mapa iframe{filter:none}

@@ -32,7 +32,7 @@
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=809ea7df86">
+<link rel="stylesheet" href="site.css?v=799be738a9">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -418,8 +418,14 @@
           <button class="btn btn-wa btn-grande" type="submit"><svg aria-hidden="true"><use href="#i-wa"/></svg>Mandar no WhatsApp</button>
         </form>
         <div class="endereco">
-          <div class="mapa">
-            <iframe title="Mapa: Rua Sergio Silva, Engenho da Rainha, Rio de Janeiro" src="https://www.openstreetmap.org/export/embed.html?bbox=-43.3062%2C-22.8678%2C-43.2940%2C-22.8596&amp;layer=mapnik&amp;marker=-22.8637%2C-43.3001" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          <!-- Mapa do Google: abre sozinho com "Aceitar tudo" nos cookies; sem isso, com um clique (o Google grava cookies próprios). Sem script, o link leva ao Google Maps. -->
+          <div class="mapa" data-mapa="https://maps.google.com/maps?q=Rua%20Sergio%20Silva%2C%2050%2C%20Engenho%20da%20Rainha%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2020766-670&amp;z=16&amp;hl=pt-BR&amp;output=embed">
+            <a class="mapa-capa" href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20Sergio%20Silva%2C%2050%2C%20Engenho%20da%20Rainha%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2020766-670" target="_blank" rel="noopener">
+              <svg aria-hidden="true"><use href="#i-pin"/></svg>
+              <b>Mostrar o mapa do Google</b>
+              <span>Rua Sergio Silva, 50 · Engenho da Rainha</span>
+              <small>Ao abrir, o Google Maps pode gravar cookies dele.</small>
+            </a>
           </div>
           <div class="endereco-texto">
             <h3>Tech MeoW</h3>
@@ -490,6 +496,6 @@
 
 <a class="fab" href="https://wa.me/5521966547296?text=Ol%C3%A1%2C%20Tech%20MeoW!%20Vim%20pelo%20site." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
 
-<script type="module" src="js/main.js?v=6c1171d3d8"></script>
+<script type="module" src="js/main.js?v=862065d785"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import { mountAdPairs } from "./banners.js";
-import { mountConsent } from "./consent.js";
+import { mountConsent, optionalAllowed } from "./consent.js";
 
 gsap.registerPlugin(ScrollTrigger);
 const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -140,6 +140,25 @@ if (!still) {
 
 // ---------- Anúncios do CRM e aviso de cookies ----------
 mountConsent("");
+
+// ---------- Mapa do Google: com "Aceitar tudo" abre sozinho; sem isso, só com o clique no botão ----------
+const mapa = document.querySelector(".mapa[data-mapa]");
+const abrirMapa = () => {
+  if (!mapa || mapa.querySelector("iframe")) return;
+  const f = document.createElement("iframe");
+  f.title = "Mapa do Google: Rua Sergio Silva, 50, Engenho da Rainha, Rio de Janeiro";
+  f.src = mapa.dataset.mapa;
+  f.loading = "lazy";
+  f.referrerPolicy = "no-referrer-when-downgrade";
+  f.allowFullscreen = true;
+  mapa.querySelector(".mapa-capa")?.remove();
+  mapa.append(f);
+};
+if (mapa) {
+  mapa.querySelector(".mapa-capa")?.addEventListener("click", (e) => { e.preventDefault(); abrirMapa(); });
+  if (optionalAllowed()) abrirMapa();
+  document.addEventListener("bio-consent", (e) => { if (e.detail?.optional) abrirMapa(); });
+}
 const espacos = [
   ["adSolucoes", "adSolucoesMidia"],
   ["adLoja", "adLojaMidia"],
