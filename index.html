@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tech MeoW · reparo, desbloqueio de Switch e Interposer PS5</title>
+<meta name="description" content="Reparo de console e controle, desbloqueio de Nintendo Switch, a Interposer Tech MeoW para PS5 Slim e os projetos da MeoWDev-MOD. Fale direto no WhatsApp.">
+<meta name="theme-color" content="#130a2e">
+<link rel="canonical" href="https://meowdev-mod.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://meowdev-mod.github.io/">
+<meta property="og:title" content="Tech MeoW">
+<meta property="og:description" content="Reparo, desbloqueio de Switch, a Interposer Tech MeoW e meus projetos. Fale no WhatsApp.">
+<meta property="og:image" content="https://meowdev-mod.github.io/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" href="img/logo-192.png" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css?v=79eeb67bcd">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.2 21.8l5.1-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H6.2M10 21h.01M17 21h.01"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path fill="currentColor" d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.7 4.7 0 0 0 12 7.3Zm0 7.8a3.1 3.1 0 1 1 3.1-3.1 3.1 3.1 0 0 1-3.1 3.1Zm6-8a1.1 1.1 0 1 1-1.1-1.1A1.1 1.1 0 0 1 18 7.1ZM21.1 8.2a5.4 5.4 0 0 0-1.5-3.8 5.5 5.5 0 0 0-3.8-1.5c-1.5-.1-6-.1-7.6 0a5.5 5.5 0 0 0-3.8 1.5 5.5 5.5 0 0 0-1.5 3.8c-.1 1.5-.1 6 0 7.6a5.4 5.4 0 0 0 1.5 3.8 5.5 5.5 0 0 0 3.8 1.5c1.5.1 6 .1 7.6 0a5.4 5.4 0 0 0 3.8-1.5 5.5 5.5 0 0 0 1.5-3.8c.1-1.5.1-6 0-7.6Zm-2 9.2a3.1 3.1 0 0 1-1.8 1.8c-1.2.5-4.1.4-5.3.4s-4.2.1-5.3-.4a3.1 3.1 0 0 1-1.8-1.8c-.5-1.2-.4-4.1-.4-5.4s-.1-4.2.4-5.3a3.1 3.1 0 0 1 1.8-1.8c1.2-.5 4.1-.4 5.3-.4s4.2-.1 5.3.4a3.1 3.1 0 0 1 1.8 1.8c.5 1.2.4 4.1.4 5.3s.1 4.2-.4 5.4Z"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.7 15V9l5.8 3Z"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5a3.1 3.1 0 0 0-1.3-1.7c-1-.7.1-.7.1-.7a2.4 2.4 0 0 1 1.8 1.2 2.5 2.5 0 0 0 3.4 1 2.5 2.5 0 0 1 .7-1.6c-2.6-.3-5.3-1.3-5.3-5.7a4.5 4.5 0 0 1 1.2-3.1 4.2 4.2 0 0 1 .1-3.1s1-.3 3.2 1.2a10.9 10.9 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2a4.2 4.2 0 0 1 .1 3.1 4.5 4.5 0 0 1 1.2 3.1c0 4.4-2.7 5.4-5.3 5.7a2.8 2.8 0 0 1 .8 2.2v3.2c0 .4.2.7.8.6A11.5 11.5 0 0 0 12 .5Z"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#topo" aria-label="Tech MeoW, início"><img src="img/logo-branca.webp" width="400" height="400" alt=""><span>Tech <b>MeoW</b></span></a>
+    <nav aria-label="Principal">
+      <a class="link" href="#servicos">Serviços</a>
+      <a class="link" href="#loja">Loja</a>
+      <a class="link" href="#projetos">Projetos</a>
+      <a class="link" href="#duvidas">Dúvidas</a>
+      <a class="btn btn-wa" href="https://wa.me/5521966547296?text=Ol%C3%A1%2C%20Tech%20MeoW!%20Vim%20pelo%20link%20da%20bio." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg><span class="long">Chamar no WhatsApp</span><span class="short">WhatsApp</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- Abertura: a interposer em 3D, que gira com o dedo -->
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1><span class="h1-line">Reparo, desbloqueio</span> <span class="h1-line">e peças.</span></h1>
+        <p class="lead">A Tech MeoW conserta console e controle, desbloqueia Nintendo Switch e vende a <b>Interposer Tech MeoW</b> para PS5 Slim. Você fala direto comigo no WhatsApp.</p>
+        <div class="cta">
+          <a class="btn btn-wa" href="https://wa.me/5521966547296?text=Ol%C3%A1%2C%20Tech%20MeoW!%20Vim%20pelo%20link%20da%20bio." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
+          <a class="btn btn-ghost" href="#loja"><svg aria-hidden="true"><use href="#i-cart"/></svg>Ver a loja</a>
+          <a class="btn btn-ghost hide-sm" href="#projetos">Meus projetos</a>
+        </div>
+        <p class="fine">WhatsApp (21) 96654-7296 · Instagram <a href="https://www.instagram.com/tech_meow.oficial/" target="_blank" rel="noopener">@tech_meow.oficial</a></p>
+      </div>
+      <figure class="hero-3d">
+        <div class="stage3d" id="palco3d"><span class="ribbon" aria-hidden="true"></span>
+          <img class="poster" src="img/interposer-773.webp" width="773" height="1110" alt="Interposer Tech MeoW: placa flexível dourada com o CI HDMI MN864739" fetchpriority="high">
+          <canvas id="peca3d" aria-label="Modelo 3D da Interposer Tech MeoW. Arraste para girar."></canvas>
+        </div>
+        <figcaption class="caption">Interposer Tech MeoW em 3D, feita do desenho real da peça. Arraste para girar.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Números -->
+  <section class="numbers" aria-label="Em números">
+    <div class="wrap stats">
+      <div><b>R$ 80</b><span>o CI HDMI Nuvoton, no lugar do Realtek de R$ 1.700</span></div>
+      <div><b data-conta="6">6</b><span>projetos próprios, de app a programa para técnico</span></div>
+      <div><b data-conta="5">5</b><span>deles com uso grátis</span></div>
+      <div><b>Switch 1</b><span>desbloqueio em qualquer modelo</span></div>
+    </div>
+  </section>
+
+  <!-- Serviços: teclas como as do notebook do Iron Check montam a mensagem do WhatsApp -->
+  <section id="servicos">
+    <div class="wrap">
+      <h2>O que você precisa?</h2>
+      <p class="lead">Aperte uma tecla, escreva se quiser, e a mensagem vai pronta para o meu WhatsApp.</p>
+      <form class="pedido" action="https://wa.me/5521966547296" method="get" target="_blank" data-whats="5521966547296">
+        <div class="pedido-lado">
+          <fieldset class="teclas">
+            <legend class="sr-only">Assunto</legend>
+            <label data-key="F1"><input type="radio" name="assunto" value="reparo" data-frase="quero um reparo" checked><span>Reparo</span></label>
+            <label data-key="F2"><input type="radio" name="assunto" value="desbloqueio" data-frase="quero desbloquear o meu Nintendo Switch"><span>Desbloqueio</span></label>
+            <label data-key="F3"><input type="radio" name="assunto" value="interposer" data-frase="quero a Interposer Tech MeoW"><span>Interposer</span></label>
+            <label data-key="F4"><input type="radio" name="assunto" value="parceria" data-frase="quero falar sobre parceria"><span>Parceria</span></label>
+          </fieldset>
+          <p class="pedido-dica" data-op="reparo"><b>Reparo de console e controle</b> <span>Conta qual é o aparelho e o que aconteceu. Foto ou vídeo do defeito ajuda no orçamento.</span></p>
+          <p class="pedido-dica" data-op="desbloqueio"><b>Desbloqueio de Nintendo Switch</b> <span>Só o Switch 1, de qualquer modelo. O Switch 2 ainda não tem desbloqueio.</span></p>
+          <p class="pedido-dica" data-op="interposer"><b>Interposer Tech MeoW</b> <span>Para o PS5 Slim. Também está no Mercado Livre e na Shopee, aqui embaixo.</span></p>
+          <p class="pedido-dica" data-op="parceria"><b>Parcerias</b> <span>Loja, técnico ou criador de conteúdo: conta a sua ideia.</span></p>
+          <label class="sr-only" for="pedido-texto">Sua mensagem</label>
+          <textarea id="pedido-texto" name="text" rows="3" placeholder="Ex.: PS5 Slim sem imagem na TV"></textarea>
+          <button class="btn btn-wa btn-grande" type="submit"><svg aria-hidden="true"><use href="#i-wa"/></svg>Mandar no WhatsApp</button>
+        </div>
+        <div class="pedido-tela" aria-hidden="true">
+          <div class="tela" data-op="reparo"><video muted loop playsinline preload="none" poster="video/bancada-poster.jpg" data-src="video/bancada.mp4"></video><span class="tile-pill">Soldando a interposer no microscópio<i></i></span></div>
+          <div class="tela" data-op="desbloqueio"><img src="img/control-ps5-1120.webp" width="1120" height="630" alt="" loading="lazy"><span class="tile-pill">Control PS-5 rodando num Switch desbloqueado<i></i></span></div>
+          <div class="tela" data-op="interposer"><img src="img/interposers-720.webp" width="720" height="960" alt="" loading="lazy"><span class="tile-pill">Interposers prontas, frente e verso<i></i></span></div>
+          <div class="tela tela-logo" data-op="parceria"><img src="img/logo-gato-tech-meow.webp" width="487" height="504" alt="" loading="lazy"><span class="tile-pill">Tech MeoW e MeoWDev-MOD<i></i></span></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Loja: campo claro, como o laudo do Iron Check -->
+  <section id="loja" class="field-light">
+    <div class="wrap">
+      <h2>Loja Tech MeoW</h2>
+      <p class="lead">Compre pelo Mercado Livre ou pela Shopee. Em quantidade, chame no WhatsApp.</p>
+      <div class="produtos">
+        <article class="produto">
+          <div class="paper-wrap">
+            <div class="vitrine"><img src="img/interposer-773.webp" srcset="img/interposer-480.webp 480w, img/interposer-773.webp 773w" sizes="(max-width: 860px) 90vw, 40vw" width="773" height="1110" alt="Interposer Tech MeoW, placa flexível dourada com o CI HDMI MN864739 soldado" loading="lazy"></div>
+            <span class="stamp" aria-hidden="true">Sem fio</span>
+          </div>
+          <div class="produto-texto">
+            <h3>Interposer Tech MeoW</h3>
+            <p class="lead">Troque o CI HDMI Realtek RTD2175P de R$ 1.700 por um Nuvoton/Panasonic MN864739 de R$ 80 no PS5 Slim.</p>
+            <ul class="ticks">
+              <li>Flex transparente</li>
+              <li>Regulador de 1,8 V já soldado</li>
+              <li>Nenhum fio na placa</li>
+              <li>A NOR você converte de graça com o PS5 HDMI Tool</li>
+            </ul>
+            <div class="cta">
+              <a class="btn btn-wa" href="https://www.mercadolivre.com.br/interposer-ps5--realtek-rtd2175p--novoton-mn864739/up/MLBU5753776340?pdp_filters=item_id:MLB7912493932" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-cart"/></svg>Comprar no Mercado Livre</a>
+              <a class="btn btn-claro" href="https://shopee.com.br/product/1363007318/54670119610" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-cart"/></svg>Comprar na Shopee</a>
+            </div>
+          </div>
+        </article>
+        <article class="produto produto-inverso">
+          <div class="paper-wrap">
+            <div class="vitrine"><img src="img/chaveiro-gta6-900.webp" srcset="img/chaveiro-gta6-480.webp 480w, img/chaveiro-gta6-900.webp 900w" sizes="(max-width: 860px) 90vw, 40vw" width="900" height="900" alt="Chaveiros GTA 6 em miniatura, versões Xbox verde e PS5 azul" loading="lazy"></div>
+            <span class="stamp stamp-nfc" aria-hidden="true">NFC</span>
+          </div>
+          <div class="produto-texto">
+            <h3>Chaveiro GTA 6</h3>
+            <p class="lead">Caixinha de jogo em miniatura que abre como livro, com um disco dentro. Versões PS5 e Xbox.</p>
+            <ul class="ticks">
+              <li>Tag NFC: encostou o celular, abre um WhatsApp, um Instagram ou uma avaliação no Google</li>
+              <li>Bom para brinde e lembrança</li>
+              <li>Em quantidade, pelo WhatsApp</li>
+            </ul>
+            <div class="cta">
+              <a class="btn btn-wa" href="https://shopee.com.br/product/1363007318/57463003753/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-cart"/></svg>Comprar na Shopee</a>
+              <a class="btn btn-claro" href="https://wa.me/5521966547296?text=Ol%C3%A1%2C%20Tech%20MeoW!%20Vim%20pelo%20link%20da%20bio%20e%20quero%20chaveiros%20GTA%206%20em%20quantidade." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Em quantidade</a>
+            </div>
+            <p class="paper-cap">Produto independente, sem ligação com a Rockstar Games, a Sony ou a Microsoft.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projetos: blocos com o print, como os recursos do Iron Check -->
+  <section id="projetos">
+    <div class="wrap">
+      <h2>Meus projetos</h2>
+      <p class="lead">Apps e programas que eu fiz, para quem joga e para quem conserta.</p>
+      <div class="tiles">
+        <a class="tile" href="https://meowdev-mod.github.io/ps5-controle-test/" target="_blank" rel="noopener">
+          <div class="tile-media"><img class="kb" src="img/ps5-controle-test-640.webp" srcset="img/ps5-controle-test-640.webp 640w, img/ps5-controle-test-1120.webp 1120w" sizes="(max-width: 620px) 92vw, (max-width: 980px) 46vw, 400px" width="1120" height="630" alt="" loading="lazy"><span class="tile-pill">Grátis no navegador<i></i></span></div>
+          <h3>PS-5 Controle Test</h3>
+          <p>Testa o controle de PS5 pelo navegador ou pelo app para Android.</p>
+          <span class="tile-go">Abrir o site<svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="tile" href="https://meowdev-mod.github.io/Control-PS-5/" target="_blank" rel="noopener">
+          <div class="tile-media"><img class="kb" src="img/control-ps5-640.webp" srcset="img/control-ps5-640.webp 640w, img/control-ps5-1120.webp 1120w" sizes="(max-width: 620px) 92vw, (max-width: 980px) 46vw, 400px" width="1120" height="630" alt="" loading="lazy"><span class="tile-pill">Grátis<i></i></span></div>
+          <h3>Control PS-5</h3>
+          <p>O controle de PS5 no Nintendo Switch desbloqueado, por Bluetooth, com gatilhos e luzes.</p>
+          <span class="tile-go">Abrir o site<svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="tile" href="https://meowdev-mod.github.io/ps5-hdmi-tool/" target="_blank" rel="noopener">
+          <div class="tile-media"><img class="kb" src="img/ps5-hdmi-tool-640.webp" srcset="img/ps5-hdmi-tool-640.webp 640w, img/ps5-hdmi-tool-980.webp 980w" sizes="(max-width: 620px) 92vw, (max-width: 980px) 46vw, 400px" width="980" height="551" alt="" loading="lazy"><span class="tile-pill">Grátis · Windows<i></i></span></div>
+          <h3>PS5 HDMI Tool</h3>
+          <p>Lê, faz backup e converte a NOR do PS5 Slim para o CI HDMI Nuvoton.</p>
+          <span class="tile-go">Abrir o site<svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="tile" href="https://meowdev-mod.github.io/Iron-Check/" target="_blank" rel="noopener">
+          <div class="tile-media"><img class="kb" src="img/iron-check-640.webp" srcset="img/iron-check-640.webp 640w, img/iron-check-1120.webp 1120w" sizes="(max-width: 620px) 92vw, (max-width: 980px) 46vw, 400px" width="1120" height="630" alt="" loading="lazy"><span class="tile-pill">Chave de teste no WhatsApp<i></i></span></div>
+          <h3>Iron Check</h3>
+          <p>Testes, drivers e laudo em PDF para assistência técnica, num programa que roda do pendrive.</p>
+          <span class="tile-go">Abrir o site<svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="tile" href="https://meowdev-mod.github.io/BancadaSync-Download/" target="_blank" rel="noopener">
+          <div class="tile-media"><img class="kb" src="img/bancadasync-640.webp" srcset="img/bancadasync-640.webp 640w, img/bancadasync-1120.webp 1120w" sizes="(max-width: 620px) 92vw, (max-width: 980px) 46vw, 400px" width="1120" height="630" alt="" loading="lazy"><span class="tile-pill">Grátis · Windows<i></i></span></div>
+          <h3>BancadaSync</h3>
+          <p>Gestão da assistência técnica, do check-in ao reparo entregue.</p>
+          <span class="tile-go">Abrir o site<svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="tile" href="https://github.com/MeoWDev-MOD/JNX" target="_blank" rel="noopener">
+          <div class="tile-media"><img class="kb" src="img/jnx-640.webp" srcset="img/jnx-640.webp 640w, img/jnx-1120.webp 1120w" sizes="(max-width: 620px) 92vw, (max-width: 980px) 46vw, 400px" width="1120" height="630" alt="" loading="lazy"><span class="tile-pill">Grátis<i></i></span></div>
+          <h3>JNX</h3>
+          <p>Pacote de homebrews para Nintendo Switch, em português do Brasil.</p>
+          <span class="tile-go">Ver no GitHub<svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como funciona: três passos ligados por uma linha que se desenha com a rolagem -->
+  <section id="como">
+    <div class="wrap">
+      <h2>Do pedido à solução, sem enrolação</h2>
+      <div class="flow">
+        <span class="flow-line" aria-hidden="true"></span>
+        <ol>
+          <li><b>1</b><h3>Escolha o assunto</h3><p>Reparo, desbloqueio, interposer ou parceria, nas teclas lá em cima.</p></li>
+          <li><b>2</b><h3>Mande no WhatsApp</h3><p>A mensagem já vai pronta, com o assunto e o que você escreveu.</p></li>
+          <li><b>3</b><h3>Combine comigo</h3><p>Orçamento e prazo acertados direto na conversa.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dúvidas -->
+  <section id="duvidas">
+    <div class="wrap">
+      <h2>Dúvidas</h2>
+      <div class="faq">
+        <details><summary>Quais Switch dá para desbloquear?</summary><p>Só o Switch 1, de qualquer modelo. O Switch 2 ainda não tem desbloqueio.</p></details>
+        <details><summary>A interposer serve em qual console?</summary><p>No PS5 Slim que pede o CI HDMI Realtek RTD2175P. Ela recebe o Nuvoton/Panasonic MN864739 e já vem com o regulador de 1,8 V soldado, sem fio na placa.</p></details>
+        <details><summary>Preciso de programa para usar a interposer?</summary><p>Sim: a NOR do console precisa ser convertida. O <a href="https://meowdev-mod.github.io/ps5-hdmi-tool/" target="_blank" rel="noopener">PS5 HDMI Tool</a> faz isso de graça, pelo leitor CH341A.</p></details>
+        <details><summary>Como peço um orçamento de reparo?</summary><p>Mande no WhatsApp qual é o aparelho, o defeito e, se puder, uma foto ou um vídeo. É só apertar F1 lá em cima.</p></details>
+        <details><summary>Os programas são grátis?</summary><p>O PS5 HDMI Tool, o Control PS-5, o BancadaSync e o JNX são grátis. O PS-5 Controle Test é grátis no navegador e tem app para Android. O Iron Check é por assinatura, com chave de teste pelo WhatsApp.</p></details>
+        <details><summary>Vocês fazem parceria?</summary><p>Sim. Loja, técnico ou criador de conteúdo pode chamar no WhatsApp para conversar.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fecho -->
+  <section class="final">
+    <div class="wrap">
+      <h2>Chama no WhatsApp e conta o que você precisa</h2>
+      <p class="lead">(21) 96654-7296</p>
+      <div class="cta">
+        <a class="btn btn-wa" href="https://wa.me/5521966547296?text=Ol%C3%A1%2C%20Tech%20MeoW!%20Vim%20pelo%20link%20da%20bio." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
+        <a class="btn btn-ghost" href="https://www.instagram.com/tech_meow.oficial/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>Instagram da loja</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <ul class="socials" aria-label="Redes">
+    <li><a data-social="instagram" href="https://www.instagram.com/tech_meow.oficial/" target="_blank" rel="noopener" aria-label="Instagram @tech_meow.oficial"><span class="filled"></span><svg aria-hidden="true"><use href="#i-ig"/></svg></a><span class="tip">@tech_meow.oficial</span></li>
+    <li><a data-social="youtube" href="https://www.youtube.com/@techmeow" target="_blank" rel="noopener" aria-label="YouTube @techmeow"><span class="filled"></span><svg aria-hidden="true"><use href="#i-yt"/></svg></a><span class="tip">@techmeow</span></li>
+    <li><a data-social="instagram" href="https://www.instagram.com/honorio.dev/" target="_blank" rel="noopener" aria-label="Instagram @honorio.dev"><span class="filled"></span><svg aria-hidden="true"><use href="#i-ig"/></svg></a><span class="tip">@honorio.dev</span></li>
+    <li><a data-social="github" href="https://github.com/MeoWDev-MOD" target="_blank" rel="noopener" aria-label="GitHub MeoWDev-MOD"><span class="filled"></span><svg aria-hidden="true"><use href="#i-gh"/></svg></a><span class="tip">MeoWDev-MOD</span></li>
+    <li><a data-social="whatsapp" href="https://wa.me/5521966547296?text=Ol%C3%A1%2C%20Tech%20MeoW!%20Vim%20pelo%20link%20da%20bio." target="_blank" rel="noopener" aria-label="WhatsApp (21) 96654-7296"><span class="filled"></span><svg aria-hidden="true"><use href="#i-wa"/></svg></a><span class="tip">WhatsApp</span></li>
+  </ul>
+  <div class="wrap"><span>Tech MeoW · reparo, desbloqueio e peças</span><span>© 2026 MeoWDev-MOD</span></div>
+</footer>
+
+<a class="fab" href="https://wa.me/5521966547296?text=Ol%C3%A1%2C%20Tech%20MeoW!%20Vim%20pelo%20link%20da%20bio." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+<script type="module" src="js/main.js?v=243cbb9026"></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+/* Tech MeoW · link da bio. Mesmo padrão do site do Iron Check (paleta, Sora, botões, blocos, folhas e animações),
+   com a Interposer Tech MeoW em 3D no lugar do notebook. Paleta: #34117E #491AB1 #6631DB #7B45F0 #A981FF #B796FE #D0BCFC. */
+:root{
+  --bg:#130a2e; --bg-2:#1b0f42; --deep:#34117e; --mid:#491ab1; --brand:#6631db; --bright:#7b45f0; --soft:#a981ff; --soft-2:#b796fe; --pale:#d0bcfc;
+  --text:#f6f1ff; --muted:#cfc4ee; --ink-dark:#180a44; --ok:#5fe0a0; --wa:#25d366; --wa-ink:#052e16; --line:#2d1b66;
+  --surface:#1b0f42; --ease:cubic-bezier(.23,1,.32,1);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:72px}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif;-webkit-tap-highlight-color:transparent}
+img,video{max-width:100%;height:auto;display:block}
+a{color:var(--pale)}
+.wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+main>section{padding:clamp(88px,12vw,168px) 0}
+h1,h2,h3{font-family:Sora,"Segoe UI",system-ui,sans-serif;line-height:1.04;margin:0 0 .5em;letter-spacing:-.03em;font-weight:800;text-wrap:balance}
+h1{font-size:clamp(2.3rem,5.6vw,5.4rem)}
+h2{font-size:clamp(1.65rem,4.2vw,3.6rem);max-width:24ch}
+h3{font-size:1.25rem;letter-spacing:-.01em;font-weight:700;line-height:1.2}
+p{margin:0 0 1em;max-width:72ch}
+.lead{font-size:clamp(1.05rem,1.5vw,1.3rem);max-width:60ch;color:var(--text)}
+.fine{font-size:.92rem;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+main{overflow-x:clip}
+
+/* Topo: barra simples */
+header{position:fixed;inset:0 0 auto;z-index:40;background:var(--bg)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0}
+.brand{display:flex;align-items:center;gap:11px;color:var(--text);text-decoration:none;font:700 1.05rem Sora,sans-serif;letter-spacing:.02em;white-space:nowrap}
+.brand b{font-weight:800}
+.brand img{width:38px;height:38px}
+nav{display:flex;align-items:center;gap:22px}
+nav a.link{color:var(--muted);text-decoration:none;font-size:.96rem;transition:color .15s ease}
+nav a.link:hover{color:var(--text)}
+nav .short{display:none}
+@media (max-width:980px){nav a.link{display:none}}
+@media (max-width:520px){
+  .brand{font-size:.95rem;gap:8px}.brand img{width:30px;height:30px}
+  nav{gap:10px}nav .btn{padding:9px 14px;font-size:.88rem;min-height:42px}nav .long{display:none}nav .short{display:inline}
+}
+
+/* Botões: cheios, de uma cor só */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:12px 24px;border-radius:999px;border:0;font:700 1rem "Segoe UI",system-ui,sans-serif;text-decoration:none;cursor:pointer;transition:background-color .15s ease,color .15s ease,transform .16s var(--ease)}
+.btn:active{transform:scale(.97)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-wa{background:var(--bright);color:#fff}
+.btn-wa:hover{background:var(--brand)}
+.btn-ghost{background:var(--deep);color:var(--text)}
+.btn-ghost:hover{background:var(--mid)}
+:focus-visible{outline:3px solid var(--pale);outline-offset:3px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 14px}
+
+/* Abertura: a peça em 3D sobre o brilho roxo */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:clamp(96px,12vh,132px) 0 clamp(48px,8vh,88px)!important;overflow:hidden}
+.hero-glow{position:absolute;inset:-20% -10%;pointer-events:none;background:radial-gradient(42% 46% at 72% 38%,rgba(123,69,240,.55),transparent 70%),radial-gradient(36% 40% at 18% 78%,rgba(73,26,177,.6),transparent 72%),radial-gradient(30% 34% at 92% 92%,rgba(169,129,255,.28),transparent 70%)}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,5vw,72px);align-items:center}
+.hero-copy .lead{max-width:56ch}
+.hero-copy .fine{margin:0}
+.hero-copy .fine a{color:var(--pale)}
+.h1-line{display:inline-block}
+.hero-3d{margin:0}
+.stage3d{position:relative;aspect-ratio:1/1.1;width:min(470px,100%);margin:0 auto;border-radius:30px;background:radial-gradient(85% 70% at 50% 40%,#3a1f96 0,#1b0f42 62%,#130a2e 100%);box-shadow:0 25px 50px rgba(8,3,24,.55)}
+.stage3d .poster{position:absolute;left:50%;top:50%;width:62%;height:auto;transform:translate(-50%,-50%) rotate(-4deg);filter:drop-shadow(0 22px 34px rgba(0,0,0,.6));transition:opacity .5s}
+.stage3d canvas{position:absolute;inset:0;width:100%;height:100%;display:block;border-radius:inherit;touch-action:pan-y;cursor:grab;opacity:0;transition:opacity .5s}
+.stage3d canvas.pega{cursor:grabbing}
+.stage3d.pronto canvas{opacity:1}
+.stage3d.pronto .poster{opacity:0}
+.ribbon{position:absolute;overflow:hidden;width:150px;height:150px;top:-10px;left:-10px;display:flex;align-items:center;justify-content:center;z-index:3;pointer-events:none}
+.ribbon::before{content:"Flex";position:absolute;width:150%;height:40px;background:linear-gradient(45deg,#ff9d0a 0%,#ffc14a 51%,#ff9d0a 100%);transform:rotate(-45deg) translateY(-20px);display:flex;align-items:center;justify-content:center;color:#2b1a00;font:800 .95rem Sora,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.ribbon::after{content:"";position:absolute;width:10px;height:10px;bottom:0;left:0;z-index:-1;box-shadow:140px -140px #b86a00;background:linear-gradient(45deg,#d17a00 0%,#ffb01f 51%,#d17a00 100%)}
+.caption{margin:14px auto 0;max-width:42ch;text-align:center;font-size:.9rem;color:var(--muted)}
+@media (max-width:860px){
+  .hero{min-height:0;display:block}
+  .hero-grid{grid-template-columns:minmax(0,1fr)}
+  .stage3d{width:min(340px,86%)}
+  .hide-sm{display:none}
+}
+
+/* Números */
+.numbers{padding:clamp(56px,8vw,96px) 0!important;background:linear-gradient(var(--bg),var(--deep) clamp(90px,10vw,150px))}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.stats b{display:block;font:800 clamp(2.2rem,5vw,4.2rem)/1 Sora,sans-serif;letter-spacing:-.03em;color:var(--pale);font-variant-numeric:tabular-nums}
+.stats span{display:block;margin-top:8px;color:var(--text)}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Serviços: teclas F1 a F4, iguais às do notebook do Iron Check */
+#servicos{background:var(--deep)}
+.pedido{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start;margin-top:clamp(28px,4vw,48px)}
+.teclas{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px;padding:0;border:0;min-width:0}
+.teclas label{position:relative;flex:none;display:inline-flex;align-items:flex-end;min-height:58px;padding:22px 18px 9px;border-radius:10px;background:linear-gradient(180deg,#2c2934,#16141b);color:#ece8f6;font:600 1rem "Segoe UI",system-ui,sans-serif;cursor:pointer;user-select:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -2px 0 rgba(0,0,0,.5),0 4px 0 #09080c,0 7px 14px rgba(0,0,0,.45);transition:transform .1s var(--ease),box-shadow .1s var(--ease),filter .15s ease}
+.teclas label::before{content:attr(data-key);position:absolute;top:6px;right:10px;font:600 .7rem "Segoe UI",system-ui,sans-serif;color:rgba(236,232,246,.55)}
+.teclas input{position:absolute;opacity:0;pointer-events:none}
+@media (hover:hover) and (pointer:fine){.teclas label:hover{filter:brightness(1.3)}}
+.teclas label:active{transform:translateY(3px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),inset 0 -1px 0 rgba(0,0,0,.45),0 1px 0 #09080c,0 2px 5px rgba(0,0,0,.4)}
+.teclas label:has(input:checked){background:linear-gradient(180deg,#8a5cf5,#6631db);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -2px 0 rgba(0,0,0,.3),0 4px 0 #1b0f42,0 0 24px rgba(169,129,255,.6)}
+.teclas label:has(input:checked)::before{color:rgba(255,255,255,.85)}
+.teclas label:has(input:focus-visible){outline:3px solid var(--pale);outline-offset:3px}
+.pedido-dica{display:none;margin:0 0 16px;min-height:3.2em;font-size:clamp(.98rem,1.3vw,1.1rem)}
+.pedido-dica b{font-family:Sora,sans-serif;margin-right:8px}
+.pedido-dica span{color:var(--muted)}
+.pedido:has(input[value="reparo"]:checked) .pedido-dica[data-op="reparo"],
+.pedido:has(input[value="desbloqueio"]:checked) .pedido-dica[data-op="desbloqueio"],
+.pedido:has(input[value="interposer"]:checked) .pedido-dica[data-op="interposer"],
+.pedido:has(input[value="parceria"]:checked) .pedido-dica[data-op="parceria"]{display:block}
+.pedido textarea{display:block;width:100%;min-height:110px;margin:0 0 14px;padding:14px 18px;border:0;border-radius:16px;background:var(--bg);color:var(--text);font:400 16px/1.5 "Segoe UI",system-ui,sans-serif;resize:vertical}
+.pedido textarea::placeholder{color:var(--muted);opacity:.8}
+.btn-grande{width:100%;min-height:56px;font-size:1.05rem}
+.pedido-tela{position:relative;aspect-ratio:16/11;border-radius:22px;overflow:hidden;background:#0d0622}
+.tela{position:absolute;inset:0;opacity:0;transition:opacity .35s ease}
+.tela img,.tela video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
+.tela-logo{background:radial-gradient(70% 70% at 50% 45%,#3a1f96,#130a2e)}
+.tela-logo img{object-fit:contain;padding:12% 0 18%}
+.pedido:has(input[value="reparo"]:checked) .tela[data-op="reparo"],
+.pedido:has(input[value="desbloqueio"]:checked) .tela[data-op="desbloqueio"],
+.pedido:has(input[value="interposer"]:checked) .tela[data-op="interposer"],
+.pedido:has(input[value="parceria"]:checked) .tela[data-op="parceria"]{opacity:1}
+@media (max-width:860px){.pedido{grid-template-columns:minmax(0,1fr)}.pedido-tela{order:-1}}
+@media (max-width:560px){.teclas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 10px}.teclas label{justify-content:flex-start}}
+
+/* Loja: campo claro, como o laudo */
+.field-light{background:var(--pale);color:var(--ink-dark)}
+.field-light .lead,.field-light .paper-cap,.field-light .ticks li{color:var(--ink-dark)}
+.field-light .btn-wa{background:var(--deep);color:#fff}
+.field-light .btn-wa:hover{background:var(--mid)}
+.btn-claro{background:#fff;color:var(--ink-dark)}
+.btn-claro:hover{background:#efe8ff}
+.produtos{display:grid;gap:clamp(56px,8vw,104px);margin-top:clamp(36px,5vw,64px)}
+.produto{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,5vw,72px);align-items:center}
+.produto-inverso .paper-wrap{order:2}
+.produto h3{font-size:clamp(1.65rem,3.4vw,3rem);line-height:1.04;letter-spacing:-.03em;font-weight:800;color:var(--ink-dark)}
+.paper-wrap{position:relative}
+.vitrine{overflow:hidden;border-radius:22px;background:#130a2e;aspect-ratio:4/4.4}
+.vitrine img{width:100%;height:100%;object-fit:cover}
+.paper-cap{margin:14px 2px 0;font-size:.88rem}
+.stamp{position:absolute;right:4%;top:10%;padding:8px 18px;border:4px solid #6631db;border-radius:12px;background:rgba(255,255,255,.9);color:#6631db;font:800 clamp(1rem,1.9vw,1.5rem) Sora,sans-serif;letter-spacing:.1em;text-transform:uppercase;transform:rotate(-12deg);box-shadow:0 8px 20px rgba(24,10,68,.22)}
+.stamp-nfc{right:auto;left:4%;transform:rotate(10deg)}
+@media (max-width:620px){.stamp{padding:6px 12px;font-size:.95rem;border-width:3px}}
+@media (max-width:860px){.produto{grid-template-columns:minmax(0,1fr)}.produto-inverso .paper-wrap{order:0}.vitrine{aspect-ratio:1/1}}
+.ticks{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:12px}
+.ticks li{position:relative;padding-left:34px;font-weight:600;color:var(--ink-dark)}
+.ticks li::before{content:"";position:absolute;left:0;top:.15em;width:22px;height:22px;border-radius:50%;background:#34117e url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.3 5 8.6 9.6 3.6' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat}
+
+/* Projetos: blocos visuais, o print e uma frase */
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,26px);margin-top:clamp(32px,4vw,56px)}
+@media (max-width:980px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.tiles{grid-template-columns:minmax(0,1fr)}}
+.tile{display:flex;flex-direction:column;gap:6px;padding:12px 12px 20px;border-radius:22px;background:var(--bg-2);color:var(--text);text-decoration:none;transition:transform .25s var(--ease),background-color .2s ease}
+@media (hover:hover) and (pointer:fine){.tile:hover{transform:translateY(-4px);background:#24135a}.tile:hover .tile-go svg{transform:translateX(4px)}}
+.tile:active{transform:scale(.985)}
+.tile-media{position:relative;overflow:hidden;aspect-ratio:16/10;border-radius:14px;background:#0d0622;margin-bottom:12px}
+.tile-media img,.tile-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
+.tile h3{margin:0 8px;font-size:clamp(1.15rem,1.6vw,1.35rem);color:var(--pale)}
+.tile p{margin:0 8px;color:var(--text);font-size:.98rem}
+.tile-go{display:inline-flex;align-items:center;gap:6px;margin:auto 8px 0;padding-top:12px;font-weight:700;font-size:.95rem;color:var(--soft-2)}
+.tile-go svg{width:18px;height:18px;transition:transform .2s var(--ease)}
+.kb{transform-origin:22% 28%}
+.tile.is-in .kb{animation:kb 9s cubic-bezier(.23,1,.32,1) both}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.16) translate(-2%,-1.5%)}}
+.tile-pill{position:absolute;left:12px;right:12px;bottom:12px;display:flex;align-items:center;padding:9px 14px;border-radius:999px;background:rgba(19,10,46,.88);font:600 .82rem "Segoe UI",system-ui,sans-serif;color:var(--text);overflow:hidden}
+.tile-pill i{position:absolute;left:0;bottom:0;width:100%;height:3px;background:var(--soft);transform:scaleX(0);transform-origin:0 50%}
+.tile.is-in .tile-pill i,.pedido-tela.is-in .tela .tile-pill i{animation:pill 3.4s cubic-bezier(.4,0,.2,1) infinite}
+@keyframes pill{0%{transform:scaleX(0);opacity:1}70%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
+
+/* Como funciona: três passos ligados por uma linha que se desenha com a rolagem */
+.flow{--g:clamp(18px,3vw,40px);position:relative;margin-top:clamp(32px,4vw,56px)}
+.flow ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--g)}
+.flow li b{position:relative;z-index:1;display:grid;place-items:center;width:56px;height:56px;margin-bottom:16px;border-radius:50%;background:var(--bright);color:#fff;font:800 1.3rem Sora,sans-serif;box-shadow:0 0 0 8px var(--bg)}
+.flow li h3{margin:0 0 6px;font-size:clamp(1.2rem,1.8vw,1.5rem);color:var(--pale)}
+.flow li p{margin:0;color:var(--text)}
+.flow-line{position:absolute;left:28px;right:calc((100% - 2 * var(--g)) / 3 - 28px);top:27px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--bright),var(--soft));transform-origin:0 50%}
+@media (max-width:720px){.flow ol{grid-template-columns:minmax(0,1fr)}.flow-line{display:none}}
+
+/* Dúvidas */
+.faq{display:grid;gap:4px;margin-top:clamp(28px,4vw,48px)}
+.faq details{background:var(--bg-2);border-radius:14px;padding:0 20px}
+.faq summary{cursor:pointer;padding:17px 0;font-weight:700;font-size:1.05rem;list-style-position:outside}
+.faq details p{margin:0;padding:0 0 18px}
+
+/* Fecho */
+.final{background:var(--brand)}
+.final h2{max-width:22ch}
+.final .lead{font:800 clamp(1.4rem,3vw,2.4rem)/1.1 Sora,sans-serif;letter-spacing:-.02em;margin-bottom:.4em}
+.final .btn-wa{background:#fff;color:var(--ink-dark)}
+.final .btn-wa:hover{background:var(--pale)}
+.final .btn-ghost{background:var(--deep)}
+footer{background:var(--bg);padding:26px 0 96px;font-size:.92rem;color:var(--muted);overflow-x:clip}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:22px}
+
+/* Seções de outra cor chegam como folhas por cima da anterior: cantos redondos e sombra no lugar do corte reto */
+#servicos,.field-light,#projetos,#como,#duvidas,.final,footer{--sheet:clamp(26px,4vw,56px);position:relative;z-index:1;margin-top:calc(-1 * var(--sheet));border-radius:var(--sheet) var(--sheet) 0 0;box-shadow:0 -28px 60px -30px rgba(0,0,0,.55)}
+#projetos,#duvidas{background:var(--bg)}
+#como{background:var(--bg-2)}
+#como .flow li b{box-shadow:0 0 0 8px var(--bg-2)}
+
+/* Redes no rodapé (botões do Uiverse, de wilsondesouza): a cor da rede sobe por dentro e o nome aparece em cima */
+.socials{list-style:none;width:100%;margin:0 0 6px;padding:8px 0 0;display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
+.socials li{position:relative}
+.socials a{position:relative;overflow:hidden;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#fff;color:#2b2b33;transition:color .3s ease,box-shadow .3s ease}
+.socials svg{position:relative;z-index:1;width:24px;height:24px}
+.socials .filled{position:absolute;inset:0;transform:scaleY(0);transform-origin:50% 100%;transition:transform .3s ease-in-out}
+.socials .tip{position:absolute;left:50%;bottom:calc(100% + 8px);padding:6px 10px;border-radius:6px;color:#fff;font-size:.82rem;white-space:nowrap;pointer-events:none;opacity:0;visibility:hidden;transform:translate(-50%,8px);transition:opacity .3s ease,transform .3s ease,visibility .3s}
+.socials li:hover .tip,.socials li:focus-within .tip{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.socials li:hover a,.socials a:focus-visible{color:#fff;box-shadow:3px 2px 45px 0 rgba(0,0,0,.12)}
+.socials li:hover .filled,.socials a:focus-visible .filled{transform:scaleY(1)}
+.socials a:focus-visible{outline:3px solid var(--pale);outline-offset:3px}
+.socials a[data-social="instagram"] .filled,.socials a[data-social="instagram"]~.tip{background:linear-gradient(45deg,#405de6,#5b51db,#b33ab4,#c135b4,#e1306c,#fd1f1f)}
+.socials a[data-social="youtube"] .filled,.socials a[data-social="youtube"]~.tip{background:#ff0000}
+.socials a[data-social="github"] .filled,.socials a[data-social="github"]~.tip{background:#24262a}
+.socials a[data-social="whatsapp"] .filled,.socials a[data-social="whatsapp"]~.tip{background:#25d366}
+
+/* Botão verde do WhatsApp, sempre à mão */
+.fab{position:fixed;right:18px;bottom:18px;z-index:30;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--wa);color:var(--wa-ink);transition:transform .16s var(--ease),opacity .25s ease}
+.fab:active{transform:scale(.94)}
+.fab svg{width:30px;height:30px}
+
+/* Trocar de seção pelo menu vira uma passagem suave (rolagem do Lenis); sem movimento, nada anima */
+@media (prefers-reduced-motion:reduce){
+  .tile.is-in .kb,.tile-pill i,.pedido-tela .tile-pill i{animation:none!important}
+  .socials .filled,.socials .tip,.tela,.stage3d canvas,.stage3d .poster{transition:none}
+}
