@@ -1,0 +1,23 @@
+  <section class="sec" style="padding-top:clamp(26px,4vw,56px)">
+    <div class="wrap">
+      <div class="card caixa">
+        <span class="kick">MeoWGuard</span>
+        <h1>Seu acesso ao MeoWGuard</h1>
+        <p id="texto" class="lead">Confirmando o seu pagamento…</p>
+        <div id="estado" class="estado" role="status" aria-live="polite" hidden></div>
+
+        <div id="entregas" class="entregas" hidden>
+          <a class="b p big" id="baixar" href="#">Baixar o MeoWGuard</a>
+          <a class="b big" id="video" href="#" target="_blank" rel="noopener">Assistir ao tutorial em vídeo</a>
+          <p class="fine">O link de download vale 30 minutos. Se vencer, volte a esta página com o número do pagamento e um novo é gerado na hora. O pacote tem o aplicativo, o código-fonte e a licença.</p>
+        </div>
+
+        <form id="form" autocomplete="off">
+          <label class="sr-only" for="numero">Número do pagamento</label>
+          <input id="numero" name="numero" inputmode="numeric" pattern="[0-9]{5,20}" placeholder="Número do pagamento" required>
+          <button class="b p" type="submit">Abrir meu acesso</button>
+        </form>
+        <p class="fine">O número do pagamento está no comprovante do Mercado Pago. Precisa de ajuda? <a href="{{zap:Olá, Tech MeoW! Preciso de ajuda com o acesso ao MeoWGuard.}}" target="_blank" rel="noopener">Chame no WhatsApp</a>.</p>
+      </div>
+    </div>
+  </section>

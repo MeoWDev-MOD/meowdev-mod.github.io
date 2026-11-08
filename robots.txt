@@ -1,8 +1,9 @@
-# Vale para todos os sites em meowdev-mod.github.io (o Google só lê o robots.txt da raiz).
+# Vale para todo o techmeow.app, inclusive os projetos que moram nele (o Google só lê o robots.txt da raiz).
 User-agent: *
 Allow: /
+Disallow: /api/
 
 Sitemap: https://techmeow.app/sitemap.xml
-Sitemap: https://meowdev-mod.github.io/ps5-hdmi-tool/sitemap.xml
-Sitemap: https://meowdev-mod.github.io/Control-PS-5/sitemap.xml
-Sitemap: https://meowdev-mod.github.io/ps5-controle-test/sitemap.xml
+Sitemap: https://techmeow.app/ps5-hdmi-tool/sitemap.xml
+Sitemap: https://techmeow.app/Control-PS-5/sitemap.xml
+Sitemap: https://techmeow.app/ps5-controle-test/sitemap.xml

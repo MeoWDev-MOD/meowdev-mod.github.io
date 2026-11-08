@@ -1,0 +1,63 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://techmeow.app/#site",
+      "name": "Tech MeoW",
+      "alternateName": ["Tech MeoW Assistência Técnica", "TechMeoW"],
+      "url": "https://techmeow.app/",
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "https://techmeow.app/#loja" }
+    },
+    {
+      "@type": "ElectronicsStore",
+      "@id": "https://techmeow.app/#loja",
+      "name": "Tech MeoW",
+      "alternateName": "Tech MeoW Assistência Técnica de Videogame",
+      "description": "Assistência técnica de videogame no Engenho da Rainha, Zona Norte do Rio de Janeiro: conserto de PS5, Nintendo Switch, Steam Deck, placa de vídeo e controle, e desbloqueio de Nintendo Switch.",
+      "url": "https://techmeow.app/",
+      "logo": "https://techmeow.app/img/apple-touch-icon.png",
+      "image": "https://techmeow.app/img/og.jpg",
+      "telephone": "+55-21-96654-7296",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Sergio Silva, 50",
+        "addressLocality": "Rio de Janeiro",
+        "addressRegion": "RJ",
+        "postalCode": "20766-670",
+        "addressCountry": "BR"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": -22.8637, "longitude": -43.3001 },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Rua%20Sergio%20Silva%2C%2050%2C%20Engenho%20da%20Rainha%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2020766-670",
+      "areaServed": [
+        { "@type": "City", "name": "Rio de Janeiro" },
+        { "@type": "Place", "name": "Zona Norte do Rio de Janeiro" }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55-21-96654-7296",
+        "contactType": "customer service",
+        "availableLanguage": "pt-BR",
+        "url": "https://wa.me/5521966547296"
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "10:00", "closes": "18:00" }
+      ],
+      "knowsAbout": ["Conserto de PS5", "Troca do CI HDMI do PS5 Slim", "Conserto de Nintendo Switch", "Desbloqueio de Nintendo Switch", "Conserto de Steam Deck", "Reparo de placa de vídeo", "Conserto de controle de PS5"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços da Tech MeoW",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conserto de PS5", "description": "Reparo de placa do PS5 e do PS5 Slim, como o PS5 sem imagem na TV, incluindo a troca do CI HDMI com a Interposer Tech MeoW." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conserto de Nintendo Switch", "description": "Reparo dos modelos do Switch 1: V1, V2, Lite e OLED." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conserto de Steam Deck" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reparo de placa de vídeo", "description": "Reparo de placa de vídeo (GPU) de computador." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conserto de controle", "description": "Conserto de controle, como o DualSense do PS5." } },
+          { "@type": "Offer", "price": "339.90", "priceCurrency": "BRL", "itemOffered": { "@type": "Service", "name": "Desbloqueio de Nintendo Switch", "description": "Qualquer modelo do Switch 1: V1, V2, Lite e OLED." } }
+        ]
+      },
+      "sameAs": ["https://www.instagram.com/tech_meow.oficial/", "https://www.youtube.com/@techmeow", "https://github.com/MeoWDev-MOD"]
+    }
+  ]
+}

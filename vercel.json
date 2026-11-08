@@ -1,7 +1,27 @@
 {
+  "trailingSlash": true,
   "redirects": [
     { "source": "/meowguard", "destination": "/MeoWGuard/", "permanent": true },
     { "source": "/meowguard/", "destination": "/MeoWGuard/", "permanent": true },
-    { "source": "/MeoWGuard", "destination": "/MeoWGuard/", "permanent": true }
+
+    { "source": "/hdmi-tool", "destination": "/ps5-hdmi-tool/", "permanent": false },
+    { "source": "/hdmi", "destination": "/ps5-hdmi-tool/", "permanent": false },
+    { "source": "/iron-check", "destination": "/Iron-Check/", "permanent": false },
+    { "source": "/ironcheck", "destination": "/Iron-Check/", "permanent": false },
+    { "source": "/control-ps5", "destination": "/Control-PS-5/", "permanent": false },
+    { "source": "/control-ps-5", "destination": "/Control-PS-5/", "permanent": false },
+    { "source": "/bancadasync", "destination": "/BancadaSync-Download/", "permanent": false },
+    { "source": "/bancada", "destination": "/BancadaSync-Download/", "permanent": false },
+    { "source": "/controle-test", "destination": "/ps5-controle-test/", "permanent": false },
+    { "source": "/controle", "destination": "/ps5-controle-test/", "permanent": false },
+
+    { "source": "/guia", "destination": "https://guia-switch-tech-meow.vercel.app/", "permanent": false },
+    { "source": "/jnx", "destination": "https://github.com/MeoWDev-MOD/JNX", "permanent": false },
+    { "source": "/curso", "destination": "https://pay.kiwify.com.br/leiZv0k", "permanent": false },
+
+    { "source": "/desbloqueio", "destination": "/#desbloqueio", "permanent": false },
+    { "source": "/reparos", "destination": "/#reparos", "permanent": false },
+    { "source": "/loja", "destination": "/#loja", "permanent": false },
+    { "source": "/contato", "destination": "/#contato", "permanent": false }
   ]
 }

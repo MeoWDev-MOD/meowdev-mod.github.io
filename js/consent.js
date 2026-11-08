@@ -1,1 +1,0 @@
-import{a,b,c,d,e,f,g,h,i}from"./chunk-S7AYDZLQ.js";import"./chunk-O2XFH626.js";export{a as TERMS_VERSION,b as isOptionalKey,i as mountConsent,e as optionalAllowed,h as optionalStorage,f as purgeOptional,c as readConsent,g as saveConsent,d as termsAccepted};
