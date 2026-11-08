@@ -51,6 +51,24 @@ python -m http.server 8770                                            # site loc
 MSYS_NO_PATHCONV=1 node scripts/conferir-links.mjs http://127.0.0.1:8770   # todo endereço de imagem, script e link interno abre?
 ```
 
+## Pagamento do MeoWGuard (Mercado Pago)
+
+A venda roda nas funções de `api/` (sem banco de dados: quem diz se o pagamento vale é sempre o Mercado Pago, perguntado na hora; devolveu o dinheiro, o acesso some). As chaves ficam **só no painel da Vercel** (projeto `tech-meow`, Settings, Environment Variables, ambiente Production), nunca no código, no chat ou neste repositório.
+
+| Variável | O que é |
+|---|---|
+| `MP_ACCESS_TOKEN` | Access Token de **produção** da aplicação no painel de desenvolvedores do Mercado Pago (começa com `APP_USR-`; a "Public Key" não serve) |
+| `PRECO_BRL` | Preço em reais, por exemplo `49.90` (mínimo `1`) |
+| `ACCESS_SECRET` | Texto longo e aleatório (40+ caracteres) que assina os links de download |
+| `GH_REPO` e `GH_TOKEN` | Repositório privado das versões (`MeoWDev-MOD/meowguard-app`) e chave do GitHub só de leitura (fine-grained, permissão Contents: Read-only, só nesse repositório) |
+| `VIDEO_URL` | (opcional) link do vídeo tutorial que aparece na página de acesso |
+
+- Depois de mudar variáveis, é preciso **publicar de novo** (Redeploy na Vercel, ou um commit qualquer). `https://techmeow.app/api/preco` mostra `"faltando": [...]` com os nomes (nunca os valores) do que ainda não foi configurado; quando está tudo certo, a página `/app/` mostra o preço e liga o botão.
+- Mudar o preço não tira o acesso de quem já pagou: o pagamento só precisa ser de pelo menos R$ 1. A próxima compra já sai com o preço novo.
+- Teste de ponta a ponta: deixe `PRECO_BRL=1`, compre pelo site com Pix ou cartão, abra o acesso e baixe; depois peça a devolução no Mercado Pago e veja o acesso fechar. Aí coloque o preço de verdade.
+- A chave do GitHub tem validade: anote a data para criar outra antes de vencer, senão download e atualização param.
+- Testes do servidor (com Mercado Pago e GitHub de mentira): `node --test tests/pagamento.test.js`.
+
 ## Outros arquivos
 
 - `img/` e `video/`: imagens, o trecho da bancada e o vídeo de lançamento do MeoWGuard (`meowguard-lancamento.mp4`, versão leve 1280x720, e a capa `meowguard-poster.jpg`, usados em `/app/`). O projeto-fonte do vídeo (horizontal e vertical) fica fora deste repositório, em `videos/` ao lado do app. Fotos de terceiros (Steam Deck e placa de vídeo) são do Wikimedia Commons, CC BY-SA 4.0, com crédito no rodapé.

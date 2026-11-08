@@ -27,6 +27,9 @@ const crypto = require("node:crypto");
 const MP = "https://api.mercadopago.com";
 const REFERENCIA = "meowguard-";
 const VALIDADE_LINK_S = 30 * 60;
+// Quem pagou continua com acesso mesmo que o preço mude depois (promoção, aumento): o pagamento só precisa ser de pelo menos
+// o menor preço que o site aceita (R$ 1). O valor cobrado de cada pessoa é sempre decidido aqui no servidor, nunca pelo navegador.
+const PISO_PAGAMENTO = 1;
 
 const site = () => (process.env.SITE_URL || "https://techmeow.app").replace(/\/+$/, "");
 
@@ -38,6 +41,19 @@ function preco() {
 // Só vende quando está tudo configurado; senão o site mostra "em breve".
 function pronto() {
   return Boolean(process.env.MP_ACCESS_TOKEN && process.env.ACCESS_SECRET && preco() > 0 && (process.env.DOWNLOAD_URL || githubConfigurado()));
+}
+
+// Só os NOMES das variáveis que ainda faltam (nunca valores): ajuda a achar o que esqueceram no painel da Vercel.
+function faltando() {
+  const f = [];
+  if (!process.env.MP_ACCESS_TOKEN) f.push("MP_ACCESS_TOKEN");
+  if (!process.env.ACCESS_SECRET) f.push("ACCESS_SECRET");
+  if (!(preco() > 0)) f.push("PRECO_BRL");
+  if (!process.env.DOWNLOAD_URL && !githubConfigurado()) {
+    if (!process.env.GH_TOKEN) f.push("GH_TOKEN");
+    if (!/^[\w.-]+\/[\w.-]+$/.test(process.env.GH_REPO ?? "")) f.push("GH_REPO");
+  }
+  return f;
 }
 
 async function mp(caminho, opcoes = {}) {
@@ -52,14 +68,14 @@ async function mp(caminho, opcoes = {}) {
 
 const idValido = (id) => typeof id === "string" && /^\d{5,20}$/.test(id);
 
-// O pagamento só vale se: aprovado, em reais, desta loja/produto (referência nossa) e com o valor do preço.
+// O pagamento só vale se: aprovado, em reais, desta loja/produto (referência nossa) e de pelo menos o piso (não do preço de hoje).
 async function pagamentoLiberado(id) {
   if (!idValido(id)) return { liberado: false, motivo: "numero_invalido" };
   const r = await mp(`/v1/payments/${id}`);
   if (!r.ok) return { liberado: false, motivo: "nao_encontrado" };
   const p = r.corpo;
   if (typeof p.external_reference !== "string" || !p.external_reference.startsWith(REFERENCIA)) return { liberado: false, motivo: "outro_produto" };
-  if (p.currency_id !== "BRL" || Number(p.transaction_amount) + 0.001 < preco()) return { liberado: false, motivo: "valor_menor" };
+  if (p.currency_id !== "BRL" || Number(p.transaction_amount) + 0.001 < PISO_PAGAMENTO) return { liberado: false, motivo: "valor_menor" };
   if (p.status !== "approved") return { liberado: false, motivo: p.status || "desconhecido", pendente: ["pending", "in_process", "authorized"].includes(p.status) };
   return { liberado: true };
 }
@@ -165,4 +181,4 @@ function responder(res, status, corpo) {
   res.status(status).json(corpo);
 }
 
-module.exports = { MP, REFERENCIA, site, preco, pronto, mp, idValido, pagamentoLiberado, linkDeDownload, assinaturaValida, versaoValida, githubConfigurado, ultimaVersao, destinoDoArquivo, zerarCache, responder };
+module.exports = { MP, REFERENCIA, site, preco, pronto, faltando, mp, idValido, pagamentoLiberado, linkDeDownload, assinaturaValida, versaoValida, githubConfigurado, ultimaVersao, destinoDoArquivo, zerarCache, responder };

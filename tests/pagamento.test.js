@@ -79,8 +79,33 @@ test("o preço aceita vírgula e o botão só liga com tudo configurado", () => 
   delete process.env.MP_ACCESS_TOKEN;
   const r2 = resposta();
   preco({}, r2);
-  assert.deepEqual(r2.corpo, { disponivel: false, preco: null });
+  assert.deepEqual(r2.corpo, { disponivel: false, preco: null, faltando: ["MP_ACCESS_TOKEN"] });
   process.env.MP_ACCESS_TOKEN = guardado;
+});
+
+test("o que falta configurar aparece só pelo nome da variável, nunca pelo valor", () => {
+  const guardado = { token: process.env.MP_ACCESS_TOKEN, segredo: process.env.ACCESS_SECRET, preco: process.env.PRECO_BRL, dl: process.env.DOWNLOAD_URL, gh: process.env.GH_TOKEN, repo: process.env.GH_REPO };
+  for (const k of ["MP_ACCESS_TOKEN", "ACCESS_SECRET", "PRECO_BRL", "DOWNLOAD_URL", "GH_TOKEN", "GH_REPO"]) delete process.env[k];
+  assert.deepEqual(comum.faltando(), ["MP_ACCESS_TOKEN", "ACCESS_SECRET", "PRECO_BRL", "GH_TOKEN", "GH_REPO"]);
+
+  process.env.MP_ACCESS_TOKEN = "VALOR-SECRETO-1";
+  process.env.ACCESS_SECRET = "VALOR-SECRETO-2";
+  process.env.PRECO_BRL = "29,90";
+  process.env.GH_REPO = "MeoWDev-MOD/meowguard-app";
+  assert.deepEqual(comum.faltando(), ["GH_TOKEN"]);
+  const r = resposta();
+  preco({}, r);
+  assert.deepEqual(r.corpo, { disponivel: false, preco: null, faltando: ["GH_TOKEN"] });
+  assert.ok(!JSON.stringify(r.corpo).includes("VALOR-SECRETO"));
+
+  process.env.GH_TOKEN = "GH-VALOR-SECRETO";
+  assert.deepEqual(comum.faltando(), []);
+  assert.equal(comum.pronto(), true);
+
+  for (const [k, v] of Object.entries({ MP_ACCESS_TOKEN: guardado.token, ACCESS_SECRET: guardado.segredo, PRECO_BRL: guardado.preco, DOWNLOAD_URL: guardado.dl, GH_TOKEN: guardado.gh, GH_REPO: guardado.repo })) {
+    if (v === undefined) delete process.env[k];
+    else process.env[k] = v;
+  }
 });
 
 test("checkout cria o pagamento com Pix, crédito e débito, sem boleto, e só aceita POST", async () => {
@@ -110,6 +135,25 @@ test("pagamento aprovado libera o vídeo e um link de download assinado", async 
   assert.equal(r.cabecalhos["Cache-Control"], "no-store");
 });
 
+test("mudar o preço depois não tira o acesso de quem já pagou", async () => {
+  pagamentos = { 1500000001: pago({ transaction_amount: 29.9 }), 1500000002: pago({ transaction_amount: 1 }) };
+  const guardado = process.env.PRECO_BRL;
+  process.env.PRECO_BRL = "79,90"; // o preço subiu depois das compras
+  try {
+    for (const id of ["1500000001", "1500000002"]) {
+      const r = resposta();
+      await acesso({ method: "GET", query: { payment_id: id } }, r);
+      assert.equal(r.corpo.liberado, true, id);
+    }
+    // e a próxima compra já sai com o preço novo
+    const c = resposta();
+    await checkout({ method: "POST" }, c);
+    assert.equal(JSON.parse(chamadas.at(-1).opcoes.body).items[0].unit_price, 79.9);
+  } finally {
+    process.env.PRECO_BRL = guardado;
+  }
+});
+
 test("Pix ainda pendente não libera, mas avisa que está pendente", async () => {
   pagamentos = { 1111111111: pago({ status: "pending" }) };
   const r = resposta();
@@ -121,7 +165,7 @@ test("Pix ainda pendente não libera, mas avisa que está pendente", async () =>
 test("não libera: dinheiro devolvido, valor menor, outro produto, número inexistente ou inválido", async () => {
   pagamentos = {
     2000000001: pago({ status: "refunded" }),
-    2000000002: pago({ transaction_amount: 5 }),
+    2000000002: pago({ transaction_amount: 0.5 }),
     2000000003: pago({ external_reference: "outra-loja-1" }),
     2000000004: pago({ currency_id: "USD" }),
   };
