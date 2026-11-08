@@ -1,5 +1,4 @@
 {
-  "trailingSlash": true,
   "redirects": [
     { "source": "/meowguard", "destination": "/MeoWGuard/", "permanent": true },
     { "source": "/meowguard/", "destination": "/MeoWGuard/", "permanent": true },
@@ -22,6 +21,8 @@
     { "source": "/desbloqueio", "destination": "/#desbloqueio", "permanent": false },
     { "source": "/reparos", "destination": "/#reparos", "permanent": false },
     { "source": "/loja", "destination": "/#loja", "permanent": false },
-    { "source": "/contato", "destination": "/#contato", "permanent": false }
+    { "source": "/contato", "destination": "/#contato", "permanent": false },
+
+    { "source": "/:caminho((?!api/|\\.well-known/)(?:[^/]+/)*(?!LICENSE$)[^/.]+)", "destination": "/:caminho/", "permanent": true }
   ]
 }
