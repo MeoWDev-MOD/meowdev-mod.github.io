@@ -2,7 +2,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://meowdev-mod.github.io/sitemap.xml
+Sitemap: https://techmeow.app/sitemap.xml
 Sitemap: https://meowdev-mod.github.io/ps5-hdmi-tool/sitemap.xml
 Sitemap: https://meowdev-mod.github.io/Control-PS-5/sitemap.xml
 Sitemap: https://meowdev-mod.github.io/ps5-controle-test/sitemap.xml
