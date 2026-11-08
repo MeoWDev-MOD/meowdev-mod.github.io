@@ -27,9 +27,34 @@ function resposta() {
 
 let pagamentos = {};
 const chamadas = [];
+// GitHub de mentira: a última release do repositório privado e o link temporário de cada arquivo
+let release = null;
+const HASH_REL = "b".repeat(64);
+const releaseBoa = (extra = {}) => ({
+  tag_name: "v2.3.0",
+  body: `Corrige o Mac e acelera a instalação\nsha256: ${HASH_REL}`,
+  assets: [{ id: 111, name: "MeoWGuard.nro" }, { id: 222, name: "MeoWGuard-pacote.zip" }, { id: 333, name: "outro.txt" }],
+  ...extra,
+});
+function githubDeMentira(u, opcoes) {
+  assert.equal(opcoes.headers.Authorization, "Bearer GH-TOKEN-DE-TESTE");
+  assert.equal(opcoes.headers["User-Agent"], "techmeow-site");
+  if (u.endsWith("/repos/MeoWDev-MOD/meowguard-app/releases/latest")) {
+    return release ? { ok: true, status: 200, json: async () => release } : { ok: false, status: 404, json: async () => ({}) };
+  }
+  const a = u.match(/\/releases\/assets\/(\d+)$/);
+  if (a) {
+    assert.equal(opcoes.headers.Accept, "application/octet-stream");
+    assert.equal(opcoes.redirect, "manual");
+    return { ok: false, status: 302, headers: { get: (k) => (k === "location" ? `https://objects.githubusercontent.com/temporario/${a[1]}?assinado=1` : null) } };
+  }
+  throw new Error("chamada inesperada ao GitHub: " + u);
+}
+
 global.fetch = async (url, opcoes = {}) => {
   chamadas.push({ url, opcoes });
   const u = String(url);
+  if (u.startsWith("https://api.github.com/")) return githubDeMentira(u, opcoes);
   assert.equal(opcoes.headers.Authorization, "Bearer TOKEN-DE-TESTE");
   const m = u.match(/\/v1\/payments\/(\d+)$/);
   if (m) {
@@ -156,15 +181,15 @@ const versao = require("../api/versao");
 const atualizar = require("../api/atualizar");
 const SHA = "a".repeat(64);
 
-test("versão: pública, só aceita número de versão", () => {
+test("versão: pública, só aceita número de versão", async () => {
   process.env.APP_VERSION = "2.2.0";
   process.env.APP_NOTES = "Corrige o Mac";
   const r = resposta();
-  versao({}, r);
+  await versao({}, r);
   assert.deepEqual(r.corpo, { versao: "2.2.0", notas: "Corrige o Mac" });
   process.env.APP_VERSION = "<script>";
   const r2 = resposta();
-  versao({}, r2);
+  await versao({}, r2);
   assert.deepEqual(r2.corpo, { versao: null });
   process.env.APP_VERSION = "2.2.0";
 });
@@ -214,3 +239,113 @@ test("download do nro: o link do pacote não baixa o nro e o do nro leva ao nro"
   await baixar({ method: "GET", query: Object.fromEntries(pacote) }, pacoteOk);
   assert.equal(pacoteOk.destino, process.env.DOWNLOAD_URL);
 });
+
+// ---- versões vindas do repositório privado do GitHub ----
+function comGithub(fn) {
+  return async () => {
+    const antes = { repo: process.env.GH_REPO, token: process.env.GH_TOKEN, dl: process.env.DOWNLOAD_URL };
+    process.env.GH_REPO = "MeoWDev-MOD/meowguard-app";
+    process.env.GH_TOKEN = "GH-TOKEN-DE-TESTE";
+    delete process.env.DOWNLOAD_URL;
+    comum.zerarCache();
+    release = releaseBoa();
+    try {
+      await fn();
+    } finally {
+      for (const [k, v] of Object.entries({ GH_REPO: antes.repo, GH_TOKEN: antes.token, DOWNLOAD_URL: antes.dl })) {
+        if (v === undefined) delete process.env[k];
+        else process.env[k] = v;
+      }
+      comum.zerarCache();
+      release = null;
+    }
+  };
+}
+
+test("GitHub: versão, notas e SHA-256 saem da última release, sem mexer em painel", comGithub(async () => {
+  const r = resposta();
+  await versao({}, r);
+  assert.deepEqual(r.corpo, { versao: "2.3.0", notas: "Corrige o Mac e acelera a instalação" });
+
+  const v = await comum.ultimaVersao();
+  assert.equal(v.sha256, HASH_REL);
+  assert.equal(v.temNro, true);
+  assert.equal(v.idNro, 111);
+  assert.equal(v.idPacote, 222);
+}));
+
+test("GitHub: release nova aparece depois do cache de 1 minuto", comGithub(async () => {
+  assert.equal((await comum.ultimaVersao()).versao, "2.3.0");
+  release = releaseBoa({ tag_name: "v2.4.0" });
+  assert.equal((await comum.ultimaVersao()).versao, "2.3.0"); // ainda no cache
+  assert.equal((await comum.ultimaVersao(Date.now() + 61 * 1000)).versao, "2.4.0");
+}));
+
+test("GitHub: atualizar devolve o SHA da release; sem o arquivo ou sem hash na release, fica indisponível", comGithub(async () => {
+  pagamentos = { 6000000001: pago() };
+  const ok = resposta();
+  await atualizar({ method: "GET", query: { payment_id: "6000000001" } }, ok);
+  assert.equal(ok.corpo.liberado, true);
+  assert.equal(ok.corpo.versao, "2.3.0");
+  assert.equal(ok.corpo.sha256, HASH_REL);
+
+  comum.zerarCache();
+  release = releaseBoa({ body: "Sem impressão digital" });
+  const semHash = resposta();
+  await atualizar({ method: "GET", query: { payment_id: "6000000001" } }, semHash);
+  assert.equal(semHash.codigo, 503);
+
+  comum.zerarCache();
+  release = releaseBoa({ assets: [{ id: 222, name: "MeoWGuard-pacote.zip" }] });
+  const semNro = resposta();
+  await atualizar({ method: "GET", query: { payment_id: "6000000001" } }, semNro);
+  assert.equal(semNro.codigo, 503);
+}));
+
+test("GitHub: o download só pede o link temporário depois de confirmar o pagamento", comGithub(async () => {
+  pagamentos = { 6000000002: pago(), 6000000003: pago({ status: "refunded" }) };
+  const nro = new URL("https://x" + comum.linkDeDownload("6000000002", Date.now(), "nro")).searchParams;
+  const pacote = new URL("https://x" + comum.linkDeDownload("6000000002", Date.now(), "pacote")).searchParams;
+
+  const antes = chamadas.length;
+  const ok = resposta();
+  await baixar({ method: "GET", query: Object.fromEntries(nro) }, ok);
+  assert.equal(ok.codigo, 302);
+  assert.equal(ok.destino, "https://objects.githubusercontent.com/temporario/111?assinado=1");
+
+  const ok2 = resposta();
+  await baixar({ method: "GET", query: Object.fromEntries(pacote) }, ok2);
+  assert.equal(ok2.destino, "https://objects.githubusercontent.com/temporario/222?assinado=1");
+
+  // pagamento devolvido: nenhuma chamada ao GitHub para baixar o arquivo
+  const devolvido = new URL("https://x" + comum.linkDeDownload("6000000003", Date.now(), "nro")).searchParams;
+  const mpAntes = chamadas.length;
+  const negado = resposta();
+  await baixar({ method: "GET", query: Object.fromEntries(devolvido) }, negado);
+  assert.equal(negado.codigo, 403);
+  assert.ok(chamadas.slice(mpAntes).every((c) => !String(c.url).includes("/releases/assets/")));
+  assert.ok(chamadas.length > antes);
+}));
+
+test("GitHub: a chave do GitHub e o link temporário não aparecem nas respostas de versão e de atualização", comGithub(async () => {
+  pagamentos = { 6000000004: pago() };
+  const a = resposta();
+  await versao({}, a);
+  const b = resposta();
+  await atualizar({ method: "GET", query: { payment_id: "6000000004" } }, b);
+  for (const r of [a, b]) {
+    assert.ok(!JSON.stringify(r).includes("GH-TOKEN-DE-TESTE"));
+    assert.ok(!JSON.stringify(r).includes("objects.githubusercontent.com"));
+  }
+}));
+
+test("GitHub fora do ar: segue com a última versão boa; sem nenhuma, versão nula", comGithub(async () => {
+  assert.equal((await comum.ultimaVersao()).versao, "2.3.0");
+  release = null; // o GitHub passa a responder erro
+  assert.equal((await comum.ultimaVersao(Date.now() + 61 * 1000)).versao, "2.3.0");
+
+  comum.zerarCache();
+  const r = resposta();
+  await versao({}, r);
+  assert.deepEqual(r.corpo, { versao: null });
+}));
