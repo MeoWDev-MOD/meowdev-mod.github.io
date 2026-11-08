@@ -1,0 +1,7 @@
+{
+  "redirects": [
+    { "source": "/meowguard", "destination": "/MeoWGuard/", "permanent": true },
+    { "source": "/meowguard/", "destination": "/MeoWGuard/", "permanent": true },
+    { "source": "/MeoWGuard", "destination": "/MeoWGuard/", "permanent": true }
+  ]
+}

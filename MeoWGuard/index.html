@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+    <title>MeoWGuard · Instalar pelo navegador</title>
+    <meta name="description" content="Instale no Nintendo Switch, pelo Chrome e pelo cabo USB, os jogos que você comprou. Grátis, do MeoWGuard.">
+    <meta name="theme-color" content="#0c0920">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icon_16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icon_32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/icon_48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icon_180.png">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <header class="topo">
+            <img src="assets/mascote.png" alt="" class="mascote" width="88" height="88">
+            <div>
+                <h1>MeoW<span>Guard</span></h1>
+                <p class="subtitulo">Instalar jogos pelo navegador</p>
+            </div>
+        </header>
+
+        <div class="antes">
+            <strong>Antes, no Switch:</strong> abra o MeoWGuard → <em>Instalar jogos</em> → <em>Mac</em> →
+            <em>Pelo navegador Chrome</em>, e deixe essa tela aberta.
+        </div>
+
+        <!-- Aviso que aparece no canto -->
+        <div id="connectionToast" class="connection-toast">
+            <span class="toast-icon">🔗</span>
+            <span id="toastMessage">Switch conectado</span>
+            <button class="toast-close" id="toastClose" aria-label="Fechar">×</button>
+        </div>
+
+        <section class="section">
+            <h2><span class="numero">1</span> Conecte o Switch</h2>
+            <p class="dica">Ligue o cabo USB-C no Switch e no computador. Clique no botão e escolha
+                <strong>Nintendo Switch</strong> na lista.</p>
+            <button id="connectBtn">Conectar ao Switch</button>
+            <button id="disconnectBtn" class="secundario" disabled>Desconectar</button>
+
+            <div id="authorizedDevices" class="device-list" style="display: none;">
+                <h3>Já autorizados neste computador</h3>
+                <div id="deviceListContainer"></div>
+            </div>
+        </section>
+
+        <!-- O MeoWGuard usa só o envio para o Switch; o modo de copiar do Switch fica escondido -->
+        <div class="hidden">
+            <select id="modeSelect">
+                <option value="upload" selected>Enviar para o Switch</option>
+                <option value="download">Copiar do Switch</option>
+            </select>
+        </div>
+
+        <section class="section" id="uploadStep3Section">
+            <h2><span class="numero">2</span> Escolha os jogos</h2>
+            <p class="dica">Arquivos NSP, NSZ, XCI, XCZ ou MSP. Pode escolher vários de uma vez: jogo, atualização e DLC.</p>
+            <input type="file" id="fileInput" accept=".nsp, .xci, .nsz, .xcz, .msp" multiple class="hidden">
+
+            <div class="file-controls">
+                <button id="addFilesBtn" class="btn-add" disabled>Escolher arquivos</button>
+                <button id="clearQueueBtn" class="btn-clear" disabled>Limpar lista</button>
+            </div>
+
+            <div class="file-queue">
+                <div class="queue-header">
+                    <span class="queue-title">Arquivos</span>
+                    <span class="queue-count" id="fileCount">0 arquivos</span>
+                </div>
+                <div id="fileQueueList">
+                    <div class="file-item vazio">Nenhum arquivo ainda. Conecte o Switch e clique em "Escolher arquivos".</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section hidden" id="downloadStep3Section" style="display: none;">
+            <h2>Escolha a pasta</h2>
+            <button id="pickFolderBtn" class="btn-add">Escolher pasta</button>
+            <span id="selectedFolderName"></span>
+        </section>
+
+        <section class="section" id="uploadStep4Section">
+            <h2><span class="numero">3</span> Envie</h2>
+            <p class="dica">O Switch recebe e instala um por um. Não feche esta página nem a tela do Switch até terminar.</p>
+            <button id="sendBtn" disabled>Enviar para o Switch</button>
+            <div id="transferProgress" class="device-info" style="display: none;">
+                <div class="progresso-topo">
+                    <span id="progressTitle"><strong>Enviando</strong></span>
+                    <span id="progressCounter">0 / 0</span>
+                </div>
+
+                <div class="progress-bar-container">
+                    <div class="progress-bar">
+                        <div id="fileProgressBar"></div>
+                    </div>
+                    <div class="progresso-linha">
+                        <span id="progressPercentage">0%</span>
+                        <span id="transferSpeed">0 MB/s</span>
+                    </div>
+                </div>
+
+                <div class="tempos">
+                    <div><span>Tempo passado:</span> <span id="timeSpent">00:00</span></div>
+                    <div><span>Falta:</span> <span id="timeRemaining">--:--</span></div>
+                    <div><span>Enviado:</span> <span id="dataTransferred">0 MB</span></div>
+                    <div><span>Velocidade:</span> <span id="currentSpeed">0 MB/s</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section hidden" id="downloadStep4Section" style="display: none;">
+            <div id="downloadSpinner" style="display:none;">
+                <span class="spinner"></span>
+                <div id="downloadSpinnerTextWrap">
+                    <span id="downloadSpinnerText"></span>
+                    <span id="downloadSpinnerSpeed"></span>
+                </div>
+            </div>
+        </section>
+
+        <details class="section detalhes">
+            <summary>Detalhes técnicos (registro)</summary>
+            <div id="logDiv" class="log"></div>
+            <div class="log-controls">
+                <button id="clearLogBtn" class="log-btn">Limpar</button>
+                <button id="copyLogBtn" class="log-btn">Copiar</button>
+            </div>
+        </details>
+
+        <footer class="rodape">
+            <p class="legal"><strong>Só para jogos que você comprou.</strong> Fazer cópia de segurança do que é seu é
+                permitido (Lei 9.609/1998, art. 6º, I). Vender ou passar cópias adiante é pirataria e é crime.</p>
+            <p>Não abriu? Funciona no Google Chrome, Microsoft Edge e Opera, no computador. No Mac, também dá para
+                usar o app grátis <a href="https://openmtp.ganeshrvel.com" target="_blank" rel="noopener noreferrer">OpenMTP</a>.</p>
+            <p>MeoWGuard · Developed by MeoWDev MOD · grátis e sem fins lucrativos. Feito sobre o
+                <a href="https://github.com/ITotalJustice/sphaira" target="_blank" rel="noopener noreferrer">sphaira</a>
+                (ITotalJustice e colaboradores), licença GPLv3. Sem ligação com a Nintendo.</p>
+        </footer>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
