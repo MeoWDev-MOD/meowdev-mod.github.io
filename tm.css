@@ -205,6 +205,7 @@ a:hover>.go svg,.go:hover svg{transform:translateX(4px)}
 .lanc .selo img{display:block;width:78px;height:auto}
 .lanc h2{font-size:clamp(20px,2.4vw,28px);margin:4px 0 4px}
 .lanc p{color:var(--muted);font-size:15px}
+.lanc .go{margin-top:8px}
 .lanc .kick i{width:8px;height:8px;border-radius:50%;background:#ff6547;box-shadow:0 0 0 0 rgba(255,101,71,.6);animation:pulso 2s infinite}
 @keyframes floaty{50%{transform:translateY(-6px) rotate(-2deg)}}
 @keyframes pulso{70%{box-shadow:0 0 0 9px rgba(255,101,71,0)}100%{box-shadow:0 0 0 0 rgba(255,101,71,0)}}
@@ -403,6 +404,9 @@ footer h4{margin:0 0 10px;font-size:12px;font-weight:800;letter-spacing:.09em;te
 .entregas .b{width:100%}
 
 /* ---------- página do MeoWGuard ---------- */
+.video-card{max-width:980px;margin:0 auto}
+.video-card video{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:26px;border:2px solid var(--line);background:#0d0926;box-shadow:var(--shadow)}
+.video-card figcaption{margin-top:12px;text-align:center}
 .app-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,52px);align-items:center;padding-block:clamp(26px,4vw,48px) 20px}
 .app-hero h1{margin:14px 0}
 .app-hero .lead{margin-bottom:22px}

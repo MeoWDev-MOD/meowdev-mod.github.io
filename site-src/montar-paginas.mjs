@@ -35,6 +35,7 @@ const TRACO = {
   folder: "M3 6a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z",
   light: "M8 2h8v20H8zM12 7h.01M12 12h.01M12 17h.01",
   sys: "M4 20V8l8-5 8 5v12M9 20v-6h6v6",
+  book: "M4 5.5A2.5 2.5 0 0 1 6.5 3H20v14H6.5A2.5 2.5 0 0 0 4 19.5zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5M9 8h6M9 12h6",
 };
 const MARCAS = {
   wa: "M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.2 21.8l5.1-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z",
@@ -52,7 +53,7 @@ function midia(p, destaque) {
   const m = p.midia;
   const selo = `<span class="pill">${esc(p.selo)}</span>`;
   if (destaque && p.id === "meowguard") {
-    return `<div class="media"><img src="/img/meowguard-tela-inicio-720.webp" srcset="/img/meowguard-tela-inicio-720.webp 720w, /img/meowguard-tela-inicio-1200.webp 1200w" sizes="(max-width: 1040px) 92vw, 580px" width="1200" height="465" alt="Tela inicial do MeoWGuard, com os cartões Conectar ao PC, Instalar jogos, Copiar meu cartucho e outros" loading="lazy">${selo}</div>`;
+    return `<div class="media"><img src="/img/meowguard-tela-inicio-720.webp" srcset="/img/meowguard-tela-inicio-720.webp 720w, /img/meowguard-tela-inicio-1200.webp 1200w" sizes="(max-width: 1040px) 92vw, 580px" width="1200" height="675" alt="Tela inicial do MeoWGuard, com os cartões Conectar ao PC, Instalar jogos, Copiar meu cartucho e outros" loading="lazy">${selo}</div>`;
   }
   if (m.semaforo) return `<div class="media semaforo" aria-hidden="true"><span class="luz luz-vermelha"></span><span class="luz luz-laranja"></span><span class="luz luz-verde"></span>${selo}</div>`;
   if (m.logo) return `<div class="media logo"><img src="${m.logo}" width="${m.w}" height="${m.h}" alt="" loading="lazy">${selo}</div>`;
@@ -260,6 +261,11 @@ const PAGINAS = [
       operatingSystem: "Nintendo Switch (homebrew)", inLanguage: "pt-BR", url: `${SITE}/app/`,
       author: { "@type": "Organization", name: "MeoWDev MOD", url: `${SITE}/` },
       description: "Instala e faz backup dos jogos que você comprou no Nintendo Switch desbloqueado, pelo cabo USB, no Windows, Mac e Linux.",
+    }, null, 2), JSON.stringify({
+      "@context": "https://schema.org", "@type": "VideoObject", name: "MeoWGuard: lançamento",
+      description: "Instalar jogos pelo cabo, os 8 cartões do app e as cópias de segurança, com as telas reais do MeoWGuard.",
+      thumbnailUrl: `${SITE}/video/meowguard-poster.jpg`, contentUrl: `${SITE}/video/meowguard-lancamento.mp4`,
+      uploadDate: "2026-11-08", duration: "PT26S", inLanguage: "pt-BR",
     }, null, 2)],
   },
   {

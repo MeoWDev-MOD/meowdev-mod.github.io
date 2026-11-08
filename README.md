@@ -53,7 +53,7 @@ MSYS_NO_PATHCONV=1 node scripts/conferir-links.mjs http://127.0.0.1:8770   # tod
 
 ## Outros arquivos
 
-- `img/` e `video/`: imagens e o trecho da bancada. Fotos de terceiros (Steam Deck e placa de vídeo) são do Wikimedia Commons, CC BY-SA 4.0, com crédito no rodapé.
+- `img/` e `video/`: imagens, o trecho da bancada e o vídeo de lançamento do MeoWGuard (`meowguard-lancamento.mp4`, versão leve 1280x720, e a capa `meowguard-poster.jpg`, usados em `/app/`). O projeto-fonte do vídeo (horizontal e vertical) fica fora deste repositório, em `videos/` ao lado do app. Fotos de terceiros (Steam Deck e placa de vídeo) são do Wikimedia Commons, CC BY-SA 4.0, com crédito no rodapé.
 - `robots.txt` e `sitemap.xml`: valem para o site todo; o `robots.txt` aponta também os mapas do PS5 HDMI Tool, do Control PS-5 e do PS-5 Controle Test. `googleb5e2407b23f88743.html` é a verificação do Search Console da propriedade antiga (`meowdev-mod.github.io`).
 - `CNAME`: **não apague.** É ele que faz o GitHub redirecionar (301) os endereços antigos, `meowdev-mod.github.io/<projeto>/...`, para `techmeow.app/<projeto>/...` (vale para este repositório e para os dos projetos, que não têm domínio próprio). Os caminhos são os mesmos porque cada projeto mora aqui numa pasta com o nome do repositório. Para desfazer, apague o arquivo.
 

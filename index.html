@@ -39,7 +39,7 @@
     try { var t = localStorage.getItem("tm.theme"); if (t === "light" || t === "dark") d.dataset.theme = t; } catch (e) {}
     try { if (sessionStorage.getItem("ps5.pt")) { sessionStorage.removeItem("ps5.pt"); d.classList.add("pt"); } } catch (e) {} })();
 </script>
-<link rel="stylesheet" href="/tm.css?v=01a14643a9">
+<link rel="stylesheet" href="/tm.css?v=0626b851b6">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -207,6 +207,7 @@
   <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
   <symbol id="i-light" viewBox="0 0 24 24"><path d="M8 2h8v20H8zM12 7h.01M12 12h.01M12 17h.01"/></symbol>
   <symbol id="i-sys" viewBox="0 0 24 24"><path d="M4 20V8l8-5 8 5v12M9 20v-6h6v6"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v14H6.5A2.5 2.5 0 0 0 4 19.5zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5M9 8h6M9 12h6"/></symbol>
   <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.2 21.8l5.1-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></symbol>
   <symbol id="i-ig" viewBox="0 0 24 24"><path d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.7 4.7 0 0 0 12 7.3Zm0 7.8a3.1 3.1 0 1 1 3.1-3.1 3.1 3.1 0 0 1-3.1 3.1Zm6-8a1.1 1.1 0 1 1-1.1-1.1A1.1 1.1 0 0 1 18 7.1ZM21.1 8.2a5.4 5.4 0 0 0-1.5-3.8 5.5 5.5 0 0 0-3.8-1.5c-1.5-.1-6-.1-7.6 0a5.5 5.5 0 0 0-3.8 1.5 5.5 5.5 0 0 0-1.5 3.8c-.1 1.5-.1 6 0 7.6a5.4 5.4 0 0 0 1.5 3.8 5.5 5.5 0 0 0 3.8 1.5c1.5.1 6 .1 7.6 0a5.4 5.4 0 0 0 3.8-1.5 5.5 5.5 0 0 0 1.5-3.8c.1-1.5.1-6 0-7.6Zm-2 9.2a3.1 3.1 0 0 1-1.8 1.8c-1.2.5-4.1.4-5.3.4s-4.2.1-5.3-.4a3.1 3.1 0 0 1-1.8-1.8c-.5-1.2-.4-4.1-.4-5.4s-.1-4.2.4-5.3a3.1 3.1 0 0 1 1.8-1.8c1.2-.5 4.1-.4 5.3-.4s4.2-.1 5.3.4a3.1 3.1 0 0 1 1.8 1.8c.5 1.2.4 4.1.4 5.3s.1 4.2-.4 5.4Z"/></symbol>
   <symbol id="i-yt" viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.7 15V9l5.8 3Z"/></symbol>
@@ -303,6 +304,7 @@
         <span class="kick"><i></i>Lançamento</span>
         <h2>MeoWGuard: instale e guarde os seus jogos de Switch</h2>
         <p>App em português para Switch desbloqueado: instala pelo cabo, copia o cartucho que você comprou e guarda saves e fotos. Windows, Mac e Linux.</p>
+        <a class="go" href="/app/#video">Ver o vídeo de 26 segundos<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
       <a class="b p big magnetic" href="/app/"><span>Conhecer o MeoWGuard</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
