@@ -81,7 +81,7 @@ test("pagamento aprovado libera o vídeo e um link de download assinado", async 
   await acesso({ method: "GET", query: { payment_id: "1234567890" } }, r);
   assert.equal(r.corpo.liberado, true);
   assert.equal(r.corpo.video, "https://youtu.be/exemplo");
-  assert.match(r.corpo.baixar, /^\/api\/baixar\?payment_id=1234567890&exp=\d{10}&sig=[0-9a-f]{64}$/);
+  assert.match(r.corpo.baixar, /^\/api\/baixar\?payment_id=1234567890&exp=\d{10}&arq=pacote&sig=[0-9a-f]{64}$/);
   assert.equal(r.cabecalhos["Cache-Control"], "no-store");
 });
 
@@ -149,4 +149,68 @@ test("a chave do Mercado Pago nunca aparece nas respostas", async () => {
   await acesso({ method: "GET", query: { payment_id: "4000000001" } }, r);
   assert.ok(!JSON.stringify(r).includes("TOKEN-DE-TESTE"));
   assert.ok(!JSON.stringify(r).includes("segredo-de-teste"));
+});
+
+// ---- atualização do app ----
+const versao = require("../api/versao");
+const atualizar = require("../api/atualizar");
+const SHA = "a".repeat(64);
+
+test("versão: pública, só aceita número de versão", () => {
+  process.env.APP_VERSION = "2.2.0";
+  process.env.APP_NOTES = "Corrige o Mac";
+  const r = resposta();
+  versao({}, r);
+  assert.deepEqual(r.corpo, { versao: "2.2.0", notas: "Corrige o Mac" });
+  process.env.APP_VERSION = "<script>";
+  const r2 = resposta();
+  versao({}, r2);
+  assert.deepEqual(r2.corpo, { versao: null });
+  process.env.APP_VERSION = "2.2.0";
+});
+
+test("atualizar: com pagamento aprovado devolve o link do nro e o SHA-256; sem, não", async () => {
+  process.env.NRO_URL = "https://exemplo.blob.vercel-storage.com/nro-xyz.nro";
+  process.env.NRO_SHA256 = SHA;
+  pagamentos = { 5000000001: pago(), 5000000002: pago({ status: "refunded" }) };
+
+  const ok = resposta();
+  await atualizar({ method: "GET", query: { payment_id: "5000000001" } }, ok);
+  assert.equal(ok.corpo.liberado, true);
+  assert.equal(ok.corpo.versao, "2.2.0");
+  assert.equal(ok.corpo.sha256, SHA);
+  assert.match(ok.corpo.url, /^https:\/\/techmeow\.app\/api\/baixar\?payment_id=5000000001&exp=\d{10}&arq=nro&sig=[0-9a-f]{64}$/);
+
+  const devolvido = resposta();
+  await atualizar({ method: "GET", query: { payment_id: "5000000002" } }, devolvido);
+  assert.equal(devolvido.corpo.liberado, false);
+
+  const ruim = resposta();
+  await atualizar({ method: "GET", query: { payment_id: "x" } }, ruim);
+  assert.equal(ruim.codigo, 400);
+
+  process.env.NRO_SHA256 = "curto";
+  const semConfig = resposta();
+  await atualizar({ method: "GET", query: { payment_id: "5000000001" } }, semConfig);
+  assert.equal(semConfig.codigo, 503);
+  process.env.NRO_SHA256 = SHA;
+});
+
+test("download do nro: o link do pacote não baixa o nro e o do nro leva ao nro", async () => {
+  pagamentos = { 5000000003: pago() };
+  const pacote = new URL("https://x" + comum.linkDeDownload("5000000003")).searchParams;
+  const nro = new URL("https://x" + comum.linkDeDownload("5000000003", Date.now(), "nro")).searchParams;
+
+  const trocado = resposta();
+  await baixar({ method: "GET", query: { payment_id: "5000000003", exp: pacote.get("exp"), sig: pacote.get("sig"), arq: "nro" } }, trocado);
+  assert.equal(trocado.codigo, 403);
+
+  const ok = resposta();
+  await baixar({ method: "GET", query: Object.fromEntries(nro) }, ok);
+  assert.equal(ok.codigo, 302);
+  assert.equal(ok.destino, process.env.NRO_URL);
+
+  const pacoteOk = resposta();
+  await baixar({ method: "GET", query: Object.fromEntries(pacote) }, pacoteOk);
+  assert.equal(pacoteOk.destino, process.env.DOWNLOAD_URL);
 });

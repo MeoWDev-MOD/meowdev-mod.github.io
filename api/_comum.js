@@ -8,6 +8,10 @@
 //   ACCESS_SECRET    texto longo e aleatório que assina os links de acesso (segredo)
 //   VIDEO_URL        link do vídeo tutorial (YouTube "não listado" ou outro)
 //   DOWNLOAD_URL     link do pacote do app (arquivo longo e imprevisível, no Vercel Blob)
+//   APP_VERSION      versão mais nova do app, ex.: 2.1.0 (o app compara com a dele e avisa)
+//   APP_NOTES        (opcional) o que mudou, em uma frase
+//   NRO_URL          link do arquivo MeoWGuard.nro sozinho, para a atualização dentro do app
+//   NRO_SHA256       impressão digital (SHA-256, minúsculas) desse arquivo, para o app conferir
 //   SITE_URL         (opcional) endereço do site, padrão https://techmeow.app
 "use strict";
 
@@ -53,22 +57,27 @@ async function pagamentoLiberado(id) {
   return { liberado: true };
 }
 
-const assinatura = (id, exp) => crypto.createHmac("sha256", process.env.ACCESS_SECRET).update(`${id}.${exp}`).digest("hex");
+// O "arquivo" (pacote ou nro) entra na assinatura: um link do pacote não serve para baixar o nro, nem o contrário.
+const ARQUIVOS = ["pacote", "nro"];
+const assinatura = (id, exp, arq) => crypto.createHmac("sha256", process.env.ACCESS_SECRET).update(`${id}.${exp}.${arq}`).digest("hex");
 
-function linkDeDownload(id, agora = Date.now()) {
+function linkDeDownload(id, agora = Date.now(), arq = "pacote") {
   const exp = Math.floor(agora / 1000) + VALIDADE_LINK_S;
-  return `/api/baixar?payment_id=${id}&exp=${exp}&sig=${assinatura(id, exp)}`;
+  return `/api/baixar?payment_id=${id}&exp=${exp}&arq=${arq}&sig=${assinatura(id, exp, arq)}`;
 }
 
-function assinaturaValida(id, exp, sig, agora = Date.now()) {
-  if (!idValido(id) || !/^\d{10}$/.test(String(exp)) || typeof sig !== "string" || !/^[0-9a-f]{64}$/.test(sig)) return false;
+function assinaturaValida(id, exp, sig, arq = "pacote", agora = Date.now()) {
+  if (!idValido(id) || !/^\d{10}$/.test(String(exp)) || typeof sig !== "string" || !/^[0-9a-f]{64}$/.test(sig) || !ARQUIVOS.includes(arq)) return false;
   if (Number(exp) < Math.floor(agora / 1000)) return false;
-  return crypto.timingSafeEqual(Buffer.from(assinatura(id, exp)), Buffer.from(sig));
+  return crypto.timingSafeEqual(Buffer.from(assinatura(id, exp, arq)), Buffer.from(sig));
 }
+
+// Número de versão "2.1.0": só dígitos e pontos.
+const versaoValida = (v) => typeof v === "string" && /^\d{1,3}(\.\d{1,3}){1,2}$/.test(v);
 
 function responder(res, status, corpo) {
   res.setHeader("Cache-Control", "no-store");
   res.status(status).json(corpo);
 }
 
-module.exports = { MP, REFERENCIA, site, preco, pronto, mp, idValido, pagamentoLiberado, linkDeDownload, assinaturaValida, responder };
+module.exports = { MP, REFERENCIA, site, preco, pronto, mp, idValido, pagamentoLiberado, linkDeDownload, assinaturaValida, versaoValida, responder };
