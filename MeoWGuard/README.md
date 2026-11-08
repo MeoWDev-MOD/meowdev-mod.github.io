@@ -28,4 +28,4 @@ Só para jogos que você comprou. Fazer cópia de segurança do que é seu é pe
   MeoWGuard. O funcionamento (a conversa com o Switch) é o mesmo do original.
 - Fonte Inter, de The Inter Project Authors, sob a SIL Open Font License 1.1 (`fonts/OFL.txt`).
 
-Developed by MeoWDev MOD. Grátis, sem fins lucrativos e sem ligação com a Nintendo.
+Developed by MeoWDev MOD. Sem ligação com a Nintendo.
