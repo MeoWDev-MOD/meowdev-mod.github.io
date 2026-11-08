@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BancadaSync — gestão para assistência técnica, grátis</title>
+<meta name="description" content="Do check-in ao reparo entregue. Ordens de serviço, clientes, financeiro e garantia no seu computador. Grátis, sem mensalidade.">
+<meta name="theme-color" content="#14181c">
+<meta property="og:title" content="BancadaSync — gestão para assistência técnica">
+<meta property="og:description" content="Do check-in ao reparo entregue. Grátis, roda no seu computador.">
+<meta property="og:image" content="https://techmeow.app/BancadaSync-Download/img/03-painel.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/icon.png">
+<style>
+:root{
+  --bg:#0e1114; --surface:#161b20; --surface-2:#1d242b; --line:#2a333b;
+  --text:#e9f2e6; --muted:#9fb1a6; --brand:#7fee64; --brand-ink:#0d2208; --warn:#f4b860;
+  --radius:16px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,"Segoe UI",Roboto,sans-serif}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--brand)}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+section{padding:72px 0}
+h1,h2,h3{line-height:1.15;margin:0 0 .5em;letter-spacing:-.02em}
+h1{font-size:clamp(2.2rem,5.5vw,3.8rem)}
+h2{font-size:clamp(1.6rem,3.4vw,2.3rem)}
+h3{font-size:1.1rem;letter-spacing:0}
+p{margin:0 0 1em}
+.muted{color:var(--muted)}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);margin-bottom:14px}
+
+/* topo */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none}
+.brand img{width:34px;height:34px;border-radius:9px}
+nav{display:flex;align-items:center;gap:22px}
+nav a.link{color:var(--muted);text-decoration:none;font-size:.95rem}
+nav a.link:hover{color:var(--text)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:1px solid transparent;cursor:pointer;font:inherit;font-weight:700}
+.btn-primary{background:linear-gradient(180deg,#a8f58f,#6ddd52);color:var(--brand-ink);box-shadow:0 8px 28px rgba(127,238,100,.25)}
+.btn-primary:hover{filter:brightness(1.05)}
+.btn-ghost{border-color:var(--line);color:var(--text);background:transparent}
+.btn-ghost:hover{background:var(--surface)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+
+/* hero */
+.hero{padding-top:64px;background:radial-gradient(900px 400px at 15% -10%,rgba(127,238,100,.13),transparent 60%)}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:60ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 14px}
+.fine{font-size:.88rem;color:var(--muted)}
+.shot{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.hero .shot{margin-top:48px}
+
+/* cartões */
+.grid{display:grid;gap:16px}
+.cards{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.card .q{color:var(--warn);font-weight:700;font-size:.92rem;margin-bottom:6px}
+.card p{margin:0;color:var(--muted);font-size:.96rem}
+.card h3{margin-bottom:8px}
+
+/* galeria */
+.gallery{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.gallery figure{margin:0}
+.gallery button{all:unset;display:block;cursor:zoom-in;width:100%}
+.gallery .shot{transition:transform .2s,border-color .2s}
+.gallery button:hover .shot{transform:translateY(-3px);border-color:var(--brand)}
+.gallery figcaption{margin-top:10px;font-size:.95rem;color:var(--muted)}
+.gallery figcaption b{color:var(--text)}
+.gallery{align-items:start}
+@media (min-width:1000px){.gallery .tall{grid-row:span 2}}
+dialog{border:0;background:transparent;padding:0;max-width:96vw;max-height:94vh}
+dialog::backdrop{background:rgba(0,0,0,.85)}
+dialog img{max-height:92vh;width:auto;border-radius:12px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* planos */
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);background:var(--surface-2)}
+td.c,th.c{text-align:center;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.yes{color:var(--brand);font-weight:700}
+.lock{color:var(--muted)}
+.table-scroll{overflow-x:auto}
+
+/* passos e faq */
+.steps{counter-reset:s;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.step{position:relative;padding-top:56px}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:18px;left:22px;width:30px;height:30px;border-radius:50%;background:var(--brand);color:var(--brand-ink);font-weight:800;display:grid;place-items:center}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700}
+details p{margin:10px 0 0;color:var(--muted)}
+code{background:var(--surface-2);padding:2px 7px;border-radius:6px;font-size:.88em;word-break:break-all}
+
+/* rodapé */
+.contact{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+footer img{width:44px;height:44px}
+.dev{display:flex;align-items:center;gap:12px}
+@media (max-width:640px){nav a.link{display:none} section{padding:52px 0}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#"><img src="img/icon.png" alt="" width="34" height="34">BancadaSync</a>
+    <nav>
+      <a class="link" href="#resolve">O que resolve</a>
+      <a class="link" href="#prints">Prints</a>
+      <a class="link" href="#planos">Grátis e Pro</a>
+      <a class="btn btn-primary" href="https://github.com/MeoWDev-MOD/BancadaSync-Download/releases/latest/download/BancadaSync-Setup.exe">Baixar grátis</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Gestão para assistência técnica</span>
+    <h1>Do check-in ao<br>reparo entregue.</h1>
+    <p class="lead">Ordens de serviço, clientes, financeiro e garantia em um só lugar. O sistema roda no seu computador: sem mensalidade e sem depender de internet para trabalhar.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/MeoWDev-MOD/BancadaSync-Download/releases/latest/download/BancadaSync-Setup.exe">⬇ Baixar para Windows (85 MB)</a>
+      <a class="btn btn-ghost" href="#prints">Ver o sistema por dentro</a>
+    </div>
+    <p class="fine">Windows 10 ou 11 · instala sem senha de administrador · leva poucos minutos</p>
+    <div class="shot"><img src="img/03-painel.png" alt="Painel ao vivo do BancadaSync com atendimentos ativos, pendências e números do mês" width="1440" height="900"></div>
+  </div>
+</section>
+
+<section id="resolve">
+  <div class="wrap">
+    <span class="eyebrow">O que ele resolve</span>
+    <h2>O fim do caderno, da planilha e do "cadê aquele aparelho?"</h2>
+    <p class="muted" style="max-width:62ch">Cada dor do balcão tem uma resposta dentro do sistema.</p>
+    <div class="grid cards" style="margin-top:28px">
+      <div class="card"><div class="q">"O que veio junto com o aparelho?"</div><h3>Check-in sem esquecer nada</h3><p>Cliente, aparelho, número de série, acessórios e defeito informado ficam registrados na ordem de serviço, já no balcão.</p></div>
+      <div class="card"><div class="q">"Em que pé está esse conserto?"</div><h3>Status de cada OS</h3><p>Orçamento, aprovado, recebido, em análise, aguardando peça, pronto e entregue: tudo visível na lista e no painel.</p></div>
+      <div class="card"><div class="q">"Qual OS está esperando peça?"</div><h3>Painel ao vivo e pendências</h3><p>Veja os atendimentos ativos, o que aguarda peças e o que já está pronto para retirada.</p></div>
+      <div class="card"><div class="q">"O cliente diz que não assinou nada."</div><h3>OS impressa profissional</h3><p>Nota de serviço com dados da loja, itens, total, prazos, garantia e campo de assinatura do cliente.</p></div>
+      <div class="card"><div class="q">"Qual era a garantia mesmo?"</div><h3>Garantia por escrito</h3><p>Termos de garantia por tipo de serviço, impressos junto com a OS.</p></div>
+      <div class="card"><div class="q">"Quanto entrou e quanto saiu?"</div><h3>Financeiro de verdade</h3><p>OS entregue vira entrada sozinha. Saídas, despesas fixas, balanço do mês e exportação em PDF.</p></div>
+      <div class="card"><div class="q">"Quanto devo de comissão?"</div><h3>Comissão por técnico</h3><p>Calculada sobre os reparos entregues, sem conta de cabeça no fim do mês.</p></div>
+      <div class="card"><div class="q">"Quem mexeu nisso?"</div><h3>Equipe com controle</h3><p>Permissões por função (dono, administrador, atendente, técnico, coleta) e auditoria do que foi feito.</p></div>
+      <div class="card"><div class="q">"E se a internet cair?"</div><h3>Dados no seu computador</h3><p>Seus dados ficam com você, em um banco local. Trabalhe normalmente, sem mensalidade.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="prints" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <span class="eyebrow">O sistema por dentro</span>
+    <h2>Veja como é no dia a dia</h2>
+    <p class="muted">Clique em qualquer imagem para ampliar. Os prints usam dados fictícios.</p>
+    <div class="grid gallery" style="margin-top:28px">
+      <figure><button type="button" data-zoom><div class="shot"><img loading="lazy" src="img/04-ordens-de-servico.png" alt="Lista de ordens de serviço com status coloridos" width="1440" height="900"></div></button><figcaption><b>Ordens de serviço.</b> O status de cada aparelho num relance.</figcaption></figure>
+      <figure><button type="button" data-zoom><div class="shot"><img loading="lazy" src="img/05-detalhe-da-os.png" alt="Detalhe de uma OS com o fluxo do reparo" width="1440" height="900"></div></button><figcaption><b>Detalhe da OS.</b> Fluxo do reparo, aparelho, cliente e valores.</figcaption></figure>
+      <figure class="tall"><button type="button" data-zoom><div class="shot"><img loading="lazy" src="img/06-os-impressa.png" alt="Nota de serviço impressa com dados da loja, cliente, aparelho, itens e assinaturas" width="704" height="1146"></div></button><figcaption><b>OS impressa.</b> Nota de serviço pronta para o cliente assinar.</figcaption></figure>
+      <figure><button type="button" data-zoom><div class="shot"><img loading="lazy" src="img/08-financeiro.png" alt="Tela de financeiro com faturamento, saídas e balanço do mês" width="1440" height="900"></div></button><figcaption><b>Financeiro.</b> Faturamento, saídas, balanço mensal e despesas fixas.</figcaption></figure>
+      <figure><button type="button" data-zoom><div class="shot"><img loading="lazy" src="img/07-clientes.png" alt="Cadastro de clientes" width="1440" height="900"></div></button><figcaption><b>Clientes.</b> Cadastro com o histórico de cada um.</figcaption></figure>
+      <figure><button type="button" data-zoom><div class="shot"><img loading="lazy" src="img/09-agenda.png" alt="Agenda mensal de atendimentos" width="1440" height="900"></div></button><figcaption><b>Agenda.</b> Atendimentos do dia, da semana e do mês.</figcaption></figure>
+      <figure><button type="button" data-zoom><div class="shot"><img loading="lazy" src="img/01-primeiro-acesso.png" alt="Tela de primeiro acesso para criar a loja e o usuário" width="1440" height="900"></div></button><figcaption><b>Primeiro acesso.</b> Crie a sua loja e o seu usuário em um minuto.</figcaption></figure>
+      <figure><button type="button" data-zoom><div class="shot"><img loading="lazy" src="img/02-login.png" alt="Tela de login do BancadaSync" width="1440" height="900"></div></button><figcaption><b>Login.</b> Acesso seguro com e-mail e senha.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="planos">
+  <div class="wrap">
+    <span class="eyebrow">Grátis e Pro</span>
+    <h2>Comece de graça. Cresça quando precisar.</h2>
+    <p class="muted" style="max-width:62ch">A versão grátis já resolve o básico de uma assistência. O Pro libera integrações e acesso de qualquer lugar.</p>
+    <div class="table-scroll" style="margin-top:24px">
+      <table>
+        <thead><tr><th>Recurso</th><th class="c">Grátis</th><th class="c">Pro</th></tr></thead>
+        <tbody>
+          <tr><td>Ordens de serviço, impressão e garantia</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Clientes, equipamentos, produtos, serviços e fornecedores</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Financeiro e comissões</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Auditoria e permissões por função</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Usuários</td><td class="c">até 3</td><td class="c yes">ilimitados</td></tr>
+          <tr><td>Link de acompanhamento para o cliente</td><td class="c lock">🔒</td><td class="c yes">✓</td></tr>
+          <tr><td>WhatsApp integrado e modelos de mensagem</td><td class="c lock">🔒</td><td class="c yes">✓</td></tr>
+          <tr><td>Integração por API / N8N</td><td class="c lock">🔒</td><td class="c yes">✓</td></tr>
+          <tr><td>Acesso no desktop, tablet e celular</td><td class="c lock">🔒</td><td class="c yes">✓</td></tr>
+          <tr><td>Acompanhar a distância, em tempo real, quando a loja está faturando</td><td class="c lock">🔒</td><td class="c yes">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cta">
+      <a class="btn btn-ghost" href="https://wa.me/5521966547296">Quero o Pro (WhatsApp)</a>
+    </div>
+  </div>
+</section>
+
+<section id="instalar" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <span class="eyebrow">Como instalar</span>
+    <h2>Pronto para usar em poucos minutos</h2>
+    <div class="grid cards steps" style="margin-top:28px">
+      <div class="card step"><h3>Baixe o instalador</h3><p>Clique em "Baixar grátis" e salve o <code>BancadaSync-Setup.exe</code>.</p></div>
+      <div class="card step"><h3>Instale</h3><p>Dê dois cliques e siga o assistente. Se o Windows avisar, clique em <b>Mais informações</b> e depois em <b>Executar assim mesmo</b>. Não precisa de senha de administrador.</p></div>
+      <div class="card step"><h3>Crie a sua loja</h3><p>Abra o BancadaSync. Na primeira tela, informe os dados da assistência e crie seu usuário e senha. Pronto.</p></div>
+    </div>
+    <div class="cta"><a class="btn btn-primary" href="https://github.com/MeoWDev-MOD/BancadaSync-Download/releases/latest/download/BancadaSync-Setup.exe">⬇ Baixar para Windows</a></div>
+
+    <h3 style="margin-top:48px">Perguntas frequentes</h3>
+    <details><summary>Por que o Windows mostra um aviso ao instalar?</summary><p>O instalador ainda não tem assinatura digital paga (o certificado de "editor verificado"), então o SmartScreen mostra "editor desconhecido". O arquivo é o mesmo publicado aqui; confira a integridade pelo hash abaixo.</p></details>
+    <details><summary>Onde ficam os meus dados?</summary><p>No seu computador, em <code>%APPDATA%\CRM Assistencia</code>. Ao desinstalar, o programa pergunta se você quer apagar os dados; o padrão é manter.</p></details>
+    <details><summary>Preciso de internet?</summary><p>Para o dia a dia, não. Só para recursos que dependem dela, como o WhatsApp da versão Pro.</p></details>
+    <details><summary>E se o computador desligar?</summary><p>Ao ligar de novo, abra o atalho do BancadaSync: seus dados e acessos voltam como estavam.</p></details>
+    <details><summary>Como atualizo para uma versão nova?</summary><p>Rode o instalador novo por cima. Ele desliga o sistema, troca os arquivos e mantém os seus dados.</p></details>
+    <details><summary>Como confiro se o arquivo é o original? (SHA-256 da versão 1.0.0)</summary><p><code>1d10463c9d5ac24ce16623b04e5573c4cbf718de99053cb7d86f108681689fa7</code><br>No PowerShell: <code>Get-FileHash .\BancadaSync-Setup.exe -Algorithm SHA256</code></p></details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Fale com o desenvolvedor</span>
+    <h2>Dúvidas, sugestões ou quer o Pro?</h2>
+    <p class="muted">Desenvolvido por <b style="color:var(--text)">Jefferson Honorio (MeoWDev MOD)</b>.</p>
+    <div class="contact">
+      <a class="btn btn-primary" href="https://wa.me/5521966547296">WhatsApp</a>
+      <a class="btn btn-ghost" href="https://www.instagram.com/tech_meow.oficial?cplk=MWp5Z2s2cjNuNG01bg==">Instagram</a>
+      <a class="btn btn-ghost" href="https://linktr.ee/tech_meow?utm_source=linktree_profile_share&amp;ltsid=531414a6-986b-4891-a08f-9445b634b839">Site Tech MeoW</a>
+      <a class="btn btn-ghost" href="mailto:vendas.hson@gmail.com">E-mail</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="dev"><img src="img/meowdev-logo.png" alt="MeoWDev MOD" width="44" height="44"><span>Developed by Jefferson Honorio (MeoWDev MOD)</span></div>
+    <span>BancadaSync · gestão para assistência técnica</span>
+  </div>
+</footer>
+
+<dialog id="zoom"><img id="zoom-img" alt=""></dialog>
+<script>
+(function(){
+  var d=document.getElementById('zoom'), big=document.getElementById('zoom-img');
+  document.querySelectorAll('[data-zoom]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.querySelector('img'); big.src=i.src; big.alt=i.alt; d.showModal();
+    });
+  });
+  d.addEventListener('click',function(){ d.close(); });
+})();
+</script>
+</body>
+</html>

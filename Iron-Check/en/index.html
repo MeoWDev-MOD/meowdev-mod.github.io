@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iron Check — tests, drivers and PDF reports for repair shops</title>
+<meta name="description" content="Portable program, in English and Portuguese, for computer repair shops: tests the whole computer, installs the network driver without internet and issues a PDF report with the customer's service order. Ask for a trial key.">
+<meta name="theme-color" content="#130a2e">
+<link rel="canonical" href="https://techmeow.app/Iron-Check/en/">
+<link rel="alternate" hreflang="pt-BR" href="https://techmeow.app/Iron-Check/">
+<link rel="alternate" hreflang="en" href="https://techmeow.app/Iron-Check/en/">
+<link rel="alternate" hreflang="x-default" href="https://techmeow.app/Iron-Check/">
+<meta property="og:title" content="Iron Check — hand back every device with a report, not a promise">
+<meta property="og:description" content="Tests the whole computer, installs the network driver without internet and issues a PDF report with the service order. Portable program for repair shops.">
+<meta property="og:image" content="https://techmeow.app/Iron-Check/img/app/en/sistema.webp">
+<meta property="og:url" content="https://techmeow.app/Iron-Check/en/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<link rel="icon" href="../img/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css?v=d9f229c61f">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="f-br" viewBox="0 0 72 50" preserveAspectRatio="xMidYMid slice"><rect width="72" height="50" fill="#009c3b"/><path d="M36 4 68 25 36 46 4 25Z" fill="#ffdf00"/><circle cx="36" cy="25" r="11.5" fill="#002776"/><path d="M25 27.4c7.6-3.8 15.6-3.4 22.2 1.8" stroke="#fff" stroke-width="2.4" fill="none"/><g fill="#fff"><circle cx="31" cy="21" r=".9"/><circle cx="36" cy="19" r=".9"/><circle cx="41" cy="21.5" r=".9"/><circle cx="33" cy="30" r=".8"/><circle cx="39" cy="31" r=".8"/><circle cx="29.5" cy="25" r=".7"/><circle cx="43.5" cy="26" r=".7"/></g></symbol>
+  <symbol id="f-us" viewBox="0 0 76 40" preserveAspectRatio="xMidYMid slice"><rect width="76" height="40" fill="#fff"/><rect y="0.00" width="76" height="3.08" fill="#b22234"/><rect y="6.15" width="76" height="3.08" fill="#b22234"/><rect y="12.31" width="76" height="3.08" fill="#b22234"/><rect y="18.46" width="76" height="3.08" fill="#b22234"/><rect y="24.62" width="76" height="3.08" fill="#b22234"/><rect y="30.77" width="76" height="3.08" fill="#b22234"/><rect y="36.92" width="76" height="3.08" fill="#b22234"/><rect width="31" height="21.54" fill="#3c3b6e"/><g fill="#fff"><circle cx="2.6" cy="2.1" r=".85"/><circle cx="7.7" cy="2.1" r=".85"/><circle cx="12.8" cy="2.1" r=".85"/><circle cx="17.9" cy="2.1" r=".85"/><circle cx="23.0" cy="2.1" r=".85"/><circle cx="28.1" cy="2.1" r=".85"/><circle cx="5.2" cy="4.3" r=".85"/><circle cx="10.3" cy="4.3" r=".85"/><circle cx="15.4" cy="4.3" r=".85"/><circle cx="20.5" cy="4.3" r=".85"/><circle cx="25.6" cy="4.3" r=".85"/><circle cx="2.6" cy="6.4" r=".85"/><circle cx="7.7" cy="6.4" r=".85"/><circle cx="12.8" cy="6.4" r=".85"/><circle cx="17.9" cy="6.4" r=".85"/><circle cx="23.0" cy="6.4" r=".85"/><circle cx="28.1" cy="6.4" r=".85"/><circle cx="5.2" cy="8.5" r=".85"/><circle cx="10.3" cy="8.5" r=".85"/><circle cx="15.4" cy="8.5" r=".85"/><circle cx="20.5" cy="8.5" r=".85"/><circle cx="25.6" cy="8.5" r=".85"/><circle cx="2.6" cy="10.7" r=".85"/><circle cx="7.7" cy="10.7" r=".85"/><circle cx="12.8" cy="10.7" r=".85"/><circle cx="17.9" cy="10.7" r=".85"/><circle cx="23.0" cy="10.7" r=".85"/><circle cx="28.1" cy="10.7" r=".85"/><circle cx="5.2" cy="12.8" r=".85"/><circle cx="10.3" cy="12.8" r=".85"/><circle cx="15.4" cy="12.8" r=".85"/><circle cx="20.5" cy="12.8" r=".85"/><circle cx="25.6" cy="12.8" r=".85"/><circle cx="2.6" cy="15.0" r=".85"/><circle cx="7.7" cy="15.0" r=".85"/><circle cx="12.8" cy="15.0" r=".85"/><circle cx="17.9" cy="15.0" r=".85"/><circle cx="23.0" cy="15.0" r=".85"/><circle cx="28.1" cy="15.0" r=".85"/><circle cx="5.2" cy="17.1" r=".85"/><circle cx="10.3" cy="17.1" r=".85"/><circle cx="15.4" cy="17.1" r=".85"/><circle cx="20.5" cy="17.1" r=".85"/><circle cx="25.6" cy="17.1" r=".85"/><circle cx="2.6" cy="19.3" r=".85"/><circle cx="7.7" cy="19.3" r=".85"/><circle cx="12.8" cy="19.3" r=".85"/><circle cx="17.9" cy="19.3" r=".85"/><circle cx="23.0" cy="19.3" r=".85"/><circle cx="28.1" cy="19.3" r=".85"/></g></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm5.8 14.1c-.25.7-1.45 1.33-2 1.4-.52.07-1.17.1-1.9-.12a17 17 0 0 1-1.72-.63c-3.03-1.3-5-4.37-5.15-4.57-.15-.2-1.23-1.63-1.23-3.1 0-1.48.77-2.2 1.05-2.5.27-.3.6-.37.8-.37h.57c.18 0 .43-.07.67.5.25.6.85 2.07.92 2.22.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.32.38-.45.51-.15.15-.3.31-.13.6.18.3.78 1.28 1.67 2.07 1.15 1.02 2.1 1.34 2.4 1.5.3.14.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.8 2.02.95.3.15.5.22.57.35.07.12.07.72-.18 1.4Z"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.25" fill="currentColor"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.27 5 12 5 12 5s-6.27 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.76 1.77C5.73 19 12 19 12 19s6.27 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8ZM10 15V9l5.2 3Z"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57l-.02-2.04c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.21.69.82.57A12 12 0 0 0 12 .3"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3 4.5 6v5.5c0 4.6 3.1 8.3 7.5 9.5 4.4-1.2 7.5-4.9 7.5-9.5V6L12 3Z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m8.5 12 2.4 2.4 4.6-4.8"/></symbol>
+  <symbol id="i-usb" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M8 9h8v11a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V9Z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M9.5 3h5v6h-5z"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M11 6h.01M13 6h.01"/></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="m8.5 14.8-1.5 6.2 5-2.4 5 2.4-1.5-6.2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9.6 10 1.7 1.7 3.2-3.3"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/><circle cx="12" cy="15.5" r="1.4" fill="currentColor"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#topo"><img src="../img/icon.png" alt=""><span><b>IRON</b> CHECK</span></a>
+    <nav>
+      <a class="link" href="#recursos">Features</a>
+      <a class="link" href="#laudo">Report</a>
+      <a class="link" href="#notebook">Screens</a>
+      <a class="link" href="#como">How it works</a>
+      <a class="link" href="#faq">FAQ</a>
+      <a class="lang-sw" id="lang-sw" data-cur="en" data-to="pt" href="../" hreflang="pt-BR" lang="pt-BR" aria-label="Mudar para português" title="Português · English"><span class="fl fl-br"><svg viewBox="0 0 72 50" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#f-br"/></svg></span><span class="fl fl-us"><svg viewBox="0 0 76 40" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#f-us"/></svg></span><span class="ring"></span></a>
+      <a class="btn btn-wa" href="https://wa.me/5521966547296?text=Hi!%20I%27d%20like%20a%20trial%20key%20for%20Iron%20Check." target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#i-wa"/></svg>
+        <span class="long">Ask for a trial key</span><span class="short">Trial key</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+
+<section class="nb-stage" id="notebook">
+  <div class="nb-pin">
+    <canvas class="nb-gl" aria-hidden="true"></canvas>
+    <div class="nb-css"></div>
+    <div class="nb-copy">
+      <h1>Hand over a report, not a promise.</h1>
+      <p class="lead">Iron Check tests the whole computer, installs the missing driver (the network card driver works even with no internet) and issues a <b>PDF report with your customer's service order</b>. In English and Portuguese, one click apart, in a program that runs from a USB stick.</p>
+      <div class="cta"><button class="btn btn-ghost nb-open" type="button">Open the laptop</button>
+      <a class="btn btn-wa" href="https://wa.me/5521966547296?text=Hi!%20I%27d%20like%20a%20trial%20key%20for%20Iron%20Check." target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#i-wa"/></svg>
+        Ask for a trial key on WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="#baixar">
+        <svg aria-hidden="true"><use href="#i-down"/></svg>
+        Download the program
+      </a>
+    </div>
+      <p class="fine">Windows 10 or 11 (64-bit) · runs from a USB stick, no install · a trial key unlocks the full program for a few days</p>
+    </div>
+    <div class="nb-flat"></div>
+    <div class="nb-nav">
+      <p class="nb-caption" aria-live="polite"></p>
+      <div class="nb-chips" role="group" aria-label="Inside"></div>
+      <p class="nb-hint">Click the menu on the screen: it is the real program menu, over photos of the real screens. The flags switch the language and, in Benchmark, each test shows its animation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="numbers">
+  <div class="wrap">
+    <div class="stats" aria-label="Program numbers">
+      <div><b>30+</b><span>tests and tools</span></div>
+      <div><b>400+</b><span>network cards with offline drivers</span></div>
+      <div><b>13</b><span>hardware categories read</span></div>
+      <div><b>EN + PT</b><span>switch language in 1 click</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="px-stage" id="pixels">
+  <div class="px-pin">
+    <canvas class="px-gl" aria-hidden="true"></canvas>
+    <span class="px-ring" aria-hidden="true"></span>
+    <span class="px-found" aria-hidden="true" data-dead="Dark pixel" data-stuck="Stuck pixel">Dark pixel</span>
+    <div class="px-copy">
+      <h2>No dead pixel gets past it</h2>
+      <p>Iron Check fills the screen with color, one at a time. Stains, light bleed and dark pixels show up right away, before the device goes back to the customer.</p>
+      <div class="px-swatches" role="group" aria-label="Screen test color">
+        <button type="button" data-color="255,255,255" aria-pressed="true"><i style="background:rgb(255,255,255)"></i>White</button>
+        <button type="button" data-color="255,0,0" aria-pressed="false"><i style="background:rgb(255,0,0)"></i>Red</button>
+        <button type="button" data-color="0,255,0" aria-pressed="false"><i style="background:rgb(0,255,0)"></i>Green</button>
+        <button type="button" data-color="0,0,255" aria-pressed="false"><i style="background:rgb(0,0,255)"></i>Blue</button>
+        <button type="button" data-color="0,0,0" aria-pressed="false"><i style="background:rgb(0,0,0)"></i>Black</button>
+      </div>
+      <p class="px-note">Sample panel, made on this page. Move the mouse (or your finger) to light the pixels and find the one that stays dark. On black, the fault is the pixel that never turns off.</p>
+    </div>
+  </div>
+</section>
+
+<section id="recursos">
+  <div class="wrap">
+    <div class="center">
+      <h2>What it fixes at the bench</h2>
+      <p class="lead">One program on a USB drive, from intake to hand-over.</p>
+    </div>
+    <div class="tiles">
+      <article class="tile">
+        <div class="tile-media"><img class="kb" loading="lazy" decoding="async" src="../img/app/en/situacao.webp" alt="Iron Check automatic tests, each with its own verdict" width="1440" height="900"></div>
+        <h3>Tests the whole device</h3>
+        <p>System, battery, disk, memory, CPU, Wi-Fi and Bluetooth in sequence, each with its own verdict.</p>
+      </article>
+      <article class="tile">
+        <div class="tile-media"><img class="kb" loading="lazy" decoding="async" src="../img/app/en/drivers.webp" alt="Iron Check Drivers tab" width="1440" height="900"><span class="tile-pill" aria-hidden="true"><i></i>Installing the network driver, offline</span></div>
+        <h3>Network driver with no internet</h3>
+        <p>Formatted and lost the network? The driver for 400+ cards rides along on the USB drive.</p>
+      </article>
+      <article class="tile">
+        <div class="tile-media"><video class="tile-video" muted loop playsinline preload="none" disablepictureinpicture poster="../video/bench-cena.webp" data-src="../video/bench-cena.mp4" aria-label="Iron Check graphics card test animation"></video></div>
+        <h3>Shows if it holds the load</h3>
+        <p>Stress test and 7 scored benchmarks, to compare before and after the repair.</p>
+      </article>
+      <article class="tile">
+        <div class="tile-media"><video class="tile-video" muted loop playsinline preload="none" disablepictureinpicture poster="../video/bench-disco-en.webp" data-src="../video/bench-disco-en.mp4" aria-label="Iron Check disk test animation"></video></div>
+        <h3>Finds the disk about to fail</h3>
+        <p>SMART, read-only surface scan and performance, on HDD, SATA SSD and NVMe.</p>
+      </article>
+      <article class="tile">
+        <div class="tile-media"><img class="kb" loading="lazy" decoding="async" src="../img/app/en/teclado.webp" alt="Iron Check keyboard test, with pressed keys lit" width="1440" height="900"></div>
+        <h3>Checks every replaced part</h3>
+        <p>Screen, keyboard, touchpad, USB ports, webcam, speakers and microphone.</p>
+      </article>
+      <article class="tile">
+        <div class="tile-media"><img class="kb" loading="lazy" decoding="async" src="../img/app/en/memorymeow.webp" alt="Memory MeoW, the Iron Check video memory test" width="1440" height="900"></div>
+        <h3>Video memory, in depth</h3>
+        <p>Memory MeoW writes and checks the graphics card memory in 12 patterns and points to the likely cause.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="field-light" id="laudo">
+  <div class="wrap laudo">
+    <div>
+      <div class="paper-wrap">
+        <div class="paper"><img loading="lazy" decoding="async" src="../img/en/16-laudo.png" alt="First page of an Iron Check PDF technical report, with shop, service order number, overall result and the list of tests" width="794" height="900"></div>
+        <span class="stamp" aria-hidden="true">Verified</span>
+      </div>
+      <p class="paper-cap">Sample report created by the program. Device identifiers have been hidden.</p>
+    </div>
+    <div>
+      <h2>The report that builds trust</h2>
+      <p class="lead">A PDF with your shop, the service order and every test result. If the device comes back, you show how it left.</p>
+      <ul class="ticks">
+        <li>Ready in a minute: the hardware is read for you</li>
+        <li>A unique code shows if the PDF was changed</li>
+        <li>In Portuguese or English</li>
+      </ul>
+      <div class="cta">
+        <a class="btn btn-wa" href="https://wa.me/5521966547296?text=Hi!%20I%27d%20like%20a%20trial%20key%20for%20Iron%20Check." target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#i-wa"/></svg>
+          I want to try the report
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="field-deep" id="seguro">
+  <div class="wrap">
+    <h2>Customer devices, no surprises</h2>
+    <ul class="safe">
+      <li><svg aria-hidden="true"><use href="#i-shield"/></svg><b>Read-only disk tests</b><span>No test writes to the customer's disk.</span></li>
+      <li><svg aria-hidden="true"><use href="#i-usb"/></svg><b>Boot on USB drives only</b><span>It never touches the system disk.</span></li>
+      <li><svg aria-hidden="true"><use href="#i-badge"/></svg><b>Official sources only</b><span>Manufacturer drivers; the video one from NVIDIA.</span></li>
+      <li><svg aria-hidden="true"><use href="#i-lock"/></svg><b>Nothing gets deleted</b><span>Without a license, the program just locks.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="como">
+  <div class="wrap">
+    <h2>From request to report in minutes</h2>
+    <div class="flow">
+      <span class="flow-line" aria-hidden="true"></span>
+      <ol>
+        <li><b>1</b><h3>Ask for your key</h3><p>On WhatsApp. The trial key lasts a few days.</p></li>
+        <li><b>2</b><h3>Carry it on a USB drive</h3><p>Download the kit, extract it and open. No install.</p></li>
+        <li><b>3</b><h3>Test and hand over the report</h3><p>Automatic and manual tests, and the service order PDF.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="field-mid" id="baixar">
+  <div class="wrap">
+    <h2>Try it free, subscribe later</h2>
+    <p class="lead">The trial key unlocks the full program for a few days. Then a monthly subscription paid by Pix, with one key for all your computers.</p>
+    <div class="cta">
+      <a class="btn btn-wa" href="https://wa.me/5521966547296?text=Hi!%20I%27d%20like%20a%20trial%20key%20for%20Iron%20Check." target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#i-wa"/></svg>
+        Ask for a trial key
+      </a>
+      <a class="btn btn-ghost" href="https://wa.me/5521966547296?text=Hi!%20How%20much%20is%20the%20Iron%20Check%20subscription%3F" target="_blank" rel="noopener">Ask the price</a>
+    </div>
+    <div class="dl">
+      <a class="dl-item main" href="https://github.com/MeoWDev-MOD/Iron-Check/releases/latest/download/Iron-Check-Kit.zip"><svg aria-hidden="true"><use href="#i-down"/></svg><span><b>Download the full kit</b><small>Program and network drivers to install offline · 353 MB</small></span></a>
+      <a class="dl-item" href="https://github.com/MeoWDev-MOD/Iron-Check/releases/latest/download/Iron-Check-Portatil.exe"><svg aria-hidden="true"><use href="#i-down"/></svg><span><b>Download the program only</b><small>Iron-Check-Portatil.exe · 92 MB</small></span></a>
+    </div>
+    <p class="fine">Windows 10 or 11, 64-bit. Extract the kit and copy the whole folder to the USB drive. · <a href="https://github.com/MeoWDev-MOD/Iron-Check/releases" target="_blank" rel="noopener">All versions</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="center">
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq">
+      <details><summary>I already use free programs. Why switch?</summary><p>The free ones are great, each at one thing, and you can keep using them. Iron Check brings what you use at the counter into one place and does what they do not: tests USB ports, webcam, microphone and speakers, installs the network driver without internet and issues a PDF report with the service order and a file authenticity check.</p></details>
+      <details><summary>How do the trial and the subscription work?</summary><p>Ask for a trial key on WhatsApp: it lasts a few days and unlocks the full program. To subscribe, you pay monthly by Pix (Brazil's instant payment), send the receipt and get your key, which works on several computers. For the price, just ask on WhatsApp.</p></details>
+      <details><summary>What do I download: the program or the kit?</summary><p>The program (<b>Iron-Check-Portatil.exe</b>, 92 MB) already opens by itself. The <b>full kit</b> also brings the <b>drivers</b> folder, with the network driver library the program uses to install without internet. Extract the kit and leave the <b>drivers</b> folder next to the .exe.</p></details>
+      <details><summary>Do I need to install it?</summary><p>No. You open the file from any folder or from the USB drive. The first time it prepares its files in a folder next to it; after that it opens fast. The key and settings stay in that folder, not on the customer's computer.</p></details>
+      <details><summary>Will it delete anything from the customer's device?</summary><p>The tests do not. The disk scan only reads, the performance test uses a temporary file that is deleted at the end, and Boot Creator only touches USB drives (and warns that it erases the drive). The few tools that change Windows ask for confirmation and keep the original value or a copy.</p></details>
+      <details><summary>Why does Windows warn about an “unknown publisher”?</summary><p>It is the normal SmartScreen warning for new programs: click <b>More info</b> and then <b>Run anyway</b>. The administrator prompt is normal too: Windows requires it to read disk health and temperature and to install drivers.</p></details>
+      <details><summary>What if the internet goes down?</summary><p>The program keeps working for up to 24 hours on the last confirmation. After that, without being able to check, it stays locked until the license is confirmed. Your files are never deleted.</p></details>
+      <details><summary>Can I share my key?</summary><p>It is for your repair shop's use. The server records the computers and the approximate location of each use, and use by many people is detected: the key can be blocked.</p></details>
+      <details><summary>Which computers does it run on?</summary><p>Windows 10 or 11, 64-bit, on laptops or desktop PCs. Battery, touchpad and charger tests only make sense on a laptop. The tests work with any graphics card; overclock, detailed readout and video driver installation are for NVIDIA GeForce.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Run it on your next device</h2>
+    <p class="lead">Talk straight to the developer, get your key and start today.</p>
+    <div class="cta">
+      <a class="btn btn-wa" href="https://wa.me/5521966547296?text=Hi!%20I%27d%20like%20a%20trial%20key%20for%20Iron%20Check." target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#i-wa"/></svg>
+        Chat on WhatsApp · +55 21 96654-7296
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/MeoWDev-MOD/Iron-Check/releases/latest/download/Iron-Check-Kit.zip">Download the full kit</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul class="socials" aria-label="Social media">
+      <li><a href="https://www.instagram.com/tech_meow.oficial" target="_blank" rel="noopener" data-social="instagram" aria-label="Instagram"><span class="filled"></span><svg aria-hidden="true"><use href="#i-ig"/></svg></a><span class="tip" aria-hidden="true">Instagram</span></li>
+      <li><a href="https://www.youtube.com/@techmeow" target="_blank" rel="noopener" data-social="youtube" aria-label="YouTube"><span class="filled"></span><svg aria-hidden="true"><use href="#i-yt"/></svg></a><span class="tip" aria-hidden="true">YouTube</span></li>
+      <li><a href="https://github.com/MeoWDev-MOD" target="_blank" rel="noopener" data-social="github" aria-label="GitHub"><span class="filled"></span><svg aria-hidden="true"><use href="#i-gh"/></svg></a><span class="tip" aria-hidden="true">GitHub</span></li>
+      <li><a href="https://wa.me/5521966547296?text=Hi!%20I%27d%20like%20to%20talk%20about%20Iron%20Check." target="_blank" rel="noopener" data-social="whatsapp" aria-label="WhatsApp"><span class="filled"></span><svg aria-hidden="true"><use href="#i-wa"/></svg></a><span class="tip" aria-hidden="true">WhatsApp</span></li>
+    </ul>
+    <span>Developed By <b>MeoWDev MOD</b> · <a href="https://www.instagram.com/honorio.dev/" target="_blank" rel="noopener">@honorio.dev</a></span>
+    <span><a href="https://github.com/MeoWDev-MOD/Iron-Check/releases" target="_blank" rel="noopener">Releases</a> · Windows 10/11 (64-bit)</span>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5521966547296?text=Hi!%20I%27d%20like%20to%20try%20Iron%20Check." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg aria-hidden="true"><use href="#i-wa"/></svg>
+</a>
+
+<script type="module" src="../js/main.js?v=81184ee2d8"></script>
+
+</body>
+</html>
