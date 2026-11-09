@@ -23,9 +23,10 @@
 "use strict";
 
 const crypto = require("node:crypto");
+const infinitepay = require("./_infinitepay");
 
 const MP = "https://api.mercadopago.com";
-const REFERENCIA = "meowguard-";
+const REFERENCIA = infinitepay.REFERENCIA;
 const VALIDADE_LINK_S = 30 * 60;
 // Quem pagou continua com acesso mesmo que o preço mude depois (promoção, aumento): o pagamento só precisa ser de pelo menos
 // o menor preço que o site aceita (R$ 1). O valor cobrado de cada pessoa é sempre decidido aqui no servidor, nunca pelo navegador.
@@ -38,15 +39,18 @@ function preco() {
   return Number.isFinite(n) && n >= 1 ? Math.round(n * 100) / 100 : 0;
 }
 
-// Só vende quando está tudo configurado; senão o site mostra "em breve".
+// Só vende quando está tudo configurado; senão o site mostra "em breve". Basta um jeito de receber: InfinitePay ou Mercado Pago.
 function pronto() {
-  return Boolean(process.env.MP_ACCESS_TOKEN && process.env.ACCESS_SECRET && preco() > 0 && (process.env.DOWNLOAD_URL || githubConfigurado()));
+  return Boolean((process.env.MP_ACCESS_TOKEN || infinitepay.configurado()) && process.env.ACCESS_SECRET && preco() > 0 && (process.env.DOWNLOAD_URL || githubConfigurado()));
 }
 
 // Só os NOMES das variáveis que ainda faltam (nunca valores): ajuda a achar o que esqueceram no painel da Vercel.
 function faltando() {
   const f = [];
-  if (!process.env.MP_ACCESS_TOKEN) f.push("MP_ACCESS_TOKEN");
+  if (!process.env.MP_ACCESS_TOKEN) {
+    if (String(process.env.INFINITEPAY_HANDLE ?? "").trim()) f.push(...infinitepay.faltandoInfinitepay());
+    else f.push("MP_ACCESS_TOKEN");
+  }
   if (!process.env.ACCESS_SECRET) f.push("ACCESS_SECRET");
   if (!(preco() > 0)) f.push("PRECO_BRL");
   if (!process.env.DOWNLOAD_URL && !githubConfigurado()) {
@@ -71,6 +75,9 @@ const idValido = (id) => typeof id === "string" && /^\d{5,20}$/.test(id);
 // O pagamento só vale se: aprovado, em reais, desta loja/produto (referência nossa) e de pelo menos o piso (não do preço de hoje).
 async function pagamentoLiberado(id) {
   if (!idValido(id)) return { liberado: false, motivo: "numero_invalido" };
+  // código de acesso de uma compra pela InfinitePay (13 números começando com 99)
+  if (infinitepay.ehCodigo(id)) return infinitepay.configurado() ? infinitepay.liberadoPorCodigo(id) : { liberado: false, motivo: "nao_encontrado" };
+  if (!process.env.MP_ACCESS_TOKEN) return { liberado: false, motivo: "nao_encontrado" };
   const r = await mp(`/v1/payments/${id}`);
   if (!r.ok) return { liberado: false, motivo: "nao_encontrado" };
   const p = r.corpo;
@@ -181,4 +188,4 @@ function responder(res, status, corpo) {
   res.status(status).json(corpo);
 }
 
-module.exports = { MP, REFERENCIA, site, preco, pronto, faltando, mp, idValido, pagamentoLiberado, linkDeDownload, assinaturaValida, versaoValida, githubConfigurado, ultimaVersao, destinoDoArquivo, zerarCache, responder };
+module.exports = { MP, REFERENCIA, infinitepay, site, preco, pronto, faltando, mp, idValido, pagamentoLiberado, linkDeDownload, assinaturaValida, versaoValida, githubConfigurado, ultimaVersao, destinoDoArquivo, zerarCache, responder };

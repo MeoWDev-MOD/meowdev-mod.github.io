@@ -18,17 +18,19 @@
     estado.hidden = !msg;
   }
 
-  async function consultar(id) {
+  // consulta: o que vai depois do "?" (o código de acesso, ou os três códigos que a InfinitePay devolve logo depois de pagar)
+  async function consultar(id, consulta) {
     clearTimeout(timer);
     entregas.hidden = true;
     mostrar("", "Conferindo o pagamento…");
+    const q = consulta || "payment_id=" + encodeURIComponent(id);
     let j;
     try {
-      const r = await fetch("/api/acesso?payment_id=" + encodeURIComponent(id), { cache: "no-store" });
+      const r = await fetch("/api/acesso?" + q, { cache: "no-store" });
       j = await r.json();
       if (r.status === 400) {
-        texto.textContent = "Esse número não parece certo.";
-        return mostrar("erro", "Digite só os números do comprovante do Mercado Pago.");
+        texto.textContent = "Esse código não parece certo.";
+        return mostrar("erro", "Digite só os números do seu código de acesso.");
       }
       if (r.status === 503) {
         texto.textContent = "A venda ainda não está aberta.";
@@ -41,8 +43,10 @@
 
     if (j.liberado) {
       tentativas = 0;
+      const codigo = j.codigo || id;
+      numero.value = codigo;
       texto.textContent = "Pagamento aprovado. Obrigado por apoiar o projeto!";
-      mostrar("ok", "Número do pagamento: " + id + ". Guarde esse número: com ele você volta aqui quando quiser.");
+      mostrar("ok", "Seu código de acesso: " + codigo + ". Anote ou tire print: com ele você volta aqui quando quiser e atualiza o app.");
       baixar.href = j.baixar;
       video.hidden = !j.video;
       if (j.video) video.href = j.video;
@@ -55,14 +59,14 @@
       tentativas++;
       texto.textContent = "Esperando o Pix ser confirmado…";
       mostrar("", "Assim que o pagamento cair, esta página abre sozinha. Pode deixar aberta.");
-      timer = setTimeout(() => consultar(id), 5000);
+      timer = setTimeout(() => consultar(id, consulta), 5000);
       return;
     }
 
-    texto.textContent = "Não encontramos um pagamento aprovado com esse número.";
+    texto.textContent = "Não encontramos um pagamento aprovado com esse código.";
     mostrar("erro", j.motivo === "refunded" || j.motivo === "cancelled"
       ? "Esse pagamento foi devolvido ou cancelado, então o acesso foi encerrado."
-      : "Confira o número no comprovante. Se acabou de pagar, espere um minuto e tente de novo.");
+      : "Confira o código. Se acabou de pagar, espere um minuto e tente de novo. Se o dinheiro foi devolvido, o acesso é encerrado.");
   }
 
   form.addEventListener("submit", (e) => {
@@ -71,12 +75,16 @@
     consultar(numero.value.trim());
   });
 
-  // O Mercado Pago volta para esta página com o número do pagamento no endereço
-  const id = new URLSearchParams(location.search).get("payment_id") || new URLSearchParams(location.search).get("collection_id");
-  if (id && /^\d{5,20}$/.test(id)) {
+  // A InfinitePay volta para esta página com os códigos da compra no endereço; o Mercado Pago, com o número do pagamento
+  const p = new URLSearchParams(location.search);
+  const compra = ["order_nsu", "transaction_nsu", "slug"].map((k) => [k, p.get(k)]);
+  const id = p.get("payment_id") || p.get("collection_id");
+  if (compra.every(([, v]) => v)) {
+    consultar("", new URLSearchParams(compra).toString());
+  } else if (id && /^\d{5,20}$/.test(id)) {
     numero.value = id;
     consultar(id);
   } else {
-    texto.textContent = "Digite o número do pagamento para abrir o seu acesso.";
+    texto.textContent = "Digite o código de acesso para abrir o seu acesso.";
   }
 })();

@@ -51,13 +51,17 @@ python -m http.server 8770                                            # site loc
 MSYS_NO_PATHCONV=1 node scripts/conferir-links.mjs http://127.0.0.1:8770   # todo endereço de imagem, script e link interno abre?
 ```
 
-## Pagamento do MeoWGuard (Mercado Pago)
+## Pagamento do MeoWGuard (InfinitePay, com Mercado Pago de reserva)
 
-A venda roda nas funções de `api/` (sem banco de dados: quem diz se o pagamento vale é sempre o Mercado Pago, perguntado na hora; devolveu o dinheiro, o acesso some). As chaves ficam **só no painel da Vercel** (projeto `tech-meow`, Settings, Environment Variables, ambiente Production), nunca no código, no chat ou neste repositório.
+A venda roda nas funções de `api/`. Quem diz se o pagamento vale é sempre a InfinitePay (ou o Mercado Pago), perguntada na hora: devolveu o dinheiro, o acesso some. As chaves ficam **só no painel da Vercel** (projeto `tech-meow`, Settings, Environment Variables, ambiente Production), nunca no código, no chat ou neste repositório.
+
+**InfinitePay (usada quando `INFINITEPAY_HANDLE` está configurada; Pix grátis).** Ela não tem chave secreta e pede três códigos da compra para confirmar um pagamento. Por isso o servidor guarda cada compra num Redis da Upstash (Vercel, Storage) e dá ao cliente um **código de acesso** de 13 números começando com `99`; é esse código que a página de acesso e o app (atualização) usam no lugar do número do pagamento do Mercado Pago. `api/_infinitepay.js` tem a lógica, `api/infinitepay.js` recebe o aviso de pagamento (reconfirmado antes de guardar). Sem ambiente de teste: o teste de compra é real (e a devolução se faz no app da InfinitePay).
 
 | Variável | O que é |
 |---|---|
-| `MP_ACCESS_TOKEN` | Access Token de **produção** da aplicação no painel de desenvolvedores do Mercado Pago (começa com `APP_USR-`; a "Public Key" não serve) |
+| `INFINITEPAY_HANDLE` | InfiniteTag da conta que recebe (CNPJ), sem o `$` |
+| `KV_REST_API_URL` e `KV_REST_API_TOKEN` | Banco Redis da Upstash, criado e ligado ao projeto pelo painel da Vercel (Storage); o painel cria as duas sozinho (também vale `UPSTASH_REDIS_REST_URL` e `UPSTASH_REDIS_REST_TOKEN`) |
+| `MP_ACCESS_TOKEN` | (reserva) Access Token de **produção** da aplicação no painel de desenvolvedores do Mercado Pago (começa com `APP_USR-`; a "Public Key" não serve). Só é usado se a InfinitePay não estiver configurada, e para reconhecer números de pagamentos antigos do Mercado Pago |
 | `PRECO_BRL` | Preço em reais, por exemplo `49.90` (mínimo `1`) |
 | `ACCESS_SECRET` | Texto longo e aleatório (40+ caracteres) que assina os links de download |
 | `GH_REPO` e `GH_TOKEN` | Repositório privado das versões (`MeoWDev-MOD/meowguard-app`) e chave do GitHub só de leitura (fine-grained, permissão Contents: Read-only, só nesse repositório) |
@@ -67,7 +71,7 @@ A venda roda nas funções de `api/` (sem banco de dados: quem diz se o pagament
 - Mudar o preço não tira o acesso de quem já pagou: o pagamento só precisa ser de pelo menos R$ 1. A próxima compra já sai com o preço novo.
 - Teste de ponta a ponta: deixe `PRECO_BRL=1`, compre pelo site com Pix ou cartão, abra o acesso e baixe; depois peça a devolução no Mercado Pago e veja o acesso fechar. Aí coloque o preço de verdade.
 - A chave do GitHub tem validade: anote a data para criar outra antes de vencer, senão download e atualização param.
-- Testes do servidor (com Mercado Pago e GitHub de mentira): `node --test tests/pagamento.test.js`.
+- Testes do servidor (com Mercado Pago, InfinitePay, banco e GitHub de mentira): `node --test tests/pagamento.test.js tests/infinitepay.test.js`.
 
 ## Outros arquivos
 
