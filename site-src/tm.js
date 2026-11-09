@@ -10,6 +10,7 @@ import { iniciarFundo } from "./fundo.js";
 import { iniciarCortina } from "./cortina.js";
 import { mountAdPairs } from "./banners.js";
 import { mountConsent, optionalAllowed } from "./consent.js";
+import { contarVisita } from "./visitas.js";
 
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.config({ ignoreMobileResize: true });
@@ -244,3 +245,4 @@ const espacos = [["adProjetos", "adProjetosMidia"], ["adLoja", "adLojaMidia"]]
   .map(([a, b]) => [document.getElementById(a), document.getElementById(b)])
   .filter(([a, b]) => a && b);
 if (espacos.length) mountAdPairs(espacos, "bio-site");
+contarVisita();
