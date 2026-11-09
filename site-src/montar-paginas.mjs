@@ -187,7 +187,7 @@ const PRIMEIRO_SCRIPT = `<script>
 function head(p, css, js) {
   const url = SITE + p.caminho;
   const og = p.og ?? { titulo: p.titulo, descricao: p.descricao };
-  const imagem = p.imagem ?? `${SITE}/img/og.jpg`;
+  const imagem = p.imagem ?? `${SITE}/img/og-videogames.jpg`;
   const linhas = [
     `<meta charset="utf-8">`,
     `<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">`,
@@ -210,7 +210,7 @@ function head(p, css, js) {
       `<meta property="og:image" content="${imagem}">`,
       `<meta property="og:image:width" content="1200">`,
       `<meta property="og:image:height" content="630">`,
-      `<meta property="og:image:alt" content="${esc(p.imagemAlt ?? "Tech MeoW, assistência técnica de videogame no Rio, com a promoção do desbloqueio de Switch por R$ 339,90")}">`,
+      `<meta property="og:image:alt" content="${esc(p.imagemAlt ?? "Nintendo Switch, PS5 e Xbox lado a lado, com o texto Assistência técnica de videogame e Especialista em desbloqueio de Switch")}">`,
       `<meta name="twitter:card" content="summary_large_image">`,
       `<meta name="twitter:title" content="${esc(og.titulo)}">`,
       `<meta name="twitter:description" content="${esc(og.descricao)}">`,
@@ -234,10 +234,10 @@ const absoluto = (href) => (href.startsWith("/") ? SITE + href.split("#")[0] : h
 const PAGINAS = [
   {
     corpo: "home.html", saida: "index.html", caminho: "/", ativo: "inicio", fotos: true,
-    titulo: "Conserto de PS5, Switch e Steam Deck no Rio, RJ | Tech MeoW",
-    descricao: "Assistência técnica de videogame no Engenho da Rainha (RJ): conserto de PS5, Switch, Steam Deck, placa de vídeo e controle. Desbloqueio de Switch R$ 339,90.",
+    titulo: "Assistência técnica de videogame no Rio, RJ | Tech MeoW",
+    descricao: "Assistência técnica de videogame no Engenho da Rainha (RJ): PS5, Nintendo Switch e Xbox. Especialista em desbloqueio de Switch por R$ 339,90.",
     keywords: "conserto de PS5, assistência técnica de PS5 no RJ, PS5 sem imagem, troca do CI HDMI do PS5, conserto de PS5 Slim, conserto de Nintendo Switch, desbloqueio de Nintendo Switch, desbloqueio de Switch no RJ, conserto de Steam Deck, reparo de placa de vídeo, conserto de controle de PS5, assistência técnica de videogame, Engenho da Rainha, Zona Norte, Rio de Janeiro",
-    og: { titulo: "Conserto de PS5, Switch e Steam Deck no Rio | Tech MeoW", descricao: "Assistência técnica de videogame no Engenho da Rainha, Zona Norte do Rio. Desbloqueio de Switch por R$ 339,90. Orçamento no WhatsApp." },
+    og: { titulo: "Assistência técnica de videogame no Rio | Tech MeoW", descricao: "PS5, Nintendo Switch e Xbox. Especialista em desbloqueio de Switch por R$ 339,90. Orçamento no WhatsApp." },
     jsonld: [lerJson("home.jsonld.json")],
   },
   {
@@ -253,6 +253,7 @@ const PAGINAS = [
   },
   {
     corpo: "app.html", saida: "app/index.html", caminho: "/app/", ativo: "app", scripts: ["/app/app.js"],
+    imagem: `${SITE}/img/og-meowguard.jpg`, imagemAlt: "MeoWGuard: instale jogos no Switch pelo cabo, em português, com a tela inicial do app e o mascote",
     titulo: "MeoWGuard: guarde e instale os jogos do seu Switch | Tech MeoW",
     descricao: "MeoWGuard: app em português para Nintendo Switch desbloqueado. Instale e faça backup dos jogos que você comprou, copie o cartucho, guarde saves e fotos, pelo cabo no Windows, Mac e Linux.",
     og: { titulo: "MeoWGuard: guarde e instale os jogos do seu Switch", descricao: "App em português para Nintendo Switch desbloqueado: instalação pelo cabo, backup do cartucho, saves e fotos." },
