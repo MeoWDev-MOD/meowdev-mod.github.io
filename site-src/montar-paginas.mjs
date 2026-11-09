@@ -135,7 +135,7 @@ function rodape({ fotos = false, legalExtra = "" } = {}) {
     ["WhatsApp (21) 96654-7296", WHATSAPP.padrao, "wa"],
   ].map(([rotulo, url, icone]) => `<li><a href="${url}" target="_blank" rel="noopener" aria-label="${rotulo}" title="${rotulo}"><svg class="ib" aria-hidden="true"><use href="#i-${icone}"/></svg></a></li>`).join("\n        ");
   const credito = fotos
-    ? `\n    <p>Fotos de terceiros: <a href="https://commons.wikimedia.org/wiki/File:Steam_Deck_(front).png" target="_blank" rel="noopener">“Steam Deck (front)”</a>, de Liam Dawe/GamingOnLinux (PNG de VulcanSphere), e <a href="https://commons.wikimedia.org/wiki/File:2023_MSI_GeForce_RTX_2080_Gaming_X_Trio_(3).jpg" target="_blank" rel="noopener">“2023 MSI GeForce RTX 2080 Gaming X Trio (3)”</a>, de Jacek Halicki, ambas <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons, recortadas para esta página.</p>`
+    ? `\n    <p>Foto de terceiros: <a href="https://commons.wikimedia.org/wiki/File:2023_MSI_GeForce_RTX_2080_Gaming_X_Trio_(3).jpg" target="_blank" rel="noopener">“2023 MSI GeForce RTX 2080 Gaming X Trio (3)”</a>, de Jacek Halicki, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons, recortada para esta página.</p>`
     : "";
   return `<footer>
   <div class="wrap">

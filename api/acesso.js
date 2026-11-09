@@ -2,7 +2,7 @@
 // Logo depois de pagar na InfinitePay, a página chega com ?order_nsu=...&transaction_nsu=...&slug=...: o servidor confirma a
 // compra, guarda e devolve o código de acesso (o "payment_id" dali em diante).
 "use strict";
-const { pronto, idValido, pagamentoLiberado, linkDeDownload, infinitepay, responder } = require("./_comum");
+const { pronto, idValido, pagamentoLiberado, linkDeDownload, infinitepay, limitar, responder } = require("./_comum");
 
 async function pelaCompra(q, res) {
   if (!infinitepay.configurado()) return responder(res, 503, { erro: "indisponivel" });
@@ -18,6 +18,7 @@ async function pelaCompra(q, res) {
 module.exports = async (req, res) => {
   if (req.method !== "GET") return responder(res, 405, { erro: "metodo" });
   if (!pronto()) return responder(res, 503, { erro: "indisponivel" });
+  if (await limitar(req, res, "acesso", 30, 600)) return;
   if (req.query?.order_nsu) return pelaCompra(req.query, res);
 
   const id = String(req.query?.payment_id ?? "").trim();

@@ -188,4 +188,27 @@ function responder(res, status, corpo) {
   res.status(status).json(corpo);
 }
 
-module.exports = { MP, REFERENCIA, infinitepay, site, preco, pronto, faltando, mp, idValido, pagamentoLiberado, linkDeDownload, assinaturaValida, versaoValida, githubConfigurado, ultimaVersao, destinoDoArquivo, zerarCache, responder };
+// Limite de tentativas por pessoa (IP), para ninguém ficar adivinhando códigos de acesso nem enchendo a InfinitePay de pedidos.
+// O IP vira uma impressão digital com o segredo do site: o banco nunca guarda o IP de verdade, e a contagem some sozinha.
+// Se o banco estiver fora do ar, segue sem limite (as outras proteções continuam valendo). Devolve true quando já respondeu 429.
+async function limitar(req, res, nome, max, janelaS) {
+  if (!infinitepay.lojaConfigurada()) return false;
+  try {
+    const h = req.headers || {};
+    const ip = String(h["x-real-ip"] || String(h["x-forwarded-for"] || "").split(",")[0] || "desconhecido").trim().slice(0, 64);
+    const quem = crypto.createHash("sha256").update(`${process.env.ACCESS_SECRET ?? ""}|${ip}`).digest("hex").slice(0, 24);
+    const chave = `mg:rl:${nome}:${quem}`;
+    const n = Number(await infinitepay.comando("INCR", chave));
+    if (n === 1) await infinitepay.comando("EXPIRE", chave, String(janelaS));
+    if (n > max) {
+      res.setHeader("Retry-After", String(janelaS));
+      responder(res, 429, { erro: "muitas_tentativas" });
+      return true;
+    }
+  } catch {
+    /* banco fora do ar: sem limite por enquanto */
+  }
+  return false;
+}
+
+module.exports = { MP, REFERENCIA, infinitepay, limitar, site, preco, pronto, faltando, mp, idValido, pagamentoLiberado, linkDeDownload, assinaturaValida, versaoValida, githubConfigurado, ultimaVersao, destinoDoArquivo, zerarCache, responder };

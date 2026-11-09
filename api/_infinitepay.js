@@ -125,4 +125,4 @@ async function liberadoPorCodigo(codigo) {
   return c.pago ? { liberado: true } : { liberado: false, motivo: "nao_pago", pendente: c.pendente };
 }
 
-module.exports = { REFERENCIA, configurado, faltandoInfinitepay, ehCodigo, parametrosValidos, criarLink, conferir, registrar, liberadoPorCodigo };
+module.exports = { REFERENCIA, comando, lojaConfigurada, configurado, faltandoInfinitepay, ehCodigo, parametrosValidos, criarLink, conferir, registrar, liberadoPorCodigo };

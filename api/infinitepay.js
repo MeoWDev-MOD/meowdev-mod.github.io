@@ -1,11 +1,12 @@
 // POST /api/infinitepay: aviso de pagamento da InfinitePay. Não é preciso confiar no aviso: cada um é confirmado de novo
 // com a InfinitePay antes de guardar a compra. Serve para a compra ficar registrada mesmo se o cliente fechar a página.
 "use strict";
-const { infinitepay, responder } = require("./_comum");
+const { infinitepay, limitar, responder } = require("./_comum");
 
 module.exports = async (req, res) => {
   if (req.method !== "POST") return responder(res, 405, { erro: "metodo" });
   if (!infinitepay.configurado()) return responder(res, 503, { erro: "indisponivel" });
+  if (await limitar(req, res, "aviso", 120, 600)) return;
 
   const b = req.body && typeof req.body === "object" ? req.body : {};
   const p = { order_nsu: String(b.order_nsu ?? ""), transaction_nsu: String(b.transaction_nsu ?? ""), slug: String(b.invoice_slug ?? b.slug ?? "") };

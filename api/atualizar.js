@@ -1,9 +1,10 @@
 // GET /api/atualizar?payment_id=...: dentro do app. Com pagamento aprovado, devolve o link do arquivo novo e o SHA-256 dele.
 "use strict";
-const { pronto, idValido, pagamentoLiberado, linkDeDownload, ultimaVersao, versaoValida, site, responder } = require("./_comum");
+const { pronto, idValido, pagamentoLiberado, linkDeDownload, ultimaVersao, versaoValida, limitar, site, responder } = require("./_comum");
 
 module.exports = async (req, res) => {
   if (req.method !== "GET") return responder(res, 405, { erro: "metodo" });
+  if (await limitar(req, res, "atualizar", 30, 600)) return;
   const v = pronto() ? await ultimaVersao().catch(() => null) : null;
   if (!v || !versaoValida(v.versao) || !v.temNro || !/^[0-9a-f]{64}$/.test(v.sha256 ?? "")) {
     return responder(res, 503, { erro: "indisponivel" });

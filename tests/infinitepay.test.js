@@ -31,6 +31,9 @@ function resposta() {
 
 // ---- mundo de mentira
 const banco = new Map(); // o Redis
+const expiracoes = new Map(); // chave -> segundos até sumir
+let ipN = 0;
+const ipNovo = () => ({ "x-real-ip": `10.1.0.${++ipN}` }); // cada chamada de teste vem de uma pessoa diferente, para o limite não atrapalhar
 const compras = new Map(); // o que a InfinitePay sabe: "ordem|transação|slug" -> { amount, paid }
 const chamadas = [];
 let linksAceitos = true;
@@ -44,6 +47,8 @@ global.fetch = async (url, opcoes = {}) => {
     let result = null;
     if (cmd === "GET") result = banco.has(chave) ? banco.get(chave) : null;
     else if (cmd === "DEL") { result = banco.delete(chave) ? 1 : 0; }
+    else if (cmd === "INCR") { result = Number(banco.get(chave) ?? 0) + 1; banco.set(chave, String(result)); }
+    else if (cmd === "EXPIRE") { expiracoes.set(chave, Number(valor)); result = 1; }
     else if (cmd === "SET") {
       if (extra === "NX" && banco.has(chave)) result = null;
       else { banco.set(chave, valor); result = "OK"; }
@@ -71,7 +76,7 @@ function novaCompra({ amount = 2490, paid = true, prefixo = "meowguard-" } = {})
   return p;
 }
 const chave = (p) => `${p.order_nsu}|${p.transaction_nsu}|${p.slug}`;
-const abrir = async (query) => { const r = resposta(); await acesso({ method: "GET", query }, r); return r; };
+const abrir = async (query, headers = ipNovo()) => { const r = resposta(); await acesso({ method: "GET", query, headers }, r); return r; };
 
 test("o botão liga só com tudo configurado, e o que falta aparece só pelo nome", () => {
   const r = resposta();
@@ -97,7 +102,7 @@ test("checkout cria o link na InfinitePay em centavos, com a volta e o aviso, e 
   assert.equal(errado.codigo, 405);
 
   const r = resposta();
-  await checkout({ method: "POST" }, r);
+  await checkout({ method: "POST", headers: ipNovo() }, r);
   assert.equal(r.codigo, 200);
   assert.equal(r.corpo.url, "https://checkout.infinitepay.io/tech_meow_teste?lenc=abc");
   const enviado = JSON.parse(chamadas.at(-1).opcoes.body);
@@ -111,7 +116,7 @@ test("checkout cria o link na InfinitePay em centavos, com a volta e o aviso, e 
 test("checkout: se a InfinitePay não devolve o link, avisa em vez de mandar o cliente para lugar nenhum", async () => {
   linksAceitos = false;
   const r = resposta();
-  await checkout({ method: "POST" }, r);
+  await checkout({ method: "POST", headers: ipNovo() }, r);
   assert.equal(r.codigo, 502);
   linksAceitos = true;
 });
@@ -166,7 +171,7 @@ test("dinheiro devolvido: o código para de abrir o acesso e o download", async 
   const q = { payment_id: link.get("payment_id"), exp: link.get("exp"), sig: link.get("sig"), arq: "pacote" };
 
   const bom = resposta();
-  await baixar({ method: "GET", query: q }, bom);
+  await baixar({ method: "GET", query: q, headers: ipNovo() }, bom);
   assert.equal(bom.codigo, 302);
   assert.equal(bom.destino, process.env.DOWNLOAD_URL);
 
@@ -174,7 +179,7 @@ test("dinheiro devolvido: o código para de abrir o acesso e o download", async 
   const fechado = await abrir({ payment_id: ok.corpo.codigo });
   assert.equal(fechado.corpo.liberado, false);
   const sem = resposta();
-  await baixar({ method: "GET", query: q }, sem);
+  await baixar({ method: "GET", query: q, headers: ipNovo() }, sem);
   assert.equal(sem.codigo, 403);
   assert.equal(sem.destino, null);
 });
@@ -183,7 +188,7 @@ test("o aviso de pagamento registra a compra paga, ignora o que não é compra e
   const p = novaCompra();
   const corpo = { order_nsu: p.order_nsu, transaction_nsu: p.transaction_nsu, invoice_slug: p.slug, amount: 2490, paid_amount: 2490, capture_method: "pix", items: [] };
   const r = resposta();
-  await aviso({ method: "POST", body: corpo }, r);
+  await aviso({ method: "POST", body: corpo, headers: ipNovo() }, r);
   assert.equal(r.codigo, 200);
   assert.match(banco.get(`mg:tx:${p.transaction_nsu}`), /^99\d{11}$/);
   // a página que chega depois recebe o mesmo código que o aviso já guardou
@@ -192,12 +197,12 @@ test("o aviso de pagamento registra a compra paga, ignora o que não é compra e
 
   const falso = { order_nsu: "meowguard-1111111111111111", transaction_nsu: "tx-falso-123456", invoice_slug: "slugfalso1" };
   const f = resposta();
-  await aviso({ method: "POST", body: falso }, f);
+  await aviso({ method: "POST", body: falso, headers: ipNovo() }, f);
   assert.equal(f.codigo, 200);
   assert.ok(!banco.has("mg:tx:tx-falso-123456"));
 
   const semCodigos = resposta();
-  await aviso({ method: "POST", body: { event: "created" } }, semCodigos);
+  await aviso({ method: "POST", body: { event: "created" }, headers: ipNovo() }, semCodigos);
   assert.equal(semCodigos.codigo, 200);
   assert.equal(semCodigos.corpo.ignorado, true);
 
@@ -224,8 +229,41 @@ test("segredos não aparecem nas respostas", async () => {
   const p = novaCompra();
   const r = await abrir(p);
   const c = resposta();
-  await checkout({ method: "POST" }, c);
+  await checkout({ method: "POST", headers: ipNovo() }, c);
   const tudo = JSON.stringify([r.corpo, c.corpo]);
   assert.ok(!tudo.includes("LOJA-TOKEN-SECRETO"));
   assert.ok(!tudo.includes(process.env.ACCESS_SECRET));
+});
+
+test("limite de tentativas: depois de 30 pedidos de acesso em 10 minutos, a mesma pessoa leva 429; outra pessoa não", async () => {
+  const eu = { "x-real-ip": "203.0.113.77" };
+  for (let i = 1; i <= 30; i++) {
+    const r = await abrir({ payment_id: "9900000000000" }, eu);
+    assert.equal(r.codigo, 200, `pedido ${i}`);
+  }
+  const barrado = await abrir({ payment_id: "9900000000000" }, eu);
+  assert.equal(barrado.codigo, 429);
+  assert.equal(barrado.corpo.erro, "muitas_tentativas");
+  assert.equal(barrado.cabecalhos["Retry-After"], "600");
+
+  const outro = await abrir({ payment_id: "9900000000000" }, { "x-real-ip": "203.0.113.78" });
+  assert.equal(outro.codigo, 200);
+
+  // o banco nunca guarda o IP de verdade, e a contagem tem prazo para sumir
+  const chaves = [...banco.keys()].filter((k) => k.startsWith("mg:rl:acesso:"));
+  assert.ok(chaves.length >= 2);
+  assert.ok(!chaves.some((k) => k.includes("203.0.113")));
+  assert.ok(chaves.every((k) => expiracoes.get(k) === 600));
+});
+
+test("limite de tentativas: o botão de comprar só cria 10 links em 10 minutos por pessoa", async () => {
+  const eu = { "x-real-ip": "198.51.100.5" };
+  for (let i = 1; i <= 10; i++) {
+    const r = resposta();
+    await checkout({ method: "POST", headers: eu }, r);
+    assert.equal(r.codigo, 200, `pedido ${i}`);
+  }
+  const barrado = resposta();
+  await checkout({ method: "POST", headers: eu }, barrado);
+  assert.equal(barrado.codigo, 429);
 });

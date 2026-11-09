@@ -1,11 +1,12 @@
 // POST /api/checkout: cria o pagamento (InfinitePay: Pix e cartão; ou Mercado Pago: Pix, crédito e débito) e devolve o endereço dele.
 "use strict";
 const crypto = require("node:crypto");
-const { REFERENCIA, infinitepay, site, preco, pronto, mp, responder } = require("./_comum");
+const { REFERENCIA, infinitepay, limitar, site, preco, pronto, mp, responder } = require("./_comum");
 
 module.exports = async (req, res) => {
   if (req.method !== "POST") return responder(res, 405, { erro: "metodo" });
   if (!pronto()) return responder(res, 503, { erro: "indisponivel" });
+  if (await limitar(req, res, "checkout", 10, 600)) return;
 
   const volta = `${site()}/app/acesso/`;
 
