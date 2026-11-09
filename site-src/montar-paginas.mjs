@@ -158,6 +158,7 @@ function rodape({ fotos = false, legalExtra = "" } = {}) {
         <h4>Projetos</h4>
         ${projetos}
         <a href="/projetos/">Ver todos</a>
+        <a href="/app/acesso/">Meu acesso ao MeoWGuard</a>
       </nav>
       <nav class="fcol" aria-label="Site">
         <h4>Site</h4>
