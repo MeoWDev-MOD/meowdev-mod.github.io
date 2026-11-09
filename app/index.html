@@ -33,7 +33,7 @@
     try { var t = localStorage.getItem("tm.theme"); if (t === "light" || t === "dark") d.dataset.theme = t; } catch (e) {}
     try { if (sessionStorage.getItem("ps5.pt")) { sessionStorage.removeItem("ps5.pt"); d.classList.add("pt"); } } catch (e) {} })();
 </script>
-<link rel="stylesheet" href="/tm.css?v=0626b851b6">
+<link rel="stylesheet" href="/tm.css?v=02469776fb">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -215,7 +215,7 @@
       </div>
       <ol class="steps">
         <li><h3>Você compra aqui no site</h3><p>Pix, cartão de crédito ou débito, pelo Mercado Pago. Assim que o pagamento é aprovado, o acesso abre.</p></li>
-        <li><h3>Baixa o app e vê o tutorial</h3><p>Na página de acesso estão o pacote do MeoWGuard, com o código-fonte, e o vídeo que mostra tudo na prática.</p></li>
+        <li><h3>Baixa o app e vê o tutorial</h3><p>Na página de acesso estão o pacote do MeoWGuard e o vídeo que mostra tudo na prática.</p></li>
         <li><h3>Copia para o cartão SD do Switch</h3><p>Coloque a pasta na pasta <i>switch</i> do cartão, abra pelo menu de homebrew e pronto.</p></li>
       </ol>
       <div class="req">
@@ -246,7 +246,6 @@
         <ul class="ticks">
           <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Aplicativo MeoWGuard para o seu Switch</li>
           <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Vídeo tutorial passo a passo</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Código-fonte do app (licença GPLv3)</li>
           <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Atualizações da mesma versão e ajuda pelo WhatsApp</li>
         </ul>
         <button class="b p big" id="botaoComprar" type="button" disabled>Comprar com Pix ou cartão</button>
@@ -269,7 +268,6 @@
         <details><summary>Funciona no Mac?</summary><p>Funciona. Pelo cabo, com o app grátis OpenMTP, ou pelo navegador Chrome numa página nossa. O app mostra qual endereço abrir.</p></details>
         <details><summary>O que é o NSZ e por que o Switch às vezes pede o atalho?</summary><p>NSZ é um jogo compactado. Para descompactar, o app precisa de bastante memória. Por isso, ele ensina a criar um atalho na tela inicial do Switch, que abre com a memória toda.</p></details>
         <details><summary>E se eu quiser o dinheiro de volta?</summary><p>Você tem 7 dias a partir da compra. Chame no WhatsApp com o número do pagamento. Com a devolução feita pelo Mercado Pago, o acesso ao download é encerrado.</p></details>
-        <details><summary>Por que o código-fonte vem junto?</summary><p>O MeoWGuard é feito sobre o sphaira, um programa livre sob a licença GPLv3. Essa licença permite cobrar pelo programa, mas obriga a entregar o código a quem recebe. Por isso o pacote traz o código e a licença.</p></details>
         <details><summary>Perdi o link do download. E agora?</summary><p>Abra <a href="/app/acesso/">a página de acesso</a> e digite o número do pagamento, que está no comprovante do Mercado Pago. O link novo é gerado na hora.</p></details>
       </div>
     </div>
