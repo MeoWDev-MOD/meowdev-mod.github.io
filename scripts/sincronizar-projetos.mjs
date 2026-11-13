@@ -27,7 +27,7 @@ export const PROJETOS = [
     pasta: "Control-PS-5",
     repo: "MeoWDev-MOD/Control-PS-5",
     origem: ".",
-    incluir: ["index.html", "assets", "css", "img", "js", "vendor", "privacidade", "termos", "sitemap.xml", "switch"],
+    incluir: ["index.html", "assets", "css", "img", "js", "vendor", "privacidade", "termos", "sitemap.xml", "switch", "en", "es", "ru", "sitemap-idiomas.xml"],
   },
 ];
 
