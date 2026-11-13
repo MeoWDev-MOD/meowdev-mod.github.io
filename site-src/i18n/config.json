@@ -1,0 +1,48 @@
+{
+  "base": "https://techmeow.app/",
+  "docs": ".",
+  "raiz": "/",
+  "dominio": "https://techmeow.app",
+  "paginas": [
+    "index.html",
+    "projetos/index.html",
+    "app/index.html",
+    "app/acesso/index.html",
+    "privacidade/index.html",
+    "JNX/index.html"
+  ],
+  "idiomas": [
+    "en",
+    "es",
+    "ru"
+  ],
+  "origem": "pt-BR",
+  "chave_idioma": "techmeow.lang",
+  "atributos_extra": [
+    "data-frase",
+    "data-t"
+  ],
+  "outros_traduzidos": [
+    "/ps5-hdmi-tool/"
+  ],
+  "sitemap": [
+    "index.html",
+    "projetos/index.html",
+    "app/index.html",
+    "privacidade/index.html",
+    "JNX/index.html"
+  ],
+  "sitemap_arquivo": "sitemap-idiomas.xml",
+  "imagens": {
+    "img/og-videogames.jpg": {
+      "en": "img/og-videogames-en.jpg",
+      "es": "img/og-videogames-es.jpg",
+      "ru": "img/og-videogames-ru.jpg"
+    },
+    "img/og-meowguard.jpg": {
+      "en": "img/og-meowguard-en.jpg",
+      "es": "img/og-meowguard-es.jpg",
+      "ru": "img/og-meowguard-ru.jpg"
+    }
+  }
+}

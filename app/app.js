@@ -4,7 +4,30 @@
   const preco = document.getElementById("preco");
   const botao = document.getElementById("botaoComprar");
   const erro = document.getElementById("erroCompra");
-  const brl = (n) => n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+  // Textos no idioma da página (<html lang>); as páginas en/, es/ e ru/ saem de site-src/i18n.
+  const lang = (document.documentElement.lang || "pt").slice(0, 2).toLowerCase();
+  const TR = {
+      "en": {
+          "Em breve": "Coming soon",
+          "Abrindo o pagamento…": "Opening the payment…",
+          "Não deu para abrir o pagamento agora. Tente de novo em instantes ou chame no WhatsApp.": "We could not open the payment right now. Try again in a moment or message us on WhatsApp.",
+          "Sem conexão com o pagamento. Confira a internet e tente de novo.": "No connection to the payment service. Check your internet and try again."
+      },
+      "es": {
+          "Em breve": "Muy pronto",
+          "Abrindo o pagamento…": "Abriendo el pago…",
+          "Não deu para abrir o pagamento agora. Tente de novo em instantes ou chame no WhatsApp.": "No pudimos abrir el pago ahora. Inténtalo de nuevo en unos instantes o escríbenos por WhatsApp.",
+          "Sem conexão com o pagamento. Confira a internet e tente de novo.": "Sin conexión con el pago. Revisa tu internet e inténtalo de nuevo."
+      },
+      "ru": {
+          "Em breve": "Скоро",
+          "Abrindo o pagamento…": "Открываем оплату…",
+          "Não deu para abrir o pagamento agora. Tente de novo em instantes ou chame no WhatsApp.": "Сейчас не удалось открыть оплату. Попробуйте ещё раз чуть позже или напишите нам в WhatsApp.",
+          "Sem conexão com o pagamento. Confira a internet e tente de novo.": "Нет связи с платёжным сервисом. Проверьте интернет и попробуйте снова."
+      }
+  };
+  const L = (s) => TR[lang]?.[s] ?? s;
+  const brl = (n) => n.toLocaleString(lang === "pt" ? "pt-BR" : lang, { style: "currency", currency: "BRL" });
 
   function aviso(texto) {
     erro.textContent = texto;
@@ -21,15 +44,15 @@
         return;
       }
     } catch { /* cai no "em breve" */ }
-    preco.textContent = "Em breve";
-    botao.textContent = "Em breve";
+    preco.textContent = L("Em breve");
+    botao.textContent = L("Em breve");
   }
 
   botao.addEventListener("click", async () => {
     aviso("");
     botao.disabled = true;
     const texto = botao.textContent;
-    botao.textContent = "Abrindo o pagamento…";
+    botao.textContent = L("Abrindo o pagamento…");
     try {
       const r = await fetch("/api/checkout", { method: "POST" });
       const j = await r.json();
@@ -37,9 +60,9 @@
         location.href = j.url;
         return;
       }
-      aviso("Não deu para abrir o pagamento agora. Tente de novo em instantes ou chame no WhatsApp.");
+      aviso(L("Não deu para abrir o pagamento agora. Tente de novo em instantes ou chame no WhatsApp."));
     } catch {
-      aviso("Sem conexão com o pagamento. Confira a internet e tente de novo.");
+      aviso(L("Sem conexão com o pagamento. Confira a internet e tente de novo."));
     }
     botao.textContent = texto;
     botao.disabled = false;

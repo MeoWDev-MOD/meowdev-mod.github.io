@@ -491,3 +491,7 @@ footer h4{margin:0 0 10px;font-size:12px;font-weight:800;letter-spacing:.09em;te
 @media (max-width:420px){.acoes{gap:6px}.b.mg{padding:4px 13px}.b.mg .ar{display:none}}
 @media (max-width:350px){.b.mg .novo{display:none}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* menu de idioma (site-src/i18n): o logo não encolhe; com o menu inteiro no topo e pouca largura, o botão fica só com o globo */
+.top .brand{flex-shrink:0}
+@media (min-width:1181px) and (max-width:1400px){.top .i18n-btn span{display:none}.top .i18n-btn{padding:0 11px}}

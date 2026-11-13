@@ -1,0 +1,3 @@
+site-src/i18n/faltando-*.json
+site-src/i18n/__pycache__/
+.playwright-cli/

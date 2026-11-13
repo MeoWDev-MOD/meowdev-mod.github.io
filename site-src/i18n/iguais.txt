@@ -1,0 +1,26 @@
+# Textos que ficam iguais em todos os idiomas (nomes de marca e de produto). Uma chave por linha; o resto é comentário.
+f2d03f50f9 Tech <b>MeoW</b>
+a5e9d6aac4 Control PS-5
+ad74fdd9ea JNX
+9c17140691 PS5 HDMI Tool
+8cac34cb20 Iron Check
+da6af51bf9 BancadaSync
+ca102f4db9 Interposer Tech MeoW
+8526a9a8fc PS-5 Controle Test
+18d7430e34 Corrida Certa
+69799dc707 MeoWGuard
+65f7a7975a NFC
+e59689fa1a Tech MeoW
+5442e2b64f GitHub
+b336fc5587 WhatsApp
+25b7ed8097 Shopee
+16190fd30f JNX Updater
+1a3b709b95 JNX Pack
+3c6f19ac22 Atmosphère 1.12.2
+a8f3a3cba8 hekate 6.5.5
+bbc735c05b Instagram @tech_meow.oficial
+8044dba116 YouTube @techmeow
+25f01a9f77 Instagram @honorio.dev
+941f34cdd9 GitHub MeoWDev-MOD
+0fd349d674 WhatsApp (ícone)
+765d8bf2cd A Arte Kamikase

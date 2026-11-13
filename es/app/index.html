@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MeoWGuard: respalda e instala los juegos de tu Switch | Tech MeoW</title>
+<meta name="description" content="MeoWGuard: app en portugués para Nintendo Switch desbloqueado. Instala y respalda los juegos que compraste, copia el cartucho, guarda partidas y capturas, por cable en Windows, Mac y Linux.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#f4f1ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0920" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://techmeow.app/es/app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tech MeoW">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://techmeow.app/es/app/">
+<meta property="og:title" content="MeoWGuard: respalda e instala los juegos de tu Switch">
+<meta property="og:description" content="App en portugués para Nintendo Switch desbloqueado: instalación por cable, respaldo del cartucho, partidas y capturas.">
+<meta property="og:image" content="https://techmeow.app/img/og-meowguard-es.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MeoWGuard: instala juegos en el Switch por cable, en portugués, con la pantalla de inicio de la app y la mascota">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MeoWGuard: respalda e instala los juegos de tu Switch">
+<meta name="twitter:description" content="App en portugués para Nintendo Switch desbloqueado: instalación por cable, respaldo del cartucho, partidas y capturas.">
+<meta name="twitter:image" content="https://techmeow.app/img/og-meowguard-es.jpg">
+<link rel="icon" href="/img/logo-192.png" type="image/png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preload" href="/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-bold.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+  // sem esperar o resto da página: marca que há JavaScript, aplica o tema guardado e liga a chegada com cortina
+  (function () { var d = document.documentElement; d.classList.add("js");
+    try { var t = localStorage.getItem("tm.theme"); if (t === "light" || t === "dark") d.dataset.theme = t; } catch (e) {}
+    try { if (sessionStorage.getItem("ps5.pt")) { sessionStorage.removeItem("ps5.pt"); d.classList.add("pt"); } } catch (e) {} })();
+</script>
+<link rel="stylesheet" href="/tm.css?v=b3a7f5f140">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MeoWGuard",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Nintendo Switch (homebrew)",
+  "inLanguage": "es",
+  "url": "https://techmeow.app/es/app/",
+  "author": {
+    "@type": "Organization",
+    "name": "MeoWDev MOD",
+    "url": "https://techmeow.app/"
+  },
+  "description": "Instala y respalda los juegos que compraste en el Nintendo Switch desbloqueado, por cable USB, en Windows, Mac y Linux."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "MeoWGuard: lançamento",
+  "description": "Instalar juegos por cable, las 8 tarjetas de la app y las copias de seguridad, con las pantallas reales de MeoWGuard.",
+  "thumbnailUrl": "https://techmeow.app/video/meowguard-poster.jpg",
+  "contentUrl": "https://techmeow.app/video/meowguard-lancamento.mp4",
+  "uploadDate": "2026-11-08",
+  "duration": "PT26S",
+  "inLanguage": "es"
+}
+</script>
+<!--i18n:head-->
+<link rel="alternate" hreflang="pt-BR" href="https://techmeow.app/app/">
+<link rel="alternate" hreflang="en" href="https://techmeow.app/en/app/">
+<link rel="alternate" hreflang="es" href="https://techmeow.app/es/app/">
+<link rel="alternate" hreflang="ru" href="https://techmeow.app/ru/app/">
+<link rel="alternate" hreflang="x-default" href="https://techmeow.app/app/">
+<style>.i18n-menu{position:relative;display:inline-flex;flex:none}.i18n-btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;border-radius:99px;border:1px solid var(--line,rgba(127,127,127,.35));background:var(--surface2,transparent);color:inherit;font:inherit;font-size:13px;font-weight:700;letter-spacing:.04em;cursor:pointer}.i18n-btn:hover{border-color:currentColor}.i18n-lista{position:absolute;right:0;top:calc(100% + 8px);z-index:200;list-style:none;margin:0;padding:6px;min-width:176px;border-radius:14px;border:1px solid var(--line,rgba(127,127,127,.35));background:var(--surface,#16122c);box-shadow:0 18px 40px rgba(0,0,0,.35)}.i18n-lista a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;color:inherit;text-decoration:none;font-size:14px;font-weight:600}.i18n-lista a b{font-size:11px;letter-spacing:.06em;opacity:.65;width:22px}.i18n-lista a:hover,.i18n-lista a:focus-visible{background:var(--surface2,rgba(127,127,127,.15))}.i18n-lista a[aria-current]{color:var(--accent,#a78bfa)}.i18n-sug{position:absolute;right:0;top:calc(100% + 8px);z-index:199;display:flex;align-items:center;gap:8px;white-space:nowrap;padding:8px 8px 8px 14px;border-radius:99px;font-size:13px;font-weight:600;border:1px solid var(--line,rgba(127,127,127,.35));background:var(--surface,#16122c);box-shadow:0 14px 34px rgba(0,0,0,.35)}.i18n-sug a{padding:6px 12px;border-radius:99px;background:var(--accent,#7c5cff);color:#fff;text-decoration:none}.i18n-sug button{border:0;background:none;color:inherit;font:inherit;font-size:16px;line-height:1;padding:4px 6px;cursor:pointer;opacity:.7}.i18n-sug.m{position:fixed;left:12px;right:12px;top:calc(76px + env(safe-area-inset-top));z-index:60;justify-content:space-between;white-space:normal}</style>
+<script>(function(){var A="es",M={"pt": "../../app/", "en": "../../en/app/", "es": "./", "ru": "../../ru/app/"},S={"pt": ["Ler esta página em português?", "Abrir"], "en": ["Read this page in English?", "Open"], "es": ["¿Leer esta página en español?", "Abrir"], "ru": ["Открыть эту страницу на русском?", "Открыть"]},K="techmeow.lang";
+function salva(l){try{localStorage.setItem(K,l)}catch(e){}}
+var p=null;try{p=localStorage.getItem(K)}catch(e){}
+if(p&&p!==A&&M[p]){location.replace(M[p]+location.search+location.hash);return}
+document.addEventListener("DOMContentLoaded",function(){var m=document.querySelector("[data-i18n-menu]");if(!m)return;
+var b=m.querySelector(".i18n-btn"),l=m.querySelector(".i18n-lista");
+function abre(v){l.hidden=!v;b.setAttribute("aria-expanded",v?"true":"false")}
+b.addEventListener("click",function(e){e.stopPropagation();var s=document.querySelector(".i18n-sug");if(s)s.remove();abre(l.hidden)});
+document.addEventListener("click",function(e){if(!m.contains(e.target))abre(false)});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){abre(false);b.focus()}});
+m.querySelectorAll("a[data-lang]").forEach(function(a){a.addEventListener("click",function(e){salva(a.dataset.lang);
+e.preventDefault();location.href=a.getAttribute("href")+location.hash})});
+if(p)return;var n=((navigator.languages&&navigator.languages[0])||navigator.language||"").toLowerCase().slice(0,2);
+var q=M[n]?n:(n&&n!=="pt"?"en":null);if(!q||q===A||!M[q])return;
+var s=document.createElement("div");s.className="i18n-sug";s.setAttribute("role","status");s.lang=q;
+s.innerHTML='<span></span><a></a><button type="button" aria-label="×">×</button>';
+s.querySelector("span").textContent=S[q][0];var a=s.querySelector("a");a.textContent=S[q][1];a.href=M[q];
+a.addEventListener("click",function(){salva(q)});
+s.querySelector("button").addEventListener("click",function(){salva(A);s.remove()});
+if(matchMedia("(max-width:600px)").matches){s.classList.add("m");document.body.appendChild(s)}else m.appendChild(s)})})();</script>
+<!--/i18n:head-->
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir al contenido</a>
+<canvas id="fxBg" aria-hidden="true"></canvas>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-bars" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.4 7-11.5a7 7 0 0 0-14 0C5 14.6 12 21 12 21zM12 7a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.2 5.2L4 17l3 3 5.5-5.5a4 4 0 0 0 5.2-5.2l-2.5 2.5-2.4-.6-.6-2.4z"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H6.2M10 21h.01M17 21h.01"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M7 8h10v4a5 5 0 0 1-10 0V8zM12 17v5"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><path d="M3 4h18v12H3zM8 20h8M12 16v4"/></symbol>
+  <symbol id="i-sync" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><path d="M6 2h9l4 4v16H6zM10 2v5M13 2v5"/></symbol>
+  <symbol id="i-save" viewBox="0 0 24 24"><path d="M5 3h12l4 4v14H3V5a2 2 0 0 1 2-2zM7 3v6h8V3M7 21v-7h10v7"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-light" viewBox="0 0 24 24"><path d="M8 2h8v20H8zM12 7h.01M12 12h.01M12 17h.01"/></symbol>
+  <symbol id="i-sys" viewBox="0 0 24 24"><path d="M4 20V8l8-5 8 5v12M9 20v-6h6v6"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v14H6.5A2.5 2.5 0 0 0 4 19.5zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5M9 8h6M9 12h6"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.2 21.8l5.1-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.7 4.7 0 0 0 12 7.3Zm0 7.8a3.1 3.1 0 1 1 3.1-3.1 3.1 3.1 0 0 1-3.1 3.1Zm6-8a1.1 1.1 0 1 1-1.1-1.1A1.1 1.1 0 0 1 18 7.1ZM21.1 8.2a5.4 5.4 0 0 0-1.5-3.8 5.5 5.5 0 0 0-3.8-1.5c-1.5-.1-6-.1-7.6 0a5.5 5.5 0 0 0-3.8 1.5 5.5 5.5 0 0 0-1.5 3.8c-.1 1.5-.1 6 0 7.6a5.4 5.4 0 0 0 1.5 3.8 5.5 5.5 0 0 0 3.8 1.5c1.5.1 6 .1 7.6 0a5.4 5.4 0 0 0 3.8-1.5 5.5 5.5 0 0 0 1.5-3.8c.1-1.5.1-6 0-7.6Zm-2 9.2a3.1 3.1 0 0 1-1.8 1.8c-1.2.5-4.1.4-5.3.4s-4.2.1-5.3-.4a3.1 3.1 0 0 1-1.8-1.8c-.5-1.2-.4-4.1-.4-5.4s-.1-4.2.4-5.3a3.1 3.1 0 0 1 1.8-1.8c1.2-.5 4.1-.4 5.3-.4s4.2-.1 5.3.4a3.1 3.1 0 0 1 1.8 1.8c.5 1.2.4 4.1.4 5.3s.1 4.2-.4 5.4Z"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.7 15V9l5.8 3Z"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5a3.1 3.1 0 0 0-1.3-1.7c-1-.7.1-.7.1-.7a2.4 2.4 0 0 1 1.8 1.2 2.5 2.5 0 0 0 3.4 1 2.5 2.5 0 0 1 .7-1.6c-2.6-.3-5.3-1.3-5.3-5.7a4.5 4.5 0 0 1 1.2-3.1 4.2 4.2 0 0 1 .1-3.1s1-.3 3.2 1.2a10.9 10.9 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2a4.2 4.2 0 0 1 .1 3.1 4.5 4.5 0 0 1 1.2 3.1c0 4.4-2.7 5.4-5.3 5.7a2.8 2.8 0 0 1 .8 2.2v3.2c0 .4.2.7.8.6A11.5 11.5 0 0 0 12 .5Z"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/es/" aria-label="Tech MeoW, página de inicio"><img src="/img/logo-branca.webp" width="400" height="400" alt=""><span>Tech <b>MeoW</b></span></a>
+    <nav class="links" id="menuPrincipal" aria-label="Principal">
+      <a href="/es/#reparos" data-sec="reparos">Reparaciones</a>
+      <a class="hl" href="/es/#desbloqueio" data-sec="desbloqueio">Desbloqueo <i>R$ 339,90</i></a>
+      <div class="dd">
+        <a class="dd-btn" href="/es/projetos/" aria-haspopup="true" aria-expanded="false" aria-controls="menuProjetos">Proyectos<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></a>
+        <div class="dd-panel" id="menuProjetos">
+          <div class="dd-grid">
+          <section>
+            <h3>Para Nintendo Switch</h3>
+            <a class="dd-item" href="/es/app/"><img src="/img/mini-meowguard.webp" width="42" height="42" alt="" loading="lazy"><span><b>MeoWGuard <em class="novo">Nuevo</em></b><small>Instalar y respaldar juegos por cable</small></span></a>
+            <a class="dd-item" href="/Control-PS-5/"><img src="/img/mini-control-ps5.webp" width="42" height="42" alt="" loading="lazy"><span><b>Control PS-5</b><small>Control de PS5 en el Switch</small></span></a>
+            <a class="dd-item" href="https://github.com/MeoWDev-MOD/JNX" target="_blank" rel="noopener"><img src="/img/mini-jnx.webp" width="42" height="42" alt="" loading="lazy"><span><b>JNX</b><small>Homebrews en portugués</small></span></a>
+            <a class="dd-item" href="https://pay.kiwify.com.br/leiZv0k" target="_blank" rel="noopener"><img src="/img/mini-curso.webp" width="42" height="42" alt="" loading="lazy"><span><b>Curso A Arte Kamikase</b><small>Aprende a desbloquear el Switch</small></span></a>
+            <a class="dd-item" href="https://guia-switch-tech-meow.vercel.app/" target="_blank" rel="noopener"><img src="/img/mini-guia.webp" width="42" height="42" alt="" loading="lazy"><span><b>Guía de Switch</b><small>Reparación y desbloqueo, paso a paso</small></span></a>
+          </section>
+          <section>
+            <h3>Para servicios técnicos</h3>
+            <a class="dd-item" href="/ps5-hdmi-tool/es/"><img src="/img/mini-hdmi-tool.webp" width="42" height="42" alt="" loading="lazy"><span><b>PS5 HDMI Tool</b><small>Convierte la NOR del PS5 Slim</small></span></a>
+            <a class="dd-item" href="/Iron-Check/"><img src="/img/mini-iron-check.webp" width="42" height="42" alt="" loading="lazy"><span><b>Iron Check</b><small>Pruebas e informe en PDF</small></span></a>
+            <a class="dd-item" href="/BancadaSync-Download/"><img src="/img/mini-bancadasync.webp" width="42" height="42" alt="" loading="lazy"><span><b>BancadaSync</b><small>Gestión del servicio técnico</small></span></a>
+            <a class="dd-item" href="/es/#loja"><img src="/img/mini-interposer.webp" width="42" height="42" alt="" loading="lazy"><span><b>Interposer Tech MeoW</b><small>Pieza para la reparación HDMI del PS5</small></span></a>
+          </section>
+          <section>
+            <h3>Para jugar y para trabajar</h3>
+            <a class="dd-item" href="/ps5-controle-test/"><img src="/img/mini-controle-test.webp" width="42" height="42" alt="" loading="lazy"><span><b>PS-5 Controle Test</b><small>Prueba el control de PS5 en el celular</small></span></a>
+            <a class="dd-item" href="/es/#loja"><img src="/img/mini-chaveiro.webp" width="42" height="42" alt="" loading="lazy"><span><b>Llavero GTA 6</b><small>Llavero con etiqueta NFC</small></span></a>
+            <a class="dd-item" href="https://wa.me/5521966547296?text=%C2%A1Hola%2C%20Tech%20MeoW!%20Vengo%20del%20sitio%20y%20quiero%20probar%20la%20app%20Corrida%20Certa." target="_blank" rel="noopener"><span class="mini-ico"><svg class="i" aria-hidden="true"><use href="#i-light"/></svg></span><span><b>Corrida Certa</b><small>Semáforo para conductores de apps</small></span></a>
+            <a class="dd-item" href="https://wa.me/5521966547296?text=%C2%A1Hola%2C%20Tech%20MeoW!%20Vengo%20del%20sitio%20y%20quiero%20un%20sistema%20a%20medida%20para%20mi%20empresa." target="_blank" rel="noopener"><span class="mini-ico"><svg class="i" aria-hidden="true"><use href="#i-sys"/></svg></span><span><b>Sistemas para empresas</b><small>CRM a medida</small></span></a>
+          </section>
+          </div>
+          <a class="dd-all" href="/es/projetos/"><span>Ver todos los proyectos</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <a href="/es/#loja" data-sec="loja">Tienda</a>
+      <a href="/es/#contato" data-sec="contato">Contacto</a>
+      <a class="b wa wa-menu" href="https://wa.me/5521966547296?text=%C2%A1Hola%2C%20Tech%20MeoW!%20Vengo%20del%20sitio." target="_blank" rel="noopener"><svg class="ib" aria-hidden="true"><use href="#i-wa"/></svg>Escribir por WhatsApp</a>
+    </nav>
+    <div class="acoes">
+      <!--i18n:menu--><div class="i18n-menu" data-i18n-menu><button type="button" class="i18n-btn" aria-haspopup="true" aria-expanded="false" aria-label="Idioma: Español" title="Idioma"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9s1.3-6.2 3.9-9z"/></svg><span>ES</span></button><ul class="i18n-lista" hidden><li><a href="../../app/" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><b>PT</b>Português</a></li><li><a href="../../en/app/" hreflang="en" lang="en" data-lang="en"><b>EN</b>English</a></li><li><a href="./" hreflang="es" lang="es" data-lang="es" aria-current="true"><b>ES</b>Español</a></li><li><a href="../../ru/app/" hreflang="ru" lang="ru" data-lang="ru"><b>RU</b>Русский</a></li></ul></div><!--/i18n:menu-->
+      <button class="iconbtn" id="themeBtn" type="button" aria-label="Cambiar entre claro y oscuro" title="Cambiar entre claro y oscuro">
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+      </button>
+      <a class="b mg" href="/es/app/" aria-current="page" aria-label="MeoWGuard, lanzamiento"><em class="novo">Nuevo</em><span class="nome">MeoWGuard</span><span class="ar"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+      <a class="b wa sm" href="https://wa.me/5521966547296?text=%C2%A1Hola%2C%20Tech%20MeoW!%20Vengo%20del%20sitio." target="_blank" rel="noopener"><svg class="ib" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+      <button class="iconbtn menu-btn" type="button" aria-expanded="false" aria-controls="menuPrincipal" aria-label="Abrir el menú"><svg class="i-bars" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+  </div>
+  <i id="scrollBar" aria-hidden="true"></i>
+</header>
+
+<main id="conteudo">
+  <section class="wrap app-hero">
+    <div>
+      <span class="local"><em class="novo">Nuevo</em>App para Nintendo Switch desbloqueado</span>
+      <h1>Respalda e instala los juegos que <span class="grad">compraste</span>.</h1>
+      <p class="lead">MeoWGuard hace, en una pantalla simple y en portugués, lo que antes requería varios programas: instalar juegos por cable, copiar tu cartucho, guardar las partidas y las capturas. Hecho por Tech MeoW.</p>
+      <div class="cta">
+        <a class="b p big magnetic" href="#comprar">Quiero MeoWGuard</a>
+        <a class="b big" href="#como">Ver cómo funciona</a>
+      </div>
+      <p class="fine">¿Ya compraste? <a href="/es/app/acesso/">Abrir mi acceso y descargar</a> · ¿Vas a transferir juegos? <a href="/MeoWGuard/">Abrir la transferencia en Chrome</a></p>
+      <ul class="chips">
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Windows, Mac y Linux</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>NSP, NSZ, XCI, XCZ y MSP</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Tutorial en video incluido</li>
+      </ul>
+    </div>
+    <figure class="app-tela">
+      <img class="mascote" src="/MeoWGuard/assets/mascote.png" width="180" height="180" alt="">
+      <div class="tv"><img src="/img/meowguard-tela-inicio-1200.webp" srcset="/img/meowguard-tela-inicio-720.webp 720w, /img/meowguard-tela-inicio-1200.webp 1200w" sizes="(max-width: 1040px) 90vw, 560px" width="1200" height="675" alt="Pantalla de inicio de MeoWGuard, con las tarjetas Conectar al PC, Instalar juegos, Copiar mi cartucho, Mis juegos, Mis partidas, Fotos y videos, Liberar espacio y Archivos de la tarjeta" fetchpriority="high"></div>
+      <figcaption>Pantalla de inicio de la app, en el Switch.</figcaption>
+    </figure>
+  </section>
+
+  <section class="sec" id="video">
+    <div class="wrap">
+      <div class="h centro">
+        <span class="kick">Míralo en 26 segundos</span>
+        <h2>MeoWGuard en la práctica</h2>
+        <p>Instalar por cable, las 8 tarjetas de la app y las copias de seguridad, con las pantallas reales.</p>
+      </div>
+      <figure class="video-card">
+        <video controls playsinline preload="none" poster="/video/meowguard-poster.jpg" width="1280" height="720" aria-describedby="video-desc">
+          <source src="/video/meowguard-lancamento.mp4" type="video/mp4">
+          Tu navegador no reproduce video. <a href="/video/meowguard-lancamento.mp4">Descargar el video</a>.
+        </video>
+        <figcaption class="fine" id="video-desc">Video sin sonido, con textos en pantalla: la app pregunta qué computadora usas, instala los juegos por cable y muestra todo en una sola pantalla, en portugués.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="pelo-navegador">
+    <div class="wrap">
+      <div class="h centro">
+        <span class="kick">Mac, Windows o Linux</span>
+        <h2>¿Vas a transferir tus juegos por la computadora?</h2>
+        <p>¿Usas Mac? Abre la dirección de abajo en Google Chrome, conecta el Switch a la computadora con el cable y transfiere los juegos directo desde el navegador, sin instalar nada.</p>
+      </div>
+      <div class="cta" style="justify-content:center">
+        <a class="b p big magnetic" href="/MeoWGuard/">Abrir la transferencia en Chrome</a>
+      </div>
+      <p class="fine" style="text-align:center">Dirección: <strong>techmeow.app/MeoWGuard</strong> · funciona solo en Google Chrome o Edge.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="recursos">
+    <div class="wrap">
+      <div class="h">
+        <span class="kick">Qué hace</span>
+        <h2>Qué hace MeoWGuard</h2>
+        <p>Todo dentro de la app, sin abrir otro programa en el Switch.</p>
+      </div>
+      <div class="bento">
+        <article class="card spot"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-plug"/></svg></span><h3>Instalar juegos por cable</h3><p>Arrastra NSP, NSZ, XCI, XCZ o MSP a una sola carpeta en la computadora. El Switch los instala uno por uno, mostrando el progreso.</p></article>
+        <article class="card spot"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-monitor"/></svg></span><h3>Windows, Mac y Linux</h3><p>La app pregunta qué computadora usas y muestra el paso a paso correcto. En Mac, también funciona con el navegador Chrome.</p></article>
+        <article class="card spot"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-book"/></svg></span><h3>Paso a paso en pantalla</h3><p>La app explica cada etapa en portugués y dice qué hacer si algo sale mal.</p></article>
+        <article class="card spot"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-card"/></svg></span><h3>Respaldo de tu cartucho</h3><p>Copia a la computadora el juego del cartucho que compraste, para tener una copia de seguridad.</p></article>
+        <article class="card spot"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-save"/></svg></span><h3>Partidas, fotos y videos</h3><p>Respalda el progreso de tus juegos y pasa las capturas de pantalla y grabaciones a la computadora.</p></article>
+        <article class="card spot"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-folder"/></svg></span><h3>Espacio libre y archivos</h3><p>Mira qué ocupa más espacio en la tarjeta y en la memoria interna, y organiza los archivos sin salir de la app.</p></article>
+      </div>
+      <figure class="card" style="margin:16px 0 0;padding:12px">
+        <div class="app-tela"><div class="tv"><img src="/img/meowguard-tela-instalando-1200.webp" srcset="/img/meowguard-tela-instalando-720.webp 720w, /img/meowguard-tela-instalando-1200.webp 1200w" sizes="(max-width: 1040px) 90vw, 1000px" width="1200" height="675" alt="Pantalla de instalación de MeoWGuard: un libro pasando páginas, la barra de progreso y la lista de archivos de esta conexión" loading="lazy"></div></div>
+        <figcaption class="fine" style="text-align:center;margin-top:10px">Instalando por cable: el progreso y la lista de archivos de esta conexión.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="como">
+    <div class="wrap">
+      <div class="h">
+        <span class="kick">Paso a paso</span>
+        <h2>Cómo funciona</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Compras aquí en el sitio</h3><p>Pix o tarjeta, por InfinitePay. Apenas se aprueba el pago, el acceso se abre.</p></li>
+        <li><h3>Descargas la app y ves el tutorial</h3><p>En la página de acceso están el paquete de MeoWGuard y el video que muestra todo en la práctica.</p></li>
+        <li><h3>Copias a la tarjeta SD del Switch</h3><p>Pon la carpeta dentro de la carpeta <i>switch</i> de la tarjeta, ábrela desde el menú de homebrew y listo.</p></li>
+      </ol>
+      <div class="req">
+        <div class="card">
+          <h3>Lo que necesitas</h3>
+          <ul class="ticks">
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Nintendo Switch <b>desbloqueado</b>, con el menú de homebrew</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Tarjeta SD con espacio libre</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Cable USB-C que transmita datos, no solo que cargue</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>¿No tienes el Switch desbloqueado?</h3>
+          <p class="fine" style="font-size:15px;margin:6px 0 14px">Tech MeoW hace el desbloqueo en Río de Janeiro, Brasil, en cualquier modelo del Switch 1.</p>
+          <a class="go" href="/es/#desbloqueio">Ver el servicio de desbloqueo<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="comprar">
+    <div class="wrap">
+      <div class="card compra">
+        <span class="kick">Pago único</span>
+        <h2>Llévate MeoWGuard</h2>
+        <p class="val" id="preco" aria-live="polite">Cargando el precio…</p>
+        <p class="lead">Sin mensualidad. El acceso se abre apenas se aprueba el pago.</p>
+        <ul class="ticks">
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>App MeoWGuard para tu Switch</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Video tutorial paso a paso</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Actualizaciones de la misma versión y ayuda por WhatsApp</li>
+        </ul>
+        <button class="b p big" id="botaoComprar" type="button" disabled>Comprar con Pix o tarjeta</button>
+        <p class="erro" id="erroCompra" role="alert" hidden></p>
+        <p class="fine">Pago seguro por InfinitePay: no vemos los datos de tu tarjeta. Tienes <b>7 días para arrepentirte</b> y pedir tu dinero de vuelta (Código de Defensa del Consumidor de Brasil, art. 49), y el acceso se cierra con la devolución.</p>
+        <p class="fine">¿Ya compraste? <a href="/es/app/acesso/">Abrir mi acceso</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="duvidas">
+    <div class="wrap">
+      <div class="h">
+        <span class="kick">Preguntas frecuentes</span>
+        <h2>Preguntas</h2>
+      </div>
+      <div class="faq">
+        <details><summary>¿Necesito tener el Switch desbloqueado?</summary><p>Sí. MeoWGuard es una app homebrew y solo abre en un Switch desbloqueado, con Atmosphère. Tech MeoW hace el desbloqueo en Engenho da Rainha, Río de Janeiro.</p></details>
+        <details><summary>¿Sirve para instalar juegos piratas?</summary><p>No. La app sirve para guardar y volver a instalar los juegos que compraste, y no vendemos ni ofrecemos juegos. Hacer una copia de seguridad de un programa comprado está permitido (Ley brasileña 9.609/1998, art. 6, I). Vender o pasar copias es delito, y cada persona responde por el uso que hace de su propio aparato.</p></details>
+        <details><summary>¿Funciona en Mac?</summary><p>Funciona. Por cable, con la app gratis OpenMTP, o con el navegador Chrome en una página nuestra. La app muestra qué dirección abrir.</p></details>
+        <details><summary>¿Qué es NSZ y por qué el Switch a veces pide el acceso directo?</summary><p>NSZ es un juego comprimido. Para descomprimirlo, la app necesita bastante memoria. Por eso enseña a crear un acceso directo en la pantalla de inicio del Switch, que abre con toda la memoria.</p></details>
+        <details><summary>¿Y si quiero mi dinero de vuelta?</summary><p>Tienes 7 días desde la compra. Escríbenos por WhatsApp con tu código de acceso. Una vez hecha la devolución, el acceso a la descarga se cierra.</p></details>
+        <details><summary>Perdí el enlace de descarga. ¿Y ahora?</summary><p>Abre <a href="/es/app/acesso/">la página de acceso</a> y escribe tu código de acceso, que aparece en pantalla justo después del pago (anótalo o haz una captura). El enlace nuevo se genera al instante.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec final">
+    <div class="wrap">
+      <h2>¿Te quedó alguna duda?</h2>
+      <p class="lead">Escríbenos por WhatsApp. Tech MeoW responde de lunes a viernes, de 10 a 18 h (hora de Brasil).</p>
+      <div class="cta">
+        <a class="b wa big magnetic" href="https://wa.me/5521966547296?text=%C2%A1Hola%2C%20Tech%20MeoW!%20Tengo%20una%20duda%20sobre%20MeoWGuard." target="_blank" rel="noopener"><svg class="ib" aria-hidden="true"><use href="#i-wa"/></svg>Escribir por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fmarca">
+        <a class="brand" href="/es/"><img src="/img/logo-branca.webp" width="400" height="400" alt=""><span>Tech <b>MeoW</b></span></a>
+        <p>Servicio técnico de videojuegos en Río de Janeiro, Brasil. Rua Sergio Silva, 50 · Engenho da Rainha · CP 20766-670. De lunes a viernes, de 10 a 18 h. WhatsApp <span class="nw">+55 21 96654-7296</span>.</p>
+        <ul class="socials" aria-label="Redes">
+        <li><a href="https://www.instagram.com/tech_meow.oficial/" target="_blank" rel="noopener" aria-label="Instagram @tech_meow.oficial" title="Instagram @tech_meow.oficial"><svg class="ib" aria-hidden="true"><use href="#i-ig"/></svg></a></li>
+        <li><a href="https://www.youtube.com/@techmeow" target="_blank" rel="noopener" aria-label="YouTube @techmeow" title="YouTube @techmeow"><svg class="ib" aria-hidden="true"><use href="#i-yt"/></svg></a></li>
+        <li><a href="https://www.instagram.com/honorio.dev/" target="_blank" rel="noopener" aria-label="Instagram @honorio.dev" title="Instagram @honorio.dev"><svg class="ib" aria-hidden="true"><use href="#i-ig"/></svg></a></li>
+        <li><a href="https://github.com/MeoWDev-MOD" target="_blank" rel="noopener" aria-label="GitHub MeoWDev-MOD" title="GitHub MeoWDev-MOD"><svg class="ib" aria-hidden="true"><use href="#i-gh"/></svg></a></li>
+        <li><a href="https://wa.me/5521966547296?text=%C2%A1Hola%2C%20Tech%20MeoW!%20Vengo%20del%20sitio." target="_blank" rel="noopener" aria-label="WhatsApp +55 21 96654-7296" title="WhatsApp +55 21 96654-7296"><svg class="ib" aria-hidden="true"><use href="#i-wa"/></svg></a></li>
+        </ul>
+      </div>
+      <nav class="fcol" aria-label="Servicios">
+        <h4>Servicios</h4>
+        <a href="/es/#reparos">Reparaciones</a>
+        <a href="/es/#desbloqueio">Desbloqueo de Switch</a>
+        <a href="/es/#loja">Tienda</a>
+        <a href="/es/#contato">Contacto y mapa</a>
+      </nav>
+      <nav class="fcol" aria-label="Proyectos">
+        <h4>Proyectos</h4>
+        <a href="/es/app/">MeoWGuard</a>
+        <a href="/Control-PS-5/">Control PS-5</a>
+        <a href="/ps5-hdmi-tool/es/">PS5 HDMI Tool</a>
+        <a href="/Iron-Check/">Iron Check</a>
+        <a href="/BancadaSync-Download/">BancadaSync</a>
+        <a href="/ps5-controle-test/">PS-5 Controle Test</a>
+        <a href="/es/projetos/">Ver todos</a>
+        <a href="/es/app/acesso/">Mi acceso a MeoWGuard</a>
+      </nav>
+      <nav class="fcol" aria-label="Sitio">
+        <h4>Sitio</h4>
+        <a href="/es/privacidade/">Privacidad y cookies</a>
+        <a href="#" data-ck-manage>Revisar cookies</a>
+        <a href="https://github.com/MeoWDev-MOD" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+    <div class="legal">
+      <p><strong>Aviso sobre piratería:</strong> Tech MeoW no vende, no instala y no incentiva juegos piratas ni copias de juegos que el cliente no compró. El desbloqueo sirve para ejecutar homebrews y hacer la copia de seguridad de los juegos que compraste (Ley brasileña 9.609/1998, art. 6, I). Vender o pasar copias de juegos es delito. Cada persona responde por el uso que hace de su propio aparato.</p>
+      <p>MeoWGuard sirve para ejecutar homebrews y hacer la copia de seguridad de los juegos que compraste (Ley brasileña 9.609/1998, art. 6, I). Vender o pasar copias de juegos es delito.</p>
+      <p>MeoWGuard es un producto independiente, sin relación con Nintendo. Hecho sobre sphaira, de ITotalJustice y colaboradores, licencia GPLv3.</p>
+      <p>Servicio técnico independiente, sin relación con Sony, Nintendo, Valve, NVIDIA ni Microsoft. Las marcas citadas pertenecen a sus dueños.</p>
+      <p class="copy"><span>© 2024–2026 MeoWDev-MOD · Todos los derechos reservados</span><span>Desarrollado por MeoWDev MOD</span></p>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5521966547296?text=%C2%A1Hola%2C%20Tech%20MeoW!%20Vengo%20del%20sitio." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="ib" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
+<script src="/app/app.js" defer></script>
+<script type="module" src="/js/tm.js?v=7ac03e9ea5"></script>
+</body>
+</html>

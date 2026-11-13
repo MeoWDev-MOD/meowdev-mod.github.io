@@ -1,0 +1,901 @@
+# Traduções do site principal (es). Cada "@@ chave" vem de textos-pt.json (rode traduzir.py extrair).
+@@ a9ecb16e1c
+Interposer
+@@ a3a7b250b2
+Cómo funciona
+@@ f4c0260715
+Preguntas
+@@ 750c79e9b6
+Cambiar entre claro y oscuro
+@@ 59b7adb81b
+Publicidad
+@@ 00998dcd68
+Privacidad y cookies
+@@ b01e1c8cfb
+Inicio
+@@ ef8d51ef99
+Resumen
+@@ 88b53f8eee
+Si eliges solo lo necesario
+@@ d68b84efbc
+Conteo de los anuncios
+@@ 4a4098c42d
+Servicios usados
+@@ 8ea8d5b876
+Tus derechos
+@@ 6e7f2215a6
+Promoción
+@@ 6bebcda8ba
+Servicio técnico de videojuegos en Río de Janeiro, Brasil | Tech MeoW
+@@ 72d6594723
+Servicio técnico de videojuegos en Engenho da Rainha, Río de Janeiro: PS5, Nintendo Switch y Xbox. Especialistas en desbloqueo de Switch por R$ 339,90.
+@@ 955c1c4202
+reparación de PS5, servicio técnico PS5 Río de Janeiro, PS5 sin imagen, cambio del chip HDMI PS5, reparación PS5 Slim, reparación Nintendo Switch, desbloqueo Nintendo Switch, desbloqueo Switch Río de Janeiro, reparación Steam Deck, reparación de tarjeta de video, reparación de control PS5, servicio técnico de videojuegos, Engenho da Rainha, Río de Janeiro, Brasil
+@@ 9c16fbf0e0
+Servicio técnico de videojuegos en Río de Janeiro | Tech MeoW
+@@ 8fa3f239ac
+PS5, Nintendo Switch y Xbox. Especialistas en desbloqueo de Switch por R$ 339,90. Presupuesto por WhatsApp.
+@@ 2eac46c6e2
+Nintendo Switch, PS5 y Xbox lado a lado, con el texto Servicio técnico de videojuegos y Especialistas en desbloqueo de Switch
+@@ add208f9df
+Tech MeoW Servicio Técnico de Videojuegos
+@@ ebb9cd3c91
+Servicio técnico de videojuegos en Engenho da Rainha, Zona Norte de Río de Janeiro: reparación de PS5, Nintendo Switch, Steam Deck, tarjetas de video y controles, y desbloqueo de Nintendo Switch.
+@@ fcdc599846
+Reparación de placa del PS5 y del PS5 Slim, como el PS5 sin imagen en la TV, incluido el cambio del chip HDMI con la Interposer Tech MeoW.
+@@ 4d68ef0be1
+Reparación de los modelos del Switch 1: V1, V2, Lite y OLED.
+@@ db4c5fe143
+Reparación de tarjeta de video (GPU) de computadora.
+@@ 639dc67f03
+Reparación de controles, como el DualSense del PS5.
+@@ 81f188c293
+Cualquier modelo del Switch 1: V1, V2, Lite y OLED.
+@@ db12a9c27d
+Ir al contenido
+@@ 53a0e48fc2
+Tech MeoW, página de inicio
+@@ f3b86b13db
+Principal
+@@ 98d4c4c3d2
+Reparaciones
+@@ 3754090d22
+Desbloqueo <i>R$ 339,90</i>
+@@ 2ab47298c1
+Proyectos<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg>
+@@ b77d89ba5a
+Para Nintendo Switch
+@@ 556e2e9b0c
+MeoWGuard <em class="novo">Nuevo</em>
+@@ df0f91a813
+Instalar y respaldar juegos por cable
+@@ 9e4a71849b
+Control de PS5 en el Switch
+@@ 2dd8628dd2
+Homebrews en portugués
+@@ ee9ed849c0
+Curso A Arte Kamikase
+@@ c8454b425e
+Aprende a desbloquear el Switch
+@@ 024ce40708
+Guía de Switch
+@@ 957e8a38e4
+Reparación y desbloqueo, paso a paso
+@@ 77e2c2aa90
+Para servicios técnicos
+@@ 58a3d0af6a
+Convierte la NOR del PS5 Slim
+@@ ccbfefe308
+Pruebas e informe en PDF
+@@ de4ee502b6
+Gestión del servicio técnico
+@@ af88d36bd5
+Pieza para la reparación HDMI del PS5
+@@ 0bdd4e90e7
+Para jugar y para trabajar
+@@ 86af05df83
+Prueba el control de PS5 en el celular
+@@ ccfaae4252
+Llavero GTA 6
+@@ 4bb16b7cb0
+Llavero con etiqueta NFC
+@@ c2e644bacc
+Semáforo para conductores de apps
+@@ b71e3a83d0
+Sistemas para empresas
+@@ 5de89b2fd0
+CRM a medida
+@@ 6a1d90d722
+Ver todos los proyectos
+@@ b9614d50dc
+Tienda
+@@ 56661c07cf
+Contacto
+@@ b2ee31d977
+<svg class="ib" aria-hidden="true"><use href="#i-wa"/></svg>Escribir por WhatsApp
+@@ 8265acb651
+MeoWGuard, lanzamiento
+@@ 887bef1273
+Nuevo
+@@ ce4a6ded7b
+Abrir el menú
+@@ 34afab429c
+<svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>Engenho da Rainha · Río de Janeiro, Brasil
+@@ 3cd63c000b
+Servicio técnico de <span class="grad">videojuegos</span> en Río.
+@@ f1534c317c
+Especialistas en <b>PS5</b>. Reparación de Nintendo Switch, Steam Deck, tarjetas de video y controles, en la Zona Norte de Río de Janeiro. Y las apps y piezas que creamos nosotros mismos, para quien repara y para quien juega.
+@@ 60ebd9f601
+<svg class="i" aria-hidden="true"><use href="#i-wrench"/></svg>Ver las reparaciones
+@@ 237154f4ff
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Presupuesto antes de reparar
+@@ ef69bfc6c0
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Especialistas en PS5
+@@ 2ef59c8f45
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>De lunes a viernes, de 10 a 18 h
+@@ 0b0212fbd5
+Promoción de desbloqueo de Switch
+@@ d70a5b929f
+Nintendo Switch con la app Control PS-5 abierta y un control de PS5 conectado
+@@ 11377aa87c
+Desbloqueo de Nintendo Switch
+@@ 9b8050ddd1
+R$ 339,90
+@@ 3590c3dc95
+cualquier modelo del Switch 1
+@@ 7842c0613d
+<svg class="ib" aria-hidden="true"><use href="#i-wa"/></svg>Quiero desbloquear
+@@ 04f37acb93
+Ver qué incluye ↓
+@@ 04c60fd2a8
+Lanzamiento
+@@ 3b5c65ecc8
+<i></i>Lanzamiento
+@@ 6d1995187f
+MeoWGuard: instala y respalda tus juegos de Switch
+@@ c3264172df
+App en portugués para Switch desbloqueado: instala por cable, copia el cartucho que compraste y guarda partidas y capturas. Windows, Mac y Linux.
+@@ d2fa2bfaef
+Ver el video de 26 segundos<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+@@ 74c1b580d4
+Conocer MeoWGuard
+@@ a32c4b3858
+Servicio técnico
+@@ 3949c3c8fc
+Lo que reparamos
+@@ 4f3f01f04a
+Envíanos por WhatsApp el aparato, la falla y, si puedes, una foto o un video. Te respondemos con el presupuesto.
+@@ 9e36c1183f
+Interposer siendo soldada en el microscopio
+@@ 5ebccbe027
+Especialidad de la casa
+@@ 1adcad263f
+Reparación de PS5
+@@ da445181fb
+Reparación de placa del PS5 y del PS5 Slim, como el PS5 sin imagen en la TV. Incluye el cambio del chip HDMI con la Interposer Tech MeoW, que desarrollamos nosotros mismos.
+@@ 26a1b3ef54
+Pedir presupuesto<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+@@ 5cca1c3925
+Nintendo Switch para reparar
+@@ a4b1926ecf
+V1, V2, Lite y OLED
+@@ 5450cfc676
+Reparación de Nintendo Switch
+@@ 74b9cac48d
+Reparación y desbloqueo de todos los modelos del Switch 1.
+@@ d14b208f53
+Placa del PS5 con el chip HDMI a la vista
+@@ c21ac69589
+PS5 y PS5 Slim
+@@ d006112673
+¿PS5 sin imagen en la TV?
+@@ de9d6e80af
+Cambio del chip HDMI del PS5 y del PS5 Slim, hecho con la Interposer Tech MeoW.
+@@ b155194901
+Tarjeta de video de computadora con tres ventiladores
+@@ a65a47a554
+Tarjeta de video de PC
+@@ 53f0353280
+Reparación de tarjeta de video
+@@ b9551a18b7
+Control DualSense de PS5
+@@ fa2bb3f6a7
+Prueba el tuyo gratis antes
+@@ 2a692491cd
+Reparación de controles
+@@ 36357a9ba8
+Reparación de controles, como el DualSense del PS5. Antes, prueba el tuyo gratis en <a href="/ps5-controle-test/">PS-5 Controle Test</a>.
+@@ 97815f6e3f
+Cómo funciona la reparación
+@@ 39b88491c5
+Cuéntanos la falla
+@@ 90749d7acd
+Por WhatsApp: el aparato, qué pasó y, si se puede, una foto o un video.
+@@ e394003b9b
+Trae el aparato
+@@ 1828eea572
+En Engenho da Rainha, Río de Janeiro, de lunes a viernes, de 10 a 18 h. Coordina antes por WhatsApp.
+@@ 58110be5bf
+Presupuesto y reparación
+@@ 769c439b79
+Precio y plazo acordados contigo en la conversación.
+@@ 3a4300ac77
+Promoción · Nintendo Switch 1
+@@ 37755f82e2
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>V1, V2, Lite y OLED
+@@ 55846d2dee
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Después, usa el control de PS5 en el Switch con <a href="/Control-PS-5/">Control PS-5</a>, la app gratis que hicimos
+@@ 3c572bf01b
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Homebrews en portugués en el paquete <a href="https://github.com/MeoWDev-MOD/JNX" target="_blank" rel="noopener">JNX</a>, también gratis
+@@ 21e66146b0
+Ver lo que viene después
+@@ 69ad2decbc
+El Switch 2 todavía no tiene desbloqueo.
+@@ 191eb4ceb4
+Después del desbloqueo
+@@ 3e2f9341b9
+Tres formas de aprovechar el Switch, todas en portugués.
+@@ 5e548cf7c9
+Nuevo · App para Nintendo Switch
+@@ ecab87f158
+MeoWGuard <span class="etq etq-novo">Nuevo</span>
+@@ e63dab0c4c
+Instala y respalda los juegos que compraste en el Switch desbloqueado: respaldo del cartucho, partidas guardadas e instalación por cable, en Windows, Mac y Linux.
+@@ e1cf49bd3f
+Conocer y comprar<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+@@ 0703158315
+App gratis para Switch
+@@ eaf4c6bd3e
+Control PS-5 <span class="etq etq-gratis">Gratis</span>
+@@ a1231608e6
+El control de PS5 en el Nintendo Switch desbloqueado, por Bluetooth, con gatillos y luces.
+@@ 7c5fabd40f
+Abrir el sitio<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+@@ 481a08944e
+Homebrews gratis
+@@ ea64cb46d8
+JNX <span class="etq etq-gratis">Gratis</span>
+@@ c92d51e5fa
+Paquete de homebrews para Nintendo Switch, en portugués de Brasil.
+@@ d2239477a4
+Ver en GitHub<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+@@ 23fb9195c6
+¿Quieres aprender a desbloquear?
+@@ 2899b0f3f5
+Para quien quiere trabajar con Switch o hacer su propio desbloqueo.
+@@ 32c85c59cb
+Curso
+@@ a8fd509d5d
+El curso de desbloqueo de Nintendo Switch de Tech MeoW, en Kiwify (en portugués).
+@@ 57e4d1f6b1
+R$ 300,00 <small>al contado, o hasta en 12 cuotas con tarjeta</small>
+@@ 77cc0757f8
+<svg class="i" aria-hidden="true"><use href="#i-cart"/></svg>Comprar el curso
+@@ 61f07c9617
+Guía
+@@ d7f463deb6
+Guía de desbloqueo y reparación de Switch
+@@ efce02aeae
+Para quien instala chips y repara Switch: los puntos marcados en las placas, qué significa cada pulso del LED y el camino de reparación de cada falla.
+@@ 3a382e8e4c
+Conocer la guía<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+@@ 2ae76d4e12
+Proyectos
+@@ 545683e004
+Apps y herramientas que creamos
+@@ 3fc753cd84
+Programas para servicios técnicos y para quien juega. Todo hecho por Tech MeoW.
+@@ d83a92e710
+Gratis · Windows
+@@ 98e8e9d44f
+PS5 HDMI Tool <span class="etq etq-gratis">Gratis</span>
+@@ 7cb381897a
+Lee, respalda y convierte la NOR del PS5 Slim para el chip HDMI Nuvoton.
+@@ d5417edd05
+Clave de prueba por WhatsApp
+@@ a1fd881088
+Iron Check <span class="etq etq-pago">De pago</span>
+@@ f6c2d37192
+Pruebas, drivers e informe en PDF para servicios técnicos, en un programa que funciona desde un pendrive.
+@@ 130854f16d
+BancadaSync <span class="etq etq-gratis">Gratis</span>
+@@ 47a0032e3a
+Gestión del servicio técnico, desde la recepción hasta la entrega de la reparación.
+@@ b3f7ec54d7
+Gratis en el navegador
+@@ 35bbedc31e
+PS-5 Controle Test <span class="etq etq-gratis">Gratis</span>
+@@ 6b6f3daec3
+Prueba el control de PS5 en el navegador o con la app para Android.
+@@ 9d702c8505
+Tienda Tech MeoW
+@@ cb3525f0a8
+Piezas y regalos que hacemos
+@@ ecdd91b8e6
+Compra en Mercado Livre o en Shopee (Brasil). Por cantidad, escríbenos por WhatsApp.
+@@ 5be1117c39
+Sin cables
+@@ e8f749f12d
+Interposer Tech MeoW, placa flexible dorada con el chip HDMI MN864739 soldado
+@@ 467993fa70
+Modelo 3D de la Interposer Tech MeoW. Arrastra para girar.
+@@ a298e1f312
+Pieza propia · PS5 Slim
+@@ 51297f03de
+Cambia el chip HDMI Realtek RTD2175P de R$ 1.700 por un Nuvoton/Panasonic MN864739 de R$ 80 en el PS5 Slim.
+@@ 9f0a78bc1d
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Flex transparente
+@@ 01f6ba9df5
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Regulador de 1,8 V ya soldado
+@@ 0b7e7b5409
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Ningún cable en la placa
+@@ c68ab91388
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>La NOR la conviertes gratis con <a href="/ps5-hdmi-tool/">PS5 HDMI Tool</a>
+@@ 4abf52aaec
+<svg class="i" aria-hidden="true"><use href="#i-cart"/></svg>Comprar en Mercado Livre
+@@ 29f47b1afb
+<svg class="i" aria-hidden="true"><use href="#i-cart"/></svg>Comprar en Shopee
+@@ 115efbd909
+Arrastra la pieza de al lado para girarla.
+@@ c04763fe50
+Llaveros GTA 6 en miniatura, versiones Xbox verde y PS5 azul
+@@ 7812031de5
+Regalo · PS5 y Xbox
+@@ a9cb3f3ae9
+Cajita de juego en miniatura que se abre como un libro, con un disco adentro. Versiones PS5 y Xbox.
+@@ e6711d942b
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Etiqueta NFC: acercas el celular y abre un WhatsApp, un Instagram o una reseña en Google
+@@ 3f545a7662
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Ideal como regalo y recuerdo
+@@ 973cbd6456
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Por cantidad, por WhatsApp
+@@ 84bf3b8a70
+<svg class="ib" aria-hidden="true"><use href="#i-wa"/></svg>Por cantidad
+@@ e481a8564b
+Producto independiente, sin relación con Rockstar Games, Sony ni Microsoft.
+@@ 4871c35d39
+Habla con nosotros
+@@ 12795499ce
+Elige una tecla, escribe si quieres, y el mensaje llega listo a nuestro WhatsApp.
+@@ 5e82042243
+Asunto
+@@ db91a88ded
+quiero un presupuesto de reparación
+@@ 345c52cab2
+Reparación
+@@ f94cf83622
+quiero el desbloqueo de Nintendo Switch en la promoción de R$ 339,90
+@@ 18ec9d9782
+Desbloqueo
+@@ dd696c646d
+quiero la Interposer Tech MeoW
+@@ f1a70a760a
+quiero información del curso de desbloqueo de Switch
+@@ 3e1cd85b55
+quiero hablar de una alianza
+@@ 4b0e4ffee0
+Alianza
+@@ c90ac71572
+<b>Reparación</b> PS5, Switch, Steam Deck, tarjeta de video o control. Cuéntanos el aparato y la falla; una foto o un video ayudan con el presupuesto.
+@@ f5d160b797
+<b>Desbloqueo de Switch, R$ 339,90</b> Cualquier modelo del Switch 1. Después, puedes usar el control de PS5 en el Switch con Control PS-5, la app gratis que hicimos.
+@@ d4362b7b8e
+<b>Interposer Tech MeoW</b> Para el PS5 Slim. También está en Mercado Livre y Shopee, en la tienda de arriba.
+@@ a23dcaceec
+<b>Curso A Arte Kamikase</b> Desbloqueo de Nintendo Switch, por R$ 300,00 (en portugués). También se puede comprar directo en Kiwify.
+@@ ed3a06a5ce
+<b>Alianzas</b> Tienda, técnico o creador de contenido: cuéntanos tu idea.
+@@ 5789816525
+Tu mensaje
+@@ 9046a2f7aa
+<svg class="ib" aria-hidden="true"><use href="#i-wa"/></svg>Enviar por WhatsApp
+@@ eb1726e56e
+Mostrar el mapa de Google
+@@ 1beed4b25b
+Rua Sergio Silva, 50 · Engenho da Rainha
+@@ 203336b939
+Al abrirse, Google Maps puede guardar sus propias cookies.
+@@ 78e5e47759
+Rua Sergio Silva, 50<br>Engenho da Rainha · Río de Janeiro, RJ, Brasil<br>CP 20766-670
+@@ 15f1dc9302
+En la Zona Norte de Río de Janeiro, cerca de la estación Engenho da Rainha del metro (Línea 2) y de los barrios Inhaúma, Tomás Coelho y Pilares.
+@@ 4d1402aa55
+<b>Atención:</b> de lunes a viernes, <span class="nw">de 10 a 18 h</span>
+@@ b9d120b42f
+Escríbenos por WhatsApp antes de venir: <span class="nw">+55 21 96654-7296</span>
+@@ 090e45aa7b
+<svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>Abrir en Google Maps
+@@ b778193020
+Ir con Waze
+@@ 7231a3bb43
+Preguntas frecuentes
+@@ 79c1e93d9c
+¿Qué aparatos reparan?
+@@ 06e5e0a3e6
+PS5, que es nuestra especialidad, Nintendo Switch, Steam Deck, tarjetas de video de computadora y controles. ¿Otro aparato? Escríbenos por WhatsApp y pregunta.
+@@ fca653a500
+Mi PS5 no da imagen en la TV. ¿Tiene arreglo?
+@@ e99658f1e3
+Puede ser el puerto HDMI, el chip HDMI u otra pieza de la placa, y el PS5 es nuestra especialidad. Envíanos por WhatsApp el modelo (PS5 o PS5 Slim) y qué pasó: el presupuesto llega antes de la reparación.
+@@ d78f7ed271
+¿Cómo pido un presupuesto?
+@@ 50f26c9ed0
+Envíanos por WhatsApp el aparato, la falla y, si puedes, una foto o un video. Cada tipo de reparación de arriba tiene un botón con el mensaje listo.
+@@ c17b564808
+¿Dónde está Tech MeoW?
+@@ c986e8a023
+En la Rua Sergio Silva, 50, en Engenho da Rainha, en la Zona Norte de Río de Janeiro, Brasil (CP 20766-670), cerca de la estación Engenho da Rainha del metro. Escríbenos por WhatsApp antes de venir.
+@@ 639ba2d8dd
+¿Cuál es el horario de atención?
+@@ b086e6040a
+De lunes a viernes, de 10 a 18 h. Escríbenos por WhatsApp antes de venir.
+@@ 0ceb59c461
+¿Qué Switch se pueden desbloquear?
+@@ 7426717f25
+Cualquier modelo del Switch 1: V1, V2, Lite y OLED, por R$ 339,90 en la promoción. El Switch 2 todavía no tiene desbloqueo.
+@@ febd6a4136
+Después del desbloqueo, ¿puedo usar un control de PS5 en el Switch?
+@@ e92afda020
+Sí, con <a href="/Control-PS-5/">Control PS-5</a>, la app gratis que hicimos: el DualSense se conecta por Bluetooth, sin adaptador.
+@@ 870cc3392f
+¿Qué es MeoWGuard y cómo lo compro?
+@@ 3a55c799dd
+Es la app de Tech MeoW para Switch desbloqueado: instala y respalda los juegos que compraste, por cable, en Windows, Mac y Linux. Es un pago único, con Pix o tarjeta, por InfinitePay, y el acceso se abre apenas se aprueba el pago. Mira todo en la <a href="/app/">página de MeoWGuard</a>.
+@@ 89adbe46ee
+¿Hay curso de desbloqueo?
+@@ e10da6a4d9
+Sí: el curso A Arte Kamikase, por R$ 300,00 en <a href="https://pay.kiwify.com.br/leiZv0k" target="_blank" rel="noopener">Kiwify</a> (en portugués). Para quien ya trabaja con Switch, también está la <a href="https://guia-switch-tech-meow.vercel.app/" target="_blank" rel="noopener">guía de desbloqueo y reparación</a>.
+@@ b5d92dab2c
+¿En qué consola sirve la interposer?
+@@ 2da7ed39e7
+En el PS5 Slim que pide el chip HDMI Realtek RTD2175P. Recibe el Nuvoton/Panasonic MN864739 y ya viene con el regulador de 1,8 V soldado, sin cables en la placa. La NOR la conviertes gratis con <a href="/ps5-hdmi-tool/">PS5 HDMI Tool</a>.
+@@ 37688aa9a9
+¿Los programas son gratis?
+@@ 98653d3312
+PS5 HDMI Tool, Control PS-5, BancadaSync y JNX son gratis. PS-5 Controle Test es gratis en el navegador y tiene app para Android. Iron Check es por suscripción, con clave de prueba por WhatsApp. MeoWGuard es de pago, con pago único. La lista completa está en <a href="/projetos/">Proyectos</a>.
+@@ cb1841a7e4
+¿Tech MeoW es un servicio técnico autorizado?
+@@ 430ce81e46
+No. Tech MeoW es un servicio técnico independiente, sin relación con Sony, Nintendo, Valve, NVIDIA ni Microsoft.
+@@ b9956c70c2
+Servicio técnico de videojuegos en Río de Janeiro, Brasil. Rua Sergio Silva, 50 · Engenho da Rainha · CP 20766-670. De lunes a viernes, de 10 a 18 h. WhatsApp <span class="nw">+55 21 96654-7296</span>.
+@@ 251693181b
+Redes
+@@ 44283b28cd
+WhatsApp +55 21 96654-7296
+@@ 6e8298cbcb
+Servicios
+@@ 0298d57ded
+Desbloqueo de Switch
+@@ b88a0eb4a6
+Contacto y mapa
+@@ d0d3d306c8
+Ver todos
+@@ 3097792ce3
+Mi acceso a MeoWGuard
+@@ 5b6825d3c6
+Sitio
+@@ bd3b1482a5
+Revisar cookies
+@@ 8b4b478ec7
+<strong>Aviso sobre piratería:</strong> Tech MeoW no vende, no instala y no incentiva juegos piratas ni copias de juegos que el cliente no compró. El desbloqueo sirve para ejecutar homebrews y hacer la copia de seguridad de los juegos que compraste (Ley brasileña 9.609/1998, art. 6, I). Vender o pasar copias de juegos es delito. Cada persona responde por el uso que hace de su propio aparato.
+@@ 78aff45b18
+Servicio técnico independiente, sin relación con Sony, Nintendo, Valve, NVIDIA ni Microsoft. Las marcas citadas pertenecen a sus dueños.
+@@ ddfeaff716
+Foto de terceros: <a href="https://commons.wikimedia.org/wiki/File:2023_MSI_GeForce_RTX_2080_Gaming_X_Trio_(3).jpg" target="_blank" rel="noopener">“2023 MSI GeForce RTX 2080 Gaming X Trio (3)”</a>, de Jacek Halicki, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, vía Wikimedia Commons, recortada para esta página.
+@@ 5416e1f577
+© 2024–2026 MeoWDev-MOD · Todos los derechos reservados
+@@ 73e2b1af80
+Desarrollado por MeoWDev MOD
+@@ 8d85e8b205
+Escribir por WhatsApp
+@@ f783c8225d
+¡Hola, Tech MeoW! Vengo del sitio y quiero probar la app Corrida Certa.
+@@ fb50cd66cb
+¡Hola, Tech MeoW! Vengo del sitio y quiero un sistema a medida para mi empresa.
+@@ c4564ff02e
+¡Hola, Tech MeoW! Vengo del sitio.
+@@ 49ab5b97f6
+¡Hola, Tech MeoW! Vengo del sitio y quiero el desbloqueo de Nintendo Switch en la promoción de R$ 339,90.
+@@ f008687ea3
+¡Hola, Tech MeoW! Vengo del sitio y quiero un presupuesto de reparación de PS5.
+@@ 20b67b8181
+¡Hola, Tech MeoW! Vengo del sitio y quiero un presupuesto de reparación de Nintendo Switch.
+@@ aa8858242f
+¡Hola, Tech MeoW! Vengo del sitio y mi PS5 no da imagen en la TV. Quiero un presupuesto.
+@@ bbd2c9ee72
+¡Hola, Tech MeoW! Vengo del sitio y quiero un presupuesto de reparación de tarjeta de video.
+@@ 89d516e969
+¡Hola, Tech MeoW! Vengo del sitio y quiero un presupuesto de reparación de control.
+@@ 1381d75263
+¡Hola, Tech MeoW! Vengo del sitio y quiero llaveros GTA 6 por cantidad.
+@@ 3e20e57ab0
+Proyectos de Tech MeoW: apps, piezas y cursos para Switch, PS5 y servicios técnicos
+@@ 76727f485e
+Todo lo que crea Tech MeoW: MeoWGuard, Control PS-5, PS5 HDMI Tool, Iron Check, BancadaSync, PS-5 Controle Test, un curso de desbloqueo de Switch y más.
+@@ 26dd9b745c
+Proyectos de Tech MeoW
+@@ 1963e38cd7
+Apps, piezas, cursos y sistemas para Nintendo Switch, PS5 y servicios técnicos, en un solo lugar.
+@@ f7aaffdccc
+Todo lo que crea Tech MeoW, en un solo lugar
+@@ d811eb102d
+Apps, piezas, cursos y sistemas, para servicios técnicos, para el Nintendo Switch y para quien juega. Elige una pestaña para ver solo lo que te interesa.
+@@ c207cb8930
+Tipo de proyecto
+@@ b3bafc8941
+Todo
+@@ ec84a04943
+Nintendo Switch
+@@ bb6ba3c662
+Para quien juega
+@@ 0e5a0c0939
+Para tu trabajo
+@@ 76ba215a21
+Pantalla de inicio de MeoWGuard, con las tarjetas Conectar al PC, Instalar juegos, Copiar mi cartucho y otras
+@@ 846eef9d78
+Curso · R$ 300,00
+@@ fc0c41f82f
+Curso A Arte Kamikase <span class="etq etq-pago">De pago</span>
+@@ c5889bc5aa
+El curso de desbloqueo de Nintendo Switch de Tech MeoW (en portugués).
+@@ c9d609f782
+Comprar en Kiwify<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+@@ 4eaac902a6
+Guía con acceso por clave
+@@ 9b30604960
+Guía de Switch <span class="etq etq-pago">De pago</span>
+@@ d2c44173ba
+Puntos en las placas, códigos del LED y el camino de reparación de cada falla.
+@@ 4c61e3bcdb
+Pieza · Mercado Livre y Shopee
+@@ ae1b533f8d
+Interposer Tech MeoW <span class="etq etq-peca">Pieza</span>
+@@ 8b8b66b787
+Hace viable la reparación HDMI del PS5 Slim: cambia el chip Realtek de R$ 1.700 por un Nuvoton de R$ 80.
+@@ e83b6e63b0
+Ver en la tienda<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+@@ b46c5d2c2e
+Llavero GTA 6 <span class="etq etq-peca">Pieza</span>
+@@ 32e1979345
+Cajita de juego en miniatura con etiqueta NFC, en las versiones PS5 y Xbox.
+@@ 5dfed82279
+App Android · prueba gratis
+@@ 814d20cfd6
+Corrida Certa <span class="etq etq-gratis">Gratis</span>
+@@ eb5d4cc91e
+Para conductores de apps de transporte: un semáforo sobre la pantalla dice si el viaje vale la pena, ya con el costo del auto.
+@@ a4291a12b8
+Pedir para probar<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+@@ 9c4aebd5f1
+A medida
+@@ 1a3a2004cf
+Sistemas para empresas <span class="etq etq-sob-medida">A medida</span>
+@@ 21bf9b7d90
+CRM a medida para tu negocio: clientes, finanzas y atención en un solo lugar.
+@@ 7799ba65b4
+Conversar sobre el tuyo<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+@@ bcab10861d
+Todavía no hay proyectos en esta pestaña.
+@@ 220aa6e600
+¿No encontraste lo que buscabas?
+@@ 50ce5aa7c6
+Cuéntanos por WhatsApp lo que necesitas: reparación, desbloqueo, una pieza o un sistema a medida.
+@@ 1d43d7eebc
+Volver al inicio
+@@ da2f4ce9b4
+¡Hola, Tech MeoW! Vengo de la página de proyectos del sitio.
+@@ 62bc81b8bc
+MeoWGuard: respalda e instala los juegos de tu Switch | Tech MeoW
+@@ 077e01e0d7
+MeoWGuard: app en portugués para Nintendo Switch desbloqueado. Instala y respalda los juegos que compraste, copia el cartucho, guarda partidas y capturas, por cable en Windows, Mac y Linux.
+@@ 66f46b6f39
+MeoWGuard: respalda e instala los juegos de tu Switch
+@@ 9e9edee1a0
+App en portugués para Nintendo Switch desbloqueado: instalación por cable, respaldo del cartucho, partidas y capturas.
+@@ fe371c0b54
+MeoWGuard: instala juegos en el Switch por cable, en portugués, con la pantalla de inicio de la app y la mascota
+@@ c22fe8cd22
+Instala y respalda los juegos que compraste en el Nintendo Switch desbloqueado, por cable USB, en Windows, Mac y Linux.
+@@ 6f5096fa97
+Instalar juegos por cable, las 8 tarjetas de la app y las copias de seguridad, con las pantallas reales de MeoWGuard.
+@@ bddf0fa6a8
+<em class="novo">Nuevo</em>App para Nintendo Switch desbloqueado
+@@ 9449eb87e3
+Respalda e instala los juegos que <span class="grad">compraste</span>.
+@@ b130d51241
+MeoWGuard hace, en una pantalla simple y en portugués, lo que antes requería varios programas: instalar juegos por cable, copiar tu cartucho, guardar las partidas y las capturas. Hecho por Tech MeoW.
+@@ 1a4727223d
+Quiero MeoWGuard
+@@ ddb69975df
+Ver cómo funciona
+@@ 046660d03e
+¿Ya compraste? <a href="/app/acesso/">Abrir mi acceso y descargar</a> · ¿Vas a transferir juegos? <a href="/MeoWGuard/">Abrir la transferencia en Chrome</a>
+@@ f982106475
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Windows, Mac y Linux
+@@ d03abed5b6
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>NSP, NSZ, XCI, XCZ y MSP
+@@ a15ad89745
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Tutorial en video incluido
+@@ c4027d9216
+Pantalla de inicio de MeoWGuard, con las tarjetas Conectar al PC, Instalar juegos, Copiar mi cartucho, Mis juegos, Mis partidas, Fotos y videos, Liberar espacio y Archivos de la tarjeta
+@@ bbbb829758
+Pantalla de inicio de la app, en el Switch.
+@@ d508755680
+Míralo en 26 segundos
+@@ 5233d27f89
+MeoWGuard en la práctica
+@@ d745a89aad
+Instalar por cable, las 8 tarjetas de la app y las copias de seguridad, con las pantallas reales.
+@@ 904b9fba5d
+Tu navegador no reproduce video. <a href="/video/meowguard-lancamento.mp4">Descargar el video</a>.
+@@ b40b78145b
+Video sin sonido, con textos en pantalla: la app pregunta qué computadora usas, instala los juegos por cable y muestra todo en una sola pantalla, en portugués.
+@@ 817d8a71ef
+Mac, Windows o Linux
+@@ d8b9f5745a
+¿Vas a transferir tus juegos por la computadora?
+@@ fd1da829c0
+¿Usas Mac? Abre la dirección de abajo en Google Chrome, conecta el Switch a la computadora con el cable y transfiere los juegos directo desde el navegador, sin instalar nada.
+@@ 2c1112a670
+Abrir la transferencia en Chrome
+@@ ab5888119a
+Dirección: <strong>techmeow.app/MeoWGuard</strong> · funciona solo en Google Chrome o Edge.
+@@ 690968f87b
+Qué hace
+@@ f2f5d5d6c2
+Qué hace MeoWGuard
+@@ 5674c34b84
+Todo dentro de la app, sin abrir otro programa en el Switch.
+@@ c6e02aeaf9
+Instalar juegos por cable
+@@ cebf0332b7
+Arrastra NSP, NSZ, XCI, XCZ o MSP a una sola carpeta en la computadora. El Switch los instala uno por uno, mostrando el progreso.
+@@ 0dee0dbc10
+Windows, Mac y Linux
+@@ 805032603e
+La app pregunta qué computadora usas y muestra el paso a paso correcto. En Mac, también funciona con el navegador Chrome.
+@@ d807f318a5
+Paso a paso en pantalla
+@@ 53cd8fdf10
+La app explica cada etapa en portugués y dice qué hacer si algo sale mal.
+@@ d4e1a1ec9a
+Respaldo de tu cartucho
+@@ e1e02325cc
+Copia a la computadora el juego del cartucho que compraste, para tener una copia de seguridad.
+@@ 4245238d64
+Partidas, fotos y videos
+@@ 7eb0ac5bb1
+Respalda el progreso de tus juegos y pasa las capturas de pantalla y grabaciones a la computadora.
+@@ 58392eb47f
+Espacio libre y archivos
+@@ c3d129855a
+Mira qué ocupa más espacio en la tarjeta y en la memoria interna, y organiza los archivos sin salir de la app.
+@@ 411f3ddaac
+Pantalla de instalación de MeoWGuard: un libro pasando páginas, la barra de progreso y la lista de archivos de esta conexión
+@@ 86e6fc0030
+Instalando por cable: el progreso y la lista de archivos de esta conexión.
+@@ 8728136faa
+Paso a paso
+@@ bf5e4ed64f
+Compras aquí en el sitio
+@@ aa632fabe4
+Pix o tarjeta, por InfinitePay. Apenas se aprueba el pago, el acceso se abre.
+@@ cba695580f
+Descargas la app y ves el tutorial
+@@ 1314faab8f
+En la página de acceso están el paquete de MeoWGuard y el video que muestra todo en la práctica.
+@@ 5e05b4d0c3
+Copias a la tarjeta SD del Switch
+@@ ec84312914
+Pon la carpeta dentro de la carpeta <i>switch</i> de la tarjeta, ábrela desde el menú de homebrew y listo.
+@@ 38bc0c5593
+Lo que necesitas
+@@ 212deb16ef
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Nintendo Switch <b>desbloqueado</b>, con el menú de homebrew
+@@ 170fe38ecb
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Tarjeta SD con espacio libre
+@@ 9e70c5dece
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Cable USB-C que transmita datos, no solo que cargue
+@@ 400800521e
+¿No tienes el Switch desbloqueado?
+@@ 953a2830d3
+Tech MeoW hace el desbloqueo en Río de Janeiro, Brasil, en cualquier modelo del Switch 1.
+@@ 063b43398b
+Ver el servicio de desbloqueo<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+@@ 1466a9dd91
+Pago único
+@@ 8184b2b414
+Llévate MeoWGuard
+@@ 10dbb2cedb
+Cargando el precio…
+@@ 7e348720d0
+Sin mensualidad. El acceso se abre apenas se aprueba el pago.
+@@ e5e3520c9f
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>App MeoWGuard para tu Switch
+@@ 3150a14973
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Video tutorial paso a paso
+@@ a0c107d87c
+<svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Actualizaciones de la misma versión y ayuda por WhatsApp
+@@ 98dd6a3f18
+Comprar con Pix o tarjeta
+@@ 6cb3fd9be2
+Pago seguro por InfinitePay: no vemos los datos de tu tarjeta. Tienes <b>7 días para arrepentirte</b> y pedir tu dinero de vuelta (Código de Defensa del Consumidor de Brasil, art. 49), y el acceso se cierra con la devolución.
+@@ cd532c7ea0
+¿Ya compraste? <a href="/app/acesso/">Abrir mi acceso</a>
+@@ 02b6d3e5de
+¿Necesito tener el Switch desbloqueado?
+@@ 0ba8b94620
+Sí. MeoWGuard es una app homebrew y solo abre en un Switch desbloqueado, con Atmosphère. Tech MeoW hace el desbloqueo en Engenho da Rainha, Río de Janeiro.
+@@ 8ae63fa755
+¿Sirve para instalar juegos piratas?
+@@ abff8e08ec
+No. La app sirve para guardar y volver a instalar los juegos que compraste, y no vendemos ni ofrecemos juegos. Hacer una copia de seguridad de un programa comprado está permitido (Ley brasileña 9.609/1998, art. 6, I). Vender o pasar copias es delito, y cada persona responde por el uso que hace de su propio aparato.
+@@ c4234b3dbd
+¿Funciona en Mac?
+@@ 718ee2b92c
+Funciona. Por cable, con la app gratis OpenMTP, o con el navegador Chrome en una página nuestra. La app muestra qué dirección abrir.
+@@ 11d29972b7
+¿Qué es NSZ y por qué el Switch a veces pide el acceso directo?
+@@ cee36afcfa
+NSZ es un juego comprimido. Para descomprimirlo, la app necesita bastante memoria. Por eso enseña a crear un acceso directo en la pantalla de inicio del Switch, que abre con toda la memoria.
+@@ 5c208564b0
+¿Y si quiero mi dinero de vuelta?
+@@ 9a8f5d45f2
+Tienes 7 días desde la compra. Escríbenos por WhatsApp con tu código de acceso. Una vez hecha la devolución, el acceso a la descarga se cierra.
+@@ 0d8f599954
+Perdí el enlace de descarga. ¿Y ahora?
+@@ 8a5c5131c8
+Abre <a href="/app/acesso/">la página de acceso</a> y escribe tu código de acceso, que aparece en pantalla justo después del pago (anótalo o haz una captura). El enlace nuevo se genera al instante.
+@@ 6f1d0e19e7
+¿Te quedó alguna duda?
+@@ 9b8afb6b4f
+Escríbenos por WhatsApp. Tech MeoW responde de lunes a viernes, de 10 a 18 h (hora de Brasil).
+@@ 3d9859aa2b
+MeoWGuard sirve para ejecutar homebrews y hacer la copia de seguridad de los juegos que compraste (Ley brasileña 9.609/1998, art. 6, I). Vender o pasar copias de juegos es delito.
+@@ 875ee3717e
+MeoWGuard es un producto independiente, sin relación con Nintendo. Hecho sobre sphaira, de ITotalJustice y colaboradores, licencia GPLv3.
+@@ c4dca3dd78
+¡Hola, Tech MeoW! Tengo una duda sobre MeoWGuard.
+@@ b21cf0750b
+Acceso a MeoWGuard | Tech MeoW
+@@ 38bbb126a1
+Tu acceso a MeoWGuard
+@@ a10b1b7f24
+Confirmando tu pago…
+@@ 70a52ce55e
+Descargar MeoWGuard
+@@ f639e45c89
+Ver el tutorial en video
+@@ 86b8630c1d
+El enlace de descarga vale 30 minutos. Si vence, vuelve a esta página con tu código de acceso y se genera uno nuevo al instante. El paquete tiene la app, el LÉEME y la licencia.
+@@ d588ebed74
+Código de acceso
+@@ 5cd16c9cfc
+Abrir mi acceso
+@@ 047f758b94
+El código de acceso aparece en esta página justo después del pago. ¿Perdiste el código? Escríbenos por WhatsApp con el comprobante de InfinitePay. ¿Necesitas ayuda? <a href="https://wa.me/5521966547296?text=Ol%C3%A1%2C%20Tech%20MeoW!%20Preciso%20de%20ajuda%20com%20o%20acesso%20ao%20MeoWGuard." target="_blank" rel="noopener">Escríbenos por WhatsApp</a>.
+@@ da400a4e12
+¡Hola, Tech MeoW! Necesito ayuda con el acceso a MeoWGuard.
+@@ 0b84b5ae53
+Privacidad y cookies · Tech MeoW
+@@ 031017e0a1
+Lo que el sitio de Tech MeoW guarda en tu navegador y cómo se cuentan los anuncios.
+@@ 8a09f60b05
+Privacidad
+@@ fcacd196d3
+Actualizado el 8 de noviembre de 2026.
+@@ f3c1c47474
+Este sitio no usa herramientas de analítica de terceros, como Google Analytics. El único servicio externo que puede guardar cookies es el mapa de Google Maps, y solo con tu autorización o después de tu clic. El resto de lo que aquí llamamos cookies es, en la práctica, el almacenamiento de tu navegador: pequeñas informaciones que quedan en tu dispositivo.
+@@ 413a7512a5
+Siempre activo (necesario)
+@@ c2bc73502f
+Tu elección sobre las cookies (<code>bio.consent</code>), el tema claro u oscuro que elegiste (<code>tm.theme</code>) y el idioma elegido (<code>techmeow.lang</code>), que vale para todos los sitios de techmeow.app.
+@@ 4002f21289
+Opcionales (solo con "Aceptar todo")
+@@ d8463a7384
+El último anuncio visto, para mostrar otro en la próxima visita, y qué anuncios ya vio este navegador (<code>bio-ad-*</code>). El sitio del que llegaste (<code>bio-de</code>), que desaparece al cerrar la pestaña. El conteo de vistas y clics de los anuncios. El mapa de Google Maps, en la parte de contacto, que se abre solo y guarda cookies de Google, según la <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener">política de privacidad de Google</a>.
+@@ ec370e2076
+Los anuncios siguen apareciendo, pero las vistas y los clics no se cuentan, y los opcionales no se guardan. El mapa de Google solo se abre si haces clic en "Mostrar el mapa de Google". Cambiar la elección borra los opcionales de este navegador; las cookies que Google ya guardó las borras en la configuración del navegador.
+@@ 2c99dbc993
+Con tu autorización, avisamos a nuestro servidor cuando un anuncio aparece o recibe un clic, en qué lugar de la página y de qué sitio llegaste. El servidor suma esos avisos por día, con ciudad y país aproximados y tipo de dispositivo. No guardamos tu IP ni nada que te identifique.
+@@ fa392dfa20
+Compra de MeoWGuard
+@@ b99782f269
+El pago se hace en InfinitePay, que tiene su propia política de privacidad y recibe tus datos de pago. Nuestro servidor guarda solo los códigos de la compra (sin nombre, CPF, correo ni datos de la tarjeta) para darte el código de acceso, y consulta el estado del pago para liberar la descarga. No mantenemos un registro de compradores.
+@@ e26a591855
+Conteo de visitas
+@@ 948225f65a
+Cuando se abre una página del sitio, avisa al CRM de Tech MeoW, solo para sumar el número de visitas. Se envían únicamente la ruta de la página (sin nada de lo que viene después del "?") y el sitio del que llegaste. El servidor suma también el país y el estado, aproximados por tu conexión, y si el dispositivo es celular o computadora. No usamos cookies para esto, no guardamos tu IP y no sabemos quién eres. Si tu navegador tiene activado "No rastrear", no se envía nada.
+@@ d910475480
+El sitio está alojado en Vercel. Las fuentes son del propio sitio, sin Google Fonts. El mapa viene de Google Maps, y la lista y los archivos de los anuncios vienen de Vercel y Supabase. Como en cualquier sitio, estos servicios reciben tu IP y datos técnicos para entregar el contenido. La base de datos que guarda los códigos de la compra es Redis de Upstash, contratado a través de Vercel. WhatsApp, Instagram, YouTube, GitHub, Mercado Livre, Shopee, Kiwify, InfinitePay, Mercado Pago, Google Maps y Waze tienen sus propias políticas cuando abres sus enlaces.
+@@ 95c5a2af17
+Los otros proyectos alojados aquí (PS-5 Controle Test, Control PS-5, PS5 HDMI Tool, Iron Check y BancadaSync) tienen su propia página de privacidad, dentro de cada uno.
+@@ 2b9c286b1e
+Puedes cambiar tu elección en cualquier momento en "Revisar cookies", al final de las páginas, y pedir información según la ley brasileña de protección de datos (LGPD). Responsable: MeoWDev MOD (Jefferson Honorio). Contacto: WhatsApp <a href="https://wa.me/5521966547296" target="_blank" rel="noopener">+55 21 96654-7296</a>.
+@@ 46fcc52f01
+JNX — Paquete de desbloqueo gratuito para N-Switch | Tech MeoW
+@@ 7018816a08
+Descarga JNX, paquete gratuito de desbloqueo para N-Switch, con interfaz en portugués, traducciones y trucos. Más fácil y práctico para el usuario final.
+@@ 134da1771c
+paquete de desbloqueo switch, JNX, paquete JNX, desbloqueo switch gratis, custom firmware switch, atmosphere switch, homebrew switch, paquete de desbloqueo gratis, desbloqueo N-Switch, switch desbloqueado, CFW switch, JNX Updater, paquete switch portugués
+@@ 92082d56ca
+JNX — Paquete de desbloqueo gratuito para N-Switch
+@@ f7662f9687
+Paquete gratuito, en portugués, con traducciones, trucos, temas y apps. Más fácil y práctico para el usuario final. Descárgalo y ponlo en la tarjeta SD.
+@@ 0ad87e908e
+Pantalla de inicio de hekate en el JNX Pack
+@@ aefe333d0f
+Paquete gratuito, en portugués, con traducciones, trucos, temas y apps. Más fácil y práctico para el usuario final.
+@@ 804a907704
+Paquete gratuito de desbloqueo para N-Switch, más fácil y práctico para el usuario final. Incluye Atmosphère, hekate, traducciones, trucos, temas y JNX Updater, todo en portugués.
+@@ d2529212f3
+<img src="../img/logo-192.png" alt="" width="34" height="34" style="border-radius:9px"> Tech MeoW
+@@ 44bb00a4b7
+Descargar JNX
+@@ 36fbe3953e
+Paquete de desbloqueo
+@@ dfad7f60b4
+<strong style="color:var(--accent)">JNX</strong> es el paquete gratuito para tu Switch
+@@ 7bfc664652
+Todo en portugués: traducciones de juegos, trucos, temas, apps y el desbloqueo completo, de forma más fácil y práctica para el usuario final.
+@@ df1d1f6fe8
+<svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Descargar el paquete JNX
+@@ 0d329656d5
+<svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Ver en GitHub
+@@ 4b6ea168c6
+Pantalla de inicio de hekate en el JNX Pack, con los menús Íconos, Más configuraciones, Cargas útiles y Desbloqueo
+@@ a3cd40dfe3
+Qué trae el paquete
+@@ 3d29c09685
+Custom firmware oficial, con la pantalla de arranque y el splash de JNX.
+@@ f5553244e0
+Bootloader traducido, con opciones de EmuNAND, SysNAND y sistema original.
+@@ 35d8a47ad6
++430 traducciones
+@@ e31459c994
+Juega en portugués. Instala y actualiza traducciones con JNX Updater.
+@@ 51e1f1df59
+Trucos de la comunidad
+@@ b1295d3a5a
+60 FPS, resolución, cheats. Descarga por juego o la base completa.
+@@ 6c70f89d32
+La app central del paquete: traducciones, trucos, temas y actualizaciones, todo en un solo lugar.
+@@ 09767d7591
+Usa el control de PS5 en el Switch por Bluetooth, sin adaptador.
+@@ 489c77a691
+Instala juegos desde el navegador de la computadora, directo en el Switch por cable USB.
+@@ f8ee60ea3a
+Todo en portugués
+@@ f6738da456
+Menús, overlays, bootloader y JNX Updater, pensados para el público brasileño.
+@@ 0d9afb5a6c
+Qué es JNX
+@@ c90289dd0a
+Una alternativa gratuita y democrática
+@@ 0aafdcbbbd
+JNX es un paquete de desbloqueo para N-Switch que hace todo más fácil, simple y práctico para el usuario final.
+@@ 96a8f72c29
+El paquete es gratuito y nació para ayudar a la comunidad, en especial al público brasileño, a usar el desbloqueo sin tener que entender términos técnicos.
+@@ 6f9115cf91
+Cómo instalar
+@@ bef8e87392
+1. Descarga el paquete
+@@ e1ed0f3004
+Haz clic en "Descargar el paquete JNX" y la descarga del archivo .zip empieza al instante.
+@@ f3f71f274d
+2. Extrae en la tarjeta SD
+@@ 760b6a2fcb
+Descomprime el .zip en la raíz de la tarjeta SD de tu N-Switch.
+@@ 5fd874e960
+3. Enciende el Switch
+@@ eb1b6231bb
+Inyecta el payload (por el modchip o por la PC) y JNX se encarga del resto.
+@@ 2baaa71bba
+JNX está libre de piratería
+@@ eb663c2e92
+El paquete no incluye juegos, ROMs, claves de cifrado ni herramientas pensadas para descargar contenido pirata. Usa el desbloqueo con responsabilidad.
+@@ e7084b092d
+JNX es un proyecto de <a href="../">Tech MeoW</a>.
+@@ 2856f48498
+Este es un proyecto independiente y gratuito. Todas las marcas pertenecen a sus respectivos dueños.

@@ -110,6 +110,7 @@ ${grupos}
       <a class="b wa wa-menu" href="${WHATSAPP.padrao}" target="_blank" rel="noopener"><svg class="ib" aria-hidden="true"><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
     </nav>
     <div class="acoes">
+      <!--i18n:menu--><!--/i18n:menu-->
       <button class="iconbtn" id="themeBtn" type="button" aria-label="Mudar entre claro e escuro" title="Mudar entre claro e escuro">
         <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
         <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>

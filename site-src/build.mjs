@@ -35,3 +35,8 @@ await esbuild.build({
 
 // Páginas, com o carimbo de versão do estilo e do script no endereço (muda quando o conteúdo muda, para nenhum navegador ficar com o antigo).
 montar();
+
+// Versões em inglês, espanhol e russo (en/, es/, ru/), a partir das páginas em português que acabaram de sair.
+// Se faltar tradução, ele avisa e para: rode "python site-src/i18n/traduzir.py extrair" e traduza o que faltar.
+import { execFileSync } from "node:child_process";
+execFileSync("python", [path.join(aqui, "i18n", "traduzir.py"), "gerar"], { stdio: "inherit", env: { ...process.env, PYTHONIOENCODING: "utf-8" } });

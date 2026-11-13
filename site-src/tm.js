@@ -198,7 +198,11 @@ if (filtros) {
 const form = $(".pedido");
 if (form) {
   const texto = $("textarea", form);
-  const exemplos = {
+  // idioma da página (as páginas en/, es/ e ru/ saem de site-src/i18n): troca os exemplos e o começo da mensagem
+  const LANG = (document.documentElement.lang || "pt").slice(0, 2).toLowerCase();
+  const EXEMPLOS = {"en": {"reparo": "E.g.: PS5 Slim with no picture on the TV", "desbloqueio": "E.g.: Switch OLED", "interposer": "E.g.: I'd like 2 units", "curso": "E.g.: I already work with the Switch and want to learn unlocking", "parceria": "E.g.: I run a repair shop"}, "es": {"reparo": "Ej.: PS5 Slim sin imagen en la TV", "desbloqueio": "Ej.: Switch OLED", "interposer": "Ej.: quiero 2 unidades", "curso": "Ej.: ya trabajo con Switch y quiero aprender el desbloqueo", "parceria": "Ej.: tengo un taller de reparación"}, "ru": {"reparo": "Например: PS5 Slim без изображения на телевизоре", "desbloqueio": "Например: Switch OLED", "interposer": "Например: нужно 2 штуки", "curso": "Например: уже работаю со Switch, хочу научиться прошивке", "parceria": "Например: у меня сервисный центр"}};
+  const INICIO = {"en": "Hello, Tech MeoW! I came from the website and {frase}.", "es": "¡Hola, Tech MeoW! Vengo del sitio y {frase}.", "ru": "Здравствуйте, Tech MeoW! Я пришёл с сайта и {frase}."};
+  const exemplos = EXEMPLOS[LANG] ?? {
     reparo: "Ex.: PS5 Slim sem imagem na TV",
     desbloqueio: "Ex.: Switch OLED",
     interposer: "Ex.: quero 2 unidades",
@@ -211,7 +215,7 @@ if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const frase = $("input[name=assunto]:checked", form)?.getAttribute("data-frase") ?? "";
-    let msg = `Olá, Tech MeoW! Vim pelo site e ${frase}.`;
+    let msg = INICIO[LANG] ? INICIO[LANG].replace("{frase}", frase) : `Olá, Tech MeoW! Vim pelo site e ${frase}.`;
     const extra = texto.value.trim();
     if (extra) msg += `\n${extra}`;
     const url = `https://wa.me/${form.dataset.whats}?text=${encodeURIComponent(msg)}`;
@@ -228,7 +232,8 @@ const mapa = $(".mapa[data-mapa]");
 const abrirMapa = () => {
   if (!mapa || mapa.querySelector("iframe")) return;
   const f = document.createElement("iframe");
-  f.title = "Mapa do Google: Rua Sergio Silva, 50, Engenho da Rainha, Rio de Janeiro";
+  const MAPA = {"en": "Google map: Rua Sergio Silva, 50, Engenho da Rainha, Rio de Janeiro", "es": "Mapa de Google: Rua Sergio Silva, 50, Engenho da Rainha, Río de Janeiro", "ru": "Карта Google: Rua Sergio Silva, 50, Engenho da Rainha, Рио-де-Жанейро"};
+  f.title = MAPA[(document.documentElement.lang || "pt").slice(0, 2)] ?? "Mapa do Google: Rua Sergio Silva, 50, Engenho da Rainha, Rio de Janeiro";
   f.src = mapa.dataset.mapa;
   f.loading = "lazy";
   f.referrerPolicy = "no-referrer-when-downgrade";
