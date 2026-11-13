@@ -140,4 +140,32 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://techmeow.app/ru/JNX/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://techmeow.app/JNX/"/>
   </url>
+  <url><loc>https://techmeow.app/MeoWGuard/</loc><lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://techmeow.app/MeoWGuard/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://techmeow.app/en/MeoWGuard/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://techmeow.app/es/MeoWGuard/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://techmeow.app/ru/MeoWGuard/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://techmeow.app/MeoWGuard/"/>
+  </url>
+  <url><loc>https://techmeow.app/en/MeoWGuard/</loc><lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://techmeow.app/MeoWGuard/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://techmeow.app/en/MeoWGuard/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://techmeow.app/es/MeoWGuard/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://techmeow.app/ru/MeoWGuard/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://techmeow.app/MeoWGuard/"/>
+  </url>
+  <url><loc>https://techmeow.app/es/MeoWGuard/</loc><lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://techmeow.app/MeoWGuard/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://techmeow.app/en/MeoWGuard/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://techmeow.app/es/MeoWGuard/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://techmeow.app/ru/MeoWGuard/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://techmeow.app/MeoWGuard/"/>
+  </url>
+  <url><loc>https://techmeow.app/ru/MeoWGuard/</loc><lastmod>2026-11-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://techmeow.app/MeoWGuard/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://techmeow.app/en/MeoWGuard/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://techmeow.app/es/MeoWGuard/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://techmeow.app/ru/MeoWGuard/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://techmeow.app/MeoWGuard/"/>
+  </url>
 </urlset>

@@ -1,5 +1,10 @@
 // MeoWGuard: instalar pelo navegador (WebUSB). Baseado no WebUSB do sphaira (tools/webusb),
 // de ITotalJustice e colaboradores, licença GPLv3. Mudanças: textos em português.
+// Mensagens no idioma da página (<html lang>; as páginas en/, es/ e ru/ saem de site-src/i18n).
+const TR = {"en": {"Switch não conectado.": "Switch not connected.", "A cópia falhou: ": "The copy failed: ", "Este navegador não permite escolher pastas.": "This browser does not allow choosing folders.", "Não deu para escolher a pasta: ": "Could not choose the folder: ", " aparelho(s) já autorizado(s) neste computador": " device(s) already authorized on this computer", "A reconexão falhou: ": "Reconnection failed: ", "Não deu para reconectar sozinho. Confira o cabo e clique em Conectar ao Switch.": "Could not reconnect on its own. Check the cable and click Connect to the Switch.", "Aparelho inválido": "Invalid device", "Não deu para conectar ao aparelho autorizado: ": "Could not connect to the authorized device: ", "Não deu para conectar: ": "Could not connect: ", "Arquivo ignorado (não é NSP, NSZ, XCI, XCZ ou MSP): ": "File skipped (not NSP, NSZ, XCI, XCZ or MSP): ", "Pedindo permissão para usar o cabo...": "Asking for permission to use the cable...", "Configuração escolhida": "Configuration selected", "Conexão reservada para esta página": "Connection claimed for this page", "Esperando o Switch começar...": "Waiting for the Switch to start...", "✅ Todos os {n} arquivos foram enviados! Acompanhe a instalação no Switch.": "✅ All {n} files were sent! Follow the installation on the Switch.", "O Switch pediu um arquivo que não existe: ": "The Switch asked for a file that does not exist: ", "❌ Envio parado: arquivo {a} inválido (de {n})": "❌ Sending stopped: invalid file {a} (of {n})", "Envio concluído": "Sending finished", "Não deu para copiar o registro: ": "Could not copy the log: ", "✅ Tudo enviado! Acompanhe a instalação no Switch.": "✅ Everything sent! Follow the installation on the Switch.", "Esperando o próximo arquivo...": "Waiting for the next file..."}, "es": {"Switch não conectado.": "Switch no conectada.", "A cópia falhou: ": "La copia falló: ", "Este navegador não permite escolher pastas.": "Este navegador no permite elegir carpetas.", "Não deu para escolher a pasta: ": "No se pudo elegir la carpeta: ", " aparelho(s) já autorizado(s) neste computador": " dispositivo(s) ya autorizado(s) en esta computadora", "A reconexão falhou: ": "La reconexión falló: ", "Não deu para reconectar sozinho. Confira o cabo e clique em Conectar ao Switch.": "No se pudo reconectar solo. Revisa el cable y haz clic en Conectar a la Switch.", "Aparelho inválido": "Dispositivo inválido", "Não deu para conectar ao aparelho autorizado: ": "No se pudo conectar al dispositivo autorizado: ", "Não deu para conectar: ": "No se pudo conectar: ", "Arquivo ignorado (não é NSP, NSZ, XCI, XCZ ou MSP): ": "Archivo ignorado (no es NSP, NSZ, XCI, XCZ o MSP): ", "Pedindo permissão para usar o cabo...": "Pidiendo permiso para usar el cable...", "Configuração escolhida": "Configuración elegida", "Conexão reservada para esta página": "Conexión reservada para esta página", "Esperando o Switch começar...": "Esperando que la Switch empiece...", "✅ Todos os {n} arquivos foram enviados! Acompanhe a instalação no Switch.": "✅ ¡Los {n} archivos fueron enviados! Sigue la instalación en la Switch.", "O Switch pediu um arquivo que não existe: ": "La Switch pidió un archivo que no existe: ", "❌ Envio parado: arquivo {a} inválido (de {n})": "❌ Envío detenido: archivo {a} inválido (de {n})", "Envio concluído": "Envío terminado", "Não deu para copiar o registro: ": "No se pudo copiar el registro: ", "✅ Tudo enviado! Acompanhe a instalação no Switch.": "✅ ¡Todo enviado! Sigue la instalación en la Switch.", "Esperando o próximo arquivo...": "Esperando el próximo archivo..."}, "ru": {"Switch não conectado.": "Switch не подключена.", "A cópia falhou: ": "Копирование не удалось: ", "Este navegador não permite escolher pastas.": "Этот браузер не позволяет выбирать папки.", "Não deu para escolher a pasta: ": "Не удалось выбрать папку: ", " aparelho(s) já autorizado(s) neste computador": " устройств(о) уже разрешено на этом компьютере", "A reconexão falhou: ": "Повторное подключение не удалось: ", "Não deu para reconectar sozinho. Confira o cabo e clique em Conectar ao Switch.": "Не удалось подключиться заново автоматически. Проверьте кабель и нажмите «Подключиться к Switch».", "Aparelho inválido": "Недопустимое устройство", "Não deu para conectar ao aparelho autorizado: ": "Не удалось подключиться к разрешённому устройству: ", "Não deu para conectar: ": "Не удалось подключиться: ", "Arquivo ignorado (não é NSP, NSZ, XCI, XCZ ou MSP): ": "Файл пропущен (не NSP, NSZ, XCI, XCZ или MSP): ", "Pedindo permissão para usar o cabo...": "Запрашиваем разрешение на использование кабеля...", "Configuração escolhida": "Конфигурация выбрана", "Conexão reservada para esta página": "Соединение закреплено за этой страницей", "Esperando o Switch começar...": "Ждём, пока Switch начнёт...", "✅ Todos os {n} arquivos foram enviados! Acompanhe a instalação no Switch.": "✅ Все {n} файлов отправлены! Следите за установкой на Switch.", "O Switch pediu um arquivo que não existe: ": "Switch запросила несуществующий файл: ", "❌ Envio parado: arquivo {a} inválido (de {n})": "❌ Отправка остановлена: недопустимый файл {a} (из {n})", "Envio concluído": "Отправка завершена", "Não deu para copiar o registro: ": "Не удалось скопировать журнал: ", "✅ Tudo enviado! Acompanhe a instalação no Switch.": "✅ Всё отправлено! Следите за установкой на Switch.", "Esperando o próximo arquivo...": "Ждём следующий файл..."}};
+const LANG = (document.documentElement.lang || "pt").slice(0, 2);
+const tr = (t) => TR[LANG]?.[t] ?? t;
+
 // --- Constants ---
 const MAGIC = 0x53504830;
 const PACKET_SIZE = 24;
@@ -171,7 +176,7 @@ class WebUSBFileTransfer {
         }
 
         if (!this.isConnected) {
-            this.showToast('Switch não conectado.', 'error', 4000);
+            this.showToast(tr('Switch não conectado.'), 'error', 4000);
             this.downloadLoopActive = false;
             return;
         }
@@ -205,7 +210,7 @@ class WebUSBFileTransfer {
             }
         } catch (err) {
             this.log('Download loop error: ' + err.message);
-            this.showToast('A cópia falhou: ' + err.message, 'error', 5000);
+            this.showToast(tr('A cópia falhou: ') + err.message, 'error', 5000);
         } finally {
             this.downloadLoopActive = false;
         }
@@ -337,7 +342,7 @@ class WebUSBFileTransfer {
     // Optionally, trigger download loop after folder selection in download mode
     async handleDirectoryPicker() {
         if (!window.showDirectoryPicker) {
-            this.showToast('Este navegador não permite escolher pastas.', 'error', 5000);
+            this.showToast(tr('Este navegador não permite escolher pastas.'), 'error', 5000);
             return;
         }
         try {
@@ -348,7 +353,7 @@ class WebUSBFileTransfer {
             this.maybeStartDownloadLoop();
         } catch (err) {
             if (err.name !== 'AbortError') {
-                this.showToast('Não deu para escolher a pasta: ' + err.message, 'error', 5000);
+                this.showToast(tr('Não deu para escolher a pasta: ') + err.message, 'error', 5000);
             }
         }
     }
@@ -390,7 +395,7 @@ class WebUSBFileTransfer {
             );
             this.showAuthorizedDevices();
             if (this.authorizedDevices.length > 0) {
-                this.log(`${this.authorizedDevices.length} aparelho(s) já autorizado(s) neste computador`);
+                this.log(this.authorizedDevices.length + tr(' aparelho(s) já autorizado(s) neste computador'));
                 await this.tryAutoConnect();
             } else {
                 this.log('Nenhum aparelho autorizado ainda');
@@ -409,8 +414,8 @@ class WebUSBFileTransfer {
             this.log(`Reconectando a: ${device.productName || 'Aparelho desconhecido'}`);
             await this.connectToDevice(device);
         } catch (error) {
-            this.log(`A reconexão falhou: ${error.message}`);
-            this.showToast('Não deu para reconectar sozinho. Confira o cabo e clique em Conectar ao Switch.', 'info', 4000);
+            this.log(tr('A reconexão falhou: ') + error.message);
+            this.showToast(tr('Não deu para reconectar sozinho. Confira o cabo e clique em Conectar ao Switch.'), 'info', 4000);
         }
     }
 
@@ -463,7 +468,7 @@ class WebUSBFileTransfer {
 
     async connectToAuthorizedDevice(deviceIndex) {
         if (deviceIndex < 0 || deviceIndex >= this.authorizedDevices.length) {
-            this.showStatus('Aparelho inválido', 'error');
+            this.showStatus(tr('Aparelho inválido'), 'error');
             return;
         }
 
@@ -473,8 +478,8 @@ class WebUSBFileTransfer {
         try {
             await this.connectToDevice(device);
         } catch (error) {
-            this.log(`Não deu para conectar ao aparelho autorizado: ${error.message}`);
-            this.showStatus(`Não deu para conectar: ${error.message}`, 'error');
+            this.log(tr('Não deu para conectar ao aparelho autorizado: ') + error.message);
+            this.showStatus(tr('Não deu para conectar: ') + error.message, 'error');
         }
     }
 
@@ -561,7 +566,7 @@ class WebUSBFileTransfer {
             for (const file of newFiles) {
                 const lower = file.name.toLowerCase();
                 if (!allowedExt.some(ext => lower.endsWith(ext))) {
-                    this.log(`Arquivo ignorado (não é NSP, NSZ, XCI, XCZ ou MSP): ${file.name}`);
+                    this.log(tr('Arquivo ignorado (não é NSP, NSZ, XCI, XCZ ou MSP): ') + file.name);
                     continue;
                 }
 
@@ -646,7 +651,7 @@ class WebUSBFileTransfer {
     // --- Device Connection ---
     async connectDevice() {
         try {
-            this.log('Pedindo permissão para usar o cabo...');
+            this.log(tr('Pedindo permissão para usar o cabo...'));
             this.device = await navigator.usb.requestDevice({
                 filters: [{ vendorId: 0x057e, productId: 0x3000 }]
             });
@@ -655,7 +660,7 @@ class WebUSBFileTransfer {
             await this.loadAuthorizedDevices();
         } catch (error) {
             this.log(`Erro ao conectar: ${error.message}`);
-            this.showToast(`Não deu para conectar: ${error.message}`, 'error', 5000);
+            this.showToast(tr('Não deu para conectar: ') + error.message, 'error', 5000);
         }
     }
 
@@ -666,11 +671,11 @@ class WebUSBFileTransfer {
         await this.device.open();
         if (this.device.configuration === null) {
             await this.device.selectConfiguration(1);
-            this.log('Configuração escolhida');
+            this.log(tr('Configuração escolhida'));
         }
 
         await this.device.claimInterface(0);
-        this.log('Conexão reservada para esta página');
+        this.log(tr('Conexão reservada para esta página'));
         const iface = this.device.configuration.interfaces[0].alternates[0];
         this.endpointIn  = iface.endpoints.find(e => e.direction === 'in' && e.type === 'bulk')?.endpointNumber;
         this.endpointOut = iface.endpoints.find(e => e.direction === 'out' && e.type === 'bulk')?.endpointNumber;
@@ -723,7 +728,7 @@ class WebUSBFileTransfer {
         this.showTransferProgress(files.length);
 
         try {
-            this.log(`Esperando o Switch começar...`);
+            this.log(tr('Esperando o Switch começar...'));
             document.getElementById('sendBtn').disabled = true;
             await this.get_send_header();
             await this.send_result(RESULT_OK, string_table.length);
@@ -737,7 +742,7 @@ class WebUSBFileTransfer {
                         if (files.length > 0) {
                             this.log(`Todos os ${files.length} arquivos enviados`);
                             this.showToast(
-                                `✅ Todos os ${files.length} arquivos foram enviados! Acompanhe a instalação no Switch.`,
+                                tr('✅ Todos os {n} arquivos foram enviados! Acompanhe a instalação no Switch.').replace('{n}', files.length),
                                 'success', 5000
                             );
                             this.updateTransferProgress(files.length, files.length, 0, null, 100);
@@ -747,8 +752,8 @@ class WebUSBFileTransfer {
                         const file = files[arg3];
                         if (!file) {
                             await this.send_result(RESULT_ERROR);
-                            this.showToast(`O Switch pediu um arquivo que não existe: ${arg3}`, 'error', 5000);
-                            this.log(`❌ Envio parado: arquivo ${arg3} inválido (de ${files.length})`);
+                            this.showToast(tr('O Switch pediu um arquivo que não existe: ') + arg3, 'error', 5000);
+                            this.log(tr('❌ Envio parado: arquivo {a} inválido (de {n})').replace('{a}', arg3).replace('{n}', files.length));
                             break;
                         }
 
@@ -860,7 +865,7 @@ class WebUSBFileTransfer {
 
                 if (off === 0 && size === 0) {
                     await this.send_result(RESULT_OK);
-                    this.log("Envio concluído");
+                    this.log(tr("Envio concluído"));
                     this.markCoverage(file, Math.max(0, file.size - 1), 1);
                     break;
                 }
@@ -948,7 +953,7 @@ class WebUSBFileTransfer {
         const logDiv = document.getElementById('logDiv');
         navigator.clipboard.writeText(logDiv.textContent)
             .then(() => { this.log('Registro copiado'); })
-            .catch(err => { this.log(`Não deu para copiar o registro: ${err}`); });
+            .catch(err => { this.log(tr('Não deu para copiar o registro: ') + err); });
     }
 
     // --- Formatting ---
@@ -1085,14 +1090,14 @@ class WebUSBFileTransfer {
             // Show progress bar when a file is being transferred
             document.getElementById('transferProgress').style.display = 'block';
         } else if (completed === total && total > 0) {
-            progressTitle.textContent = '✅ Tudo enviado! Acompanhe a instalação no Switch.';
+            progressTitle.textContent = tr('✅ Tudo enviado! Acompanhe a instalação no Switch.');
 
             // Hide progress details when all files are done
             setTimeout(() => {
                 document.getElementById('transferProgress').style.display = 'none';
             }, 3000);
         } else {
-            progressTitle.textContent = 'Esperando o próximo arquivo...';
+            progressTitle.textContent = tr('Esperando o próximo arquivo...');
         }
     }
 

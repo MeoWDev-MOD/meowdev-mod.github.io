@@ -9,7 +9,8 @@
     "app/index.html",
     "app/acesso/index.html",
     "privacidade/index.html",
-    "JNX/index.html"
+    "JNX/index.html",
+    "MeoWGuard/index.html"
   ],
   "idiomas": [
     "en",
@@ -24,14 +25,18 @@
   ],
   "outros_traduzidos": [
     "/ps5-hdmi-tool/",
-    "/Control-PS-5/"
+    "/Control-PS-5/",
+    "/ps5-controle-test/",
+    "/Iron-Check/",
+    "/BancadaSync-Download/"
   ],
   "sitemap": [
     "index.html",
     "projetos/index.html",
     "app/index.html",
     "privacidade/index.html",
-    "JNX/index.html"
+    "JNX/index.html",
+    "MeoWGuard/index.html"
   ],
   "sitemap_arquivo": "sitemap-idiomas.xml",
   "imagens": {

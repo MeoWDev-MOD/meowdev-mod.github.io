@@ -899,3 +899,75 @@ JNX is a project by <a href="../">Tech MeoW</a>.
 This is an independent and free project. All brands belong to their respective owners.
 @@ 6e7f2215a6
 Promotion
+@@ 6dec9668ec
+MeoWGuard · Install through the browser
+@@ e5487c6ebc
+Install the games you bought on the Nintendo Switch, through Chrome and the USB cable, with MeoWGuard.
+@@ daa39afff7
+MeoW<span>Guard</span>
+@@ c0259fe638
+Install games through the browser
+@@ eb172ae600
+<strong>First, on the Switch:</strong> open MeoWGuard → <em>Install games</em> → <em>Mac</em> → <em>Through the Chrome browser</em>, and leave that screen open.
+@@ 7376989a14
+Switch connected
+@@ 7b2006fd7a
+Close
+@@ 75a77d52dd
+<span class="numero">1</span> Connect the Switch
+@@ 2a5f4cf303
+Plug the USB-C cable into the Switch and the computer. Click the button and choose <strong>Nintendo Switch</strong> in the list.
+@@ 15c53bd1bc
+Connect to the Switch
+@@ f2bfd8e263
+Disconnect
+@@ 48e36cb681
+Already authorized on this computer
+@@ 7536675668
+Send to the Switch
+@@ 7c65ead81c
+Copy from the Switch
+@@ 99a937d383
+<span class="numero">2</span> Choose the games
+@@ 0034668a61
+NSP, NSZ, XCI, XCZ or MSP files. You can choose several at once: game, update and DLC.
+@@ 49839e1173
+Choose files
+@@ 0648b87a36
+Clear list
+@@ be74c5b4e0
+Files
+@@ 0f5bc8ff85
+0 files
+@@ df836c98c0
+No files yet. Connect the Switch and click "Choose files".
+@@ 29e3cdaae6
+Choose the folder
+@@ 7753c119fe
+Choose folder
+@@ 1179977a90
+<span class="numero">3</span> Send
+@@ f9ac2c1957
+The Switch receives and installs them one by one. Do not close this page or the Switch screen until it finishes.
+@@ 569978a71b
+Sending
+@@ 0bc1a0437f
+Elapsed:
+@@ 6ef64920aa
+Remaining:
+@@ dff67478b3
+Sent:
+@@ c27c835e6c
+Speed:
+@@ c8294081e5
+Technical details (log)
+@@ 765fbe39a2
+Clear
+@@ 8854107733
+Copy
+@@ 8dce55714c
+<strong>Only for games you bought.</strong> Making a backup copy of what is yours is allowed (Brazilian Law 9.609/1998, art. 6, I). Selling or passing copies on is piracy and a crime.
+@@ c4e17a3701
+Did it not open? It works in Google Chrome, Microsoft Edge and Opera, on a computer. On a Mac, you can also use the free app <a href="https://openmtp.ganeshrvel.com" target="_blank" rel="noopener noreferrer">OpenMTP</a>.
+@@ 552ef009b6
+MeoWGuard · Developed by MeoWDev MOD. Built on <a href="https://github.com/ITotalJustice/sphaira" target="_blank" rel="noopener noreferrer">sphaira</a> (ITotalJustice and contributors), GPLv3 license. Not affiliated with Nintendo.

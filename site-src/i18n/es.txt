@@ -899,3 +899,75 @@ El paquete no incluye juegos, ROMs, claves de cifrado ni herramientas pensadas p
 JNX es un proyecto de <a href="../">Tech MeoW</a>.
 @@ 2856f48498
 Este es un proyecto independiente y gratuito. Todas las marcas pertenecen a sus respectivos dueños.
+@@ 6dec9668ec
+MeoWGuard · Instalar por el navegador
+@@ e5487c6ebc
+Instala en la Nintendo Switch, por Chrome y por el cable USB, los juegos que compraste, con MeoWGuard.
+@@ daa39afff7
+MeoW<span>Guard</span>
+@@ c0259fe638
+Instalar juegos por el navegador
+@@ eb172ae600
+<strong>Antes, en la Switch:</strong> abre MeoWGuard → <em>Instalar juegos</em> → <em>Mac</em> → <em>Por el navegador Chrome</em>, y deja esa pantalla abierta.
+@@ 7376989a14
+Switch conectada
+@@ 7b2006fd7a
+Cerrar
+@@ 75a77d52dd
+<span class="numero">1</span> Conecta la Switch
+@@ 2a5f4cf303
+Conecta el cable USB-C a la Switch y a la computadora. Haz clic en el botón y elige <strong>Nintendo Switch</strong> en la lista.
+@@ 15c53bd1bc
+Conectar a la Switch
+@@ f2bfd8e263
+Desconectar
+@@ 48e36cb681
+Ya autorizados en esta computadora
+@@ 7536675668
+Enviar a la Switch
+@@ 7c65ead81c
+Copiar de la Switch
+@@ 99a937d383
+<span class="numero">2</span> Elige los juegos
+@@ 0034668a61
+Archivos NSP, NSZ, XCI, XCZ o MSP. Puedes elegir varios a la vez: juego, actualización y DLC.
+@@ 49839e1173
+Elegir archivos
+@@ 0648b87a36
+Limpiar lista
+@@ be74c5b4e0
+Archivos
+@@ 0f5bc8ff85
+0 archivos
+@@ df836c98c0
+Todavía no hay archivos. Conecta la Switch y haz clic en "Elegir archivos".
+@@ 29e3cdaae6
+Elige la carpeta
+@@ 7753c119fe
+Elegir carpeta
+@@ 1179977a90
+<span class="numero">3</span> Envía
+@@ f9ac2c1957
+La Switch recibe e instala uno por uno. No cierres esta página ni la pantalla de la Switch hasta terminar.
+@@ 569978a71b
+Enviando
+@@ 0bc1a0437f
+Tiempo transcurrido:
+@@ 6ef64920aa
+Falta:
+@@ dff67478b3
+Enviado:
+@@ c27c835e6c
+Velocidad:
+@@ c8294081e5
+Detalles técnicos (registro)
+@@ 765fbe39a2
+Limpiar
+@@ 8854107733
+Copiar
+@@ 8dce55714c
+<strong>Solo para juegos que compraste.</strong> Hacer una copia de seguridad de lo que es tuyo está permitido (Ley brasileña 9.609/1998, art. 6, I). Vender o pasar copias a otros es piratería y es delito.
+@@ c4e17a3701
+¿No abrió? Funciona en Google Chrome, Microsoft Edge y Opera, en la computadora. En Mac, también puedes usar la app gratis <a href="https://openmtp.ganeshrvel.com" target="_blank" rel="noopener noreferrer">OpenMTP</a>.
+@@ 552ef009b6
+MeoWGuard · Developed by MeoWDev MOD. Hecho sobre <a href="https://github.com/ITotalJustice/sphaira" target="_blank" rel="noopener noreferrer">sphaira</a> (ITotalJustice y colaboradores), licencia GPLv3. Sin relación con Nintendo.

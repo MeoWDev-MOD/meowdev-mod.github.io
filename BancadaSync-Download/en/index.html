@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BancadaSync — repair shop management, free</title>
+<meta name="description" content="From check-in to delivered repair. Service orders, customers, finances and warranty on your computer. Free, no monthly fee.">
+<meta name="theme-color" content="#14181c">
+<meta property="og:title" content="BancadaSync — repair shop management">
+<meta property="og:description" content="From check-in to delivered repair. Free, runs on your computer.">
+<meta property="og:image" content="https://techmeow.app/BancadaSync-Download/img/03-painel.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="../img/icon.png">
+<style>
+:root{
+  --bg:#0e1114; --surface:#161b20; --surface-2:#1d242b; --line:#2a333b;
+  --text:#e9f2e6; --muted:#9fb1a6; --brand:#7fee64; --brand-ink:#0d2208; --warn:#f4b860;
+  --radius:16px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,"Segoe UI",Roboto,sans-serif}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--brand)}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+section{padding:72px 0}
+h1,h2,h3{line-height:1.15;margin:0 0 .5em;letter-spacing:-.02em}
+h1{font-size:clamp(2.2rem,5.5vw,3.8rem)}
+h2{font-size:clamp(1.6rem,3.4vw,2.3rem)}
+h3{font-size:1.1rem;letter-spacing:0}
+p{margin:0 0 1em}
+.muted{color:var(--muted)}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);margin-bottom:14px}
+
+/* topo */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none}
+.brand img{width:34px;height:34px;border-radius:9px}
+nav{display:flex;align-items:center;gap:22px}
+nav a.link{color:var(--muted);text-decoration:none;font-size:.95rem}
+nav a.link:hover{color:var(--text)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:1px solid transparent;cursor:pointer;font:inherit;font-weight:700}
+.btn-primary{background:linear-gradient(180deg,#a8f58f,#6ddd52);color:var(--brand-ink);box-shadow:0 8px 28px rgba(127,238,100,.25)}
+.btn-primary:hover{filter:brightness(1.05)}
+.btn-ghost{border-color:var(--line);color:var(--text);background:transparent}
+.btn-ghost:hover{background:var(--surface)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+
+/* hero */
+.hero{padding-top:64px;background:radial-gradient(900px 400px at 15% -10%,rgba(127,238,100,.13),transparent 60%)}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:60ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 14px}
+.fine{font-size:.88rem;color:var(--muted)}
+.shot{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.hero .shot{margin-top:48px}
+
+/* cartões */
+.grid{display:grid;gap:16px}
+.cards{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.card .q{color:var(--warn);font-weight:700;font-size:.92rem;margin-bottom:6px}
+.card p{margin:0;color:var(--muted);font-size:.96rem}
+.card h3{margin-bottom:8px}
+
+/* galeria */
+.gallery{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.gallery figure{margin:0}
+.gallery button{all:unset;display:block;cursor:zoom-in;width:100%}
+.gallery .shot{transition:transform .2s,border-color .2s}
+.gallery button:hover .shot{transform:translateY(-3px);border-color:var(--brand)}
+.gallery figcaption{margin-top:10px;font-size:.95rem;color:var(--muted)}
+.gallery figcaption b{color:var(--text)}
+.gallery{align-items:start}
+@media (min-width:1000px){.gallery .tall{grid-row:span 2}}
+dialog{border:0;background:transparent;padding:0;max-width:96vw;max-height:94vh}
+dialog::backdrop{background:rgba(0,0,0,.85)}
+dialog img{max-height:92vh;width:auto;border-radius:12px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* planos */
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);background:var(--surface-2)}
+td.c,th.c{text-align:center;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.yes{color:var(--brand);font-weight:700}
+.lock{color:var(--muted)}
+.table-scroll{overflow-x:auto}
+
+/* passos e faq */
+.steps{counter-reset:s;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.step{position:relative;padding-top:56px}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:18px;left:22px;width:30px;height:30px;border-radius:50%;background:var(--brand);color:var(--brand-ink);font-weight:800;display:grid;place-items:center}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700}
+details p{margin:10px 0 0;color:var(--muted)}
+code{background:var(--surface-2);padding:2px 7px;border-radius:6px;font-size:.88em;word-break:break-all}
+
+/* rodapé */
+.contact{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+footer img{width:44px;height:44px}
+.dev{display:flex;align-items:center;gap:12px}
+@media (max-width:640px){nav a.link{display:none} section{padding:52px 0}}
+</style>
+<!--i18n:head-->
+<link rel="alternate" hreflang="pt-BR" href="https://techmeow.app/BancadaSync-Download/">
+<link rel="alternate" hreflang="en" href="https://techmeow.app/BancadaSync-Download/en/">
+<link rel="alternate" hreflang="es" href="https://techmeow.app/BancadaSync-Download/es/">
+<link rel="alternate" hreflang="ru" href="https://techmeow.app/BancadaSync-Download/ru/">
+<link rel="alternate" hreflang="x-default" href="https://techmeow.app/BancadaSync-Download/">
+<style>.i18n-menu{position:relative;display:inline-flex;flex:none}.i18n-btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;border-radius:99px;border:1px solid var(--line,rgba(127,127,127,.35));background:var(--surface2,transparent);color:inherit;font:inherit;font-size:13px;font-weight:700;letter-spacing:.04em;cursor:pointer}.i18n-btn:hover{border-color:currentColor}.i18n-lista{position:absolute;right:0;top:calc(100% + 8px);z-index:200;list-style:none;margin:0;padding:6px;min-width:176px;border-radius:14px;border:1px solid var(--line,rgba(127,127,127,.35));background:var(--surface,#16122c);box-shadow:0 18px 40px rgba(0,0,0,.35)}.i18n-lista a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;color:inherit;text-decoration:none;font-size:14px;font-weight:600}.i18n-lista a b{font-size:11px;letter-spacing:.06em;opacity:.65;width:22px}.i18n-lista a:hover,.i18n-lista a:focus-visible{background:var(--surface2,rgba(127,127,127,.15))}.i18n-lista a[aria-current]{color:var(--accent,#a78bfa)}.i18n-sug{position:absolute;right:0;top:calc(100% + 8px);z-index:199;display:flex;align-items:center;gap:8px;white-space:nowrap;padding:8px 8px 8px 14px;border-radius:99px;font-size:13px;font-weight:600;border:1px solid var(--line,rgba(127,127,127,.35));background:var(--surface,#16122c);box-shadow:0 14px 34px rgba(0,0,0,.35)}.i18n-sug a{padding:6px 12px;border-radius:99px;background:var(--accent,#7c5cff);color:#fff;text-decoration:none}.i18n-sug button{border:0;background:none;color:inherit;font:inherit;font-size:16px;line-height:1;padding:4px 6px;cursor:pointer;opacity:.7}.i18n-sug.m{position:fixed;left:12px;right:12px;top:calc(76px + env(safe-area-inset-top));z-index:60;justify-content:space-between;white-space:normal}</style>
+<script>(function(){var A="en",M={"pt": "../", "en": "./", "es": "../es/", "ru": "../ru/"},S={"pt": ["Ler esta página em português?", "Abrir"], "en": ["Read this page in English?", "Open"], "es": ["¿Leer esta página en español?", "Abrir"], "ru": ["Открыть эту страницу на русском?", "Открыть"]},K="techmeow.lang";
+function salva(l){try{localStorage.setItem(K,l)}catch(e){}}
+var p=null;try{p=localStorage.getItem(K)}catch(e){}
+if(p&&p!==A&&M[p]){location.replace(M[p]+location.search+location.hash);return}
+document.addEventListener("DOMContentLoaded",function(){var m=document.querySelector("[data-i18n-menu]");if(!m)return;
+var b=m.querySelector(".i18n-btn"),l=m.querySelector(".i18n-lista");
+function abre(v){l.hidden=!v;b.setAttribute("aria-expanded",v?"true":"false")}
+b.addEventListener("click",function(e){e.stopPropagation();var s=document.querySelector(".i18n-sug");if(s)s.remove();abre(l.hidden)});
+document.addEventListener("click",function(e){if(!m.contains(e.target))abre(false)});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){abre(false);b.focus()}});
+m.querySelectorAll("a[data-lang]").forEach(function(a){a.addEventListener("click",function(e){salva(a.dataset.lang);
+e.preventDefault();location.href=a.getAttribute("href")+location.hash})});
+if(p)return;var n=((navigator.languages&&navigator.languages[0])||navigator.language||"").toLowerCase().slice(0,2);
+var q=M[n]?n:(n&&n!=="pt"?"en":null);if(!q||q===A||!M[q])return;
+var s=document.createElement("div");s.className="i18n-sug";s.setAttribute("role","status");s.lang=q;
+s.innerHTML='<span></span><a></a><button type="button" aria-label="×">×</button>';
+s.querySelector("span").textContent=S[q][0];var a=s.querySelector("a");a.textContent=S[q][1];a.href=M[q];
+a.addEventListener("click",function(){salva(q)});
+s.querySelector("button").addEventListener("click",function(){salva(A);s.remove()});
+if(matchMedia("(max-width:600px)").matches){s.classList.add("m");document.body.appendChild(s)}else m.appendChild(s)})})();</script>
+<!--/i18n:head-->
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#"><img src="../img/icon.png" alt="" width="34" height="34">BancadaSync</a>
+    <nav>
+      <a class="link" href="#resolve">What it solves</a>
+      <a class="link" href="#prints">Screenshots</a>
+      <a class="link" href="#planos">Free and Pro</a>
+      <a class="btn btn-primary" href="https://github.com/MeoWDev-MOD/BancadaSync-Download/releases/latest/download/BancadaSync-Setup.exe">Download for free</a>
+      <!--i18n:menu--><div class="i18n-menu" data-i18n-menu><button type="button" class="i18n-btn" aria-haspopup="true" aria-expanded="false" aria-label="Language: English" title="Language"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9s1.3-6.2 3.9-9z"/></svg><span>EN</span></button><ul class="i18n-lista" hidden><li><a href="../" hreflang="pt-BR" lang="pt-BR" data-lang="pt"><b>PT</b>Português</a></li><li><a href="./" hreflang="en" lang="en" data-lang="en" aria-current="true"><b>EN</b>English</a></li><li><a href="../es/" hreflang="es" lang="es" data-lang="es"><b>ES</b>Español</a></li><li><a href="../ru/" hreflang="ru" lang="ru" data-lang="ru"><b>RU</b>Русский</a></li></ul></div><!--/i18n:menu-->
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Repair shop management</span>
+    <h1>From check-in to<br>delivered repair.</h1>
+    <p class="lead">Service orders, customers, finances and warranty in one place. The system runs on your computer: no monthly fee and no internet needed to work.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/MeoWDev-MOD/BancadaSync-Download/releases/latest/download/BancadaSync-Setup.exe">⬇ Download for Windows (85 MB)</a>
+      <a class="btn btn-ghost" href="#prints">See the system inside</a>
+    </div>
+    <p class="fine">Windows 10 or 11 · installs without an administrator password · takes a few minutes</p>
+    <div class="shot"><img src="../img/03-painel.png" alt="BancadaSync live dashboard with active jobs, pending items and the month's numbers" width="1440" height="900"></div>
+  </div>
+</section>
+
+<section id="resolve">
+  <div class="wrap">
+    <span class="eyebrow">What it solves</span>
+    <h2>The end of the notebook, the spreadsheet and “where is that device?”</h2>
+    <p class="muted" style="max-width:62ch">Every pain at the counter has an answer inside the system.</p>
+    <div class="grid cards" style="margin-top:28px">
+      <div class="card"><div class="q">“What came with the device?”</div><h3>Check-in without forgetting anything</h3><p>Customer, device, serial number, accessories and reported fault are recorded in the service order, right at the counter.</p></div>
+      <div class="card"><div class="q">“How far along is this repair?”</div><h3>Status of every service order</h3><p>Quote, approved, received, under analysis, waiting for parts, ready and delivered: all visible in the list and on the dashboard.</p></div>
+      <div class="card"><div class="q">“Which order is waiting for parts?”</div><h3>Live dashboard and pending items</h3><p>See the active jobs, what is waiting for parts and what is ready for pickup.</p></div>
+      <div class="card"><div class="q">“The customer says they never signed anything.”</div><h3>Professional printed service order</h3><p>Service note with the shop's details, items, total, deadlines, warranty and a signature field for the customer.</p></div>
+      <div class="card"><div class="q">“What was the warranty again?”</div><h3>Warranty in writing</h3><p>Warranty terms per type of service, printed together with the service order.</p></div>
+      <div class="card"><div class="q">“How much came in and how much went out?”</div><h3>Real finances</h3><p>A delivered order becomes income by itself. Expenses, fixed costs, monthly balance and PDF export.</p></div>
+      <div class="card"><div class="q">“How much commission do I owe?”</div><h3>Commission per technician</h3><p>Calculated on the delivered repairs, with no mental math at the end of the month.</p></div>
+      <div class="card"><div class="q">“Who touched this?”</div><h3>Team under control</h3><p>Permissions per role (owner, administrator, clerk, technician, pickup) and an audit log of what was done.</p></div>
+      <div class="card"><div class="q">“What if the internet goes down?”</div><h3>Data on your computer</h3><p>Your data stays with you, in a local database. Work as usual, with no monthly fee.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="prints" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <span class="eyebrow">The system inside</span>
+    <h2>See what it looks like day to day</h2>
+    <p class="muted">Click any image to enlarge. The screenshots use fictional data. The program's interface is in Portuguese.</p>
+    <div class="grid gallery" style="margin-top:28px">
+      <figure><button type="button" data-zoom><div class="shot"><img loading="lazy" src="../img/04-ordens-de-servico.png" alt="List of service orders with colored statuses" width="1440" height="900"></div></button><figcaption><b>Service orders.</b> The status of every device at a glance.</figcaption></figure>
+      <figure><button type="button" data-zoom><div class="shot"><img loading="lazy" src="../img/05-detalhe-da-os.png" alt="Detail of a service order with the repair flow" width="1440" height="900"></div></button><figcaption><b>Order detail.</b> Repair flow, device, customer and amounts.</figcaption></figure>
+      <figure class="tall"><button type="button" data-zoom><div class="shot"><img loading="lazy" src="../img/06-os-impressa.png" alt="Printed service note with the shop's details, customer, device, items and signatures" width="704" height="1146"></div></button><figcaption><b>Printed order.</b> Service note ready for the customer to sign.</figcaption></figure>
+      <figure><button type="button" data-zoom><div class="shot"><img loading="lazy" src="../img/08-financeiro.png" alt="Finance screen with revenue, expenses and the month's balance" width="1440" height="900"></div></button><figcaption><b>Finances.</b> Revenue, expenses, monthly balance and fixed costs.</figcaption></figure>
+      <figure><button type="button" data-zoom><div class="shot"><img loading="lazy" src="../img/07-clientes.png" alt="Customer records" width="1440" height="900"></div></button><figcaption><b>Customers.</b> Records with each one's history.</figcaption></figure>
+      <figure><button type="button" data-zoom><div class="shot"><img loading="lazy" src="../img/09-agenda.png" alt="Monthly appointment calendar" width="1440" height="900"></div></button><figcaption><b>Calendar.</b> Appointments for the day, the week and the month.</figcaption></figure>
+      <figure><button type="button" data-zoom><div class="shot"><img loading="lazy" src="../img/01-primeiro-acesso.png" alt="First-access screen to create the shop and the user" width="1440" height="900"></div></button><figcaption><b>First access.</b> Create your shop and your user in a minute.</figcaption></figure>
+      <figure><button type="button" data-zoom><div class="shot"><img loading="lazy" src="../img/02-login.png" alt="BancadaSync login screen" width="1440" height="900"></div></button><figcaption><b>Login.</b> Secure access with e-mail and password.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="planos">
+  <div class="wrap">
+    <span class="eyebrow">Free and Pro</span>
+    <h2>Start for free. Grow when you need to.</h2>
+    <p class="muted" style="max-width:62ch">The free version already covers the basics of a repair shop. Pro unlocks integrations and access from anywhere.</p>
+    <div class="table-scroll" style="margin-top:24px">
+      <table>
+        <thead><tr><th>Feature</th><th class="c">Free</th><th class="c">Pro</th></tr></thead>
+        <tbody>
+          <tr><td>Service orders, printing and warranty</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Customers, devices, products, services and suppliers</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Finances and commissions</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Audit log and permissions per role</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Users</td><td class="c">up to 3</td><td class="c yes">unlimited</td></tr>
+          <tr><td>Tracking link for the customer</td><td class="c lock">🔒</td><td class="c yes">✓</td></tr>
+          <tr><td>Built-in WhatsApp and message templates</td><td class="c lock">🔒</td><td class="c yes">✓</td></tr>
+          <tr><td>API / N8N integration</td><td class="c lock">🔒</td><td class="c yes">✓</td></tr>
+          <tr><td>Access on desktop, tablet and phone</td><td class="c lock">🔒</td><td class="c yes">✓</td></tr>
+          <tr><td>Follow from afar, in real time, when the shop is billing</td><td class="c lock">🔒</td><td class="c yes">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cta">
+      <a class="btn btn-ghost" href="https://wa.me/5521966547296">I want Pro (WhatsApp)</a>
+    </div>
+  </div>
+</section>
+
+<section id="instalar" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <span class="eyebrow">How to install</span>
+    <h2>Ready to use in a few minutes</h2>
+    <div class="grid cards steps" style="margin-top:28px">
+      <div class="card step"><h3>Download the installer</h3><p>Click “Download for free” and save <code>BancadaSync-Setup.exe</code>.</p></div>
+      <div class="card step"><h3>Install</h3><p>Double-click it and follow the wizard. If Windows warns you, click <b>More info</b> and then <b>Run anyway</b>. No administrator password needed.</p></div>
+      <div class="card step"><h3>Create your shop</h3><p>Open BancadaSync. On the first screen, enter the shop's details and create your user and password. Done.</p></div>
+    </div>
+    <div class="cta"><a class="btn btn-primary" href="https://github.com/MeoWDev-MOD/BancadaSync-Download/releases/latest/download/BancadaSync-Setup.exe">⬇ Download for Windows</a></div>
+
+    <h3 style="margin-top:48px">Frequently asked questions</h3>
+    <details><summary>Why does Windows show a warning when installing?</summary><p>The installer does not have a paid digital signature yet (the “verified publisher” certificate), so SmartScreen shows “unknown publisher”. The file is the same one published here; check its integrity with the hash below.</p></details>
+    <details><summary>Where is my data kept?</summary><p>On your computer, in <code>%APPDATA%\CRM Assistencia</code>. When uninstalling, the program asks whether you want to delete the data; the default is to keep it.</p></details>
+    <details><summary>Do I need internet?</summary><p>For day-to-day work, no. Only for features that depend on it, such as WhatsApp in the Pro version.</p></details>
+    <details><summary>What if the computer shuts down?</summary><p>When it turns back on, open the BancadaSync shortcut: your data and logins come back as they were.</p></details>
+    <details><summary>How do I update to a new version?</summary><p>Run the new installer over it. It closes the system, replaces the files and keeps your data.</p></details>
+    <details><summary>How do I check that the file is the original? (SHA-256 of version 1.0.0)</summary><p><code>1d10463c9d5ac24ce16623b04e5573c4cbf718de99053cb7d86f108681689fa7</code><br>In PowerShell: <code>Get-FileHash .\BancadaSync-Setup.exe -Algorithm SHA256</code></p></details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Talk to the developer</span>
+    <h2>Questions, suggestions or want Pro?</h2>
+    <p class="muted">Developed by <b style="color:var(--text)">Jefferson Honorio (MeoWDev MOD)</b>.</p>
+    <div class="contact">
+      <a class="btn btn-primary" href="https://wa.me/5521966547296">WhatsApp</a>
+      <a class="btn btn-ghost" href="https://www.instagram.com/tech_meow.oficial?cplk=MWp5Z2s2cjNuNG01bg==">Instagram</a>
+      <a class="btn btn-ghost" href="https://linktr.ee/tech_meow?utm_source=linktree_profile_share&amp;ltsid=531414a6-986b-4891-a08f-9445b634b839">Tech MeoW website</a>
+      <a class="btn btn-ghost" href="mailto:vendas.hson@gmail.com">E-mail</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="dev"><img src="../img/meowdev-logo.png" alt="MeoWDev MOD" width="44" height="44"><span>Developed by Jefferson Honorio (MeoWDev MOD)</span></div>
+    <span>BancadaSync · repair shop management</span>
+  </div>
+</footer>
+
+<dialog id="zoom"><img id="zoom-img" alt=""></dialog>
+<script>
+(function(){
+  var d=document.getElementById('zoom'), big=document.getElementById('zoom-img');
+  document.querySelectorAll('[data-zoom]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.querySelector('img'); big.src=i.src; big.alt=i.alt; d.showModal();
+    });
+  });
+  d.addEventListener('click',function(){ d.close(); });
+})();
+</script>
+</body>
+</html>

@@ -9,3 +9,6 @@ Sitemap: https://techmeow.app/Control-PS-5/sitemap.xml
 Sitemap: https://techmeow.app/ps5-controle-test/sitemap.xml
 Sitemap: https://techmeow.app/sitemap-idiomas.xml
 Sitemap: https://techmeow.app/Control-PS-5/sitemap-idiomas.xml
+Sitemap: https://techmeow.app/ps5-controle-test/sitemap-idiomas.xml
+Sitemap: https://techmeow.app/Iron-Check/sitemap.xml
+Sitemap: https://techmeow.app/BancadaSync-Download/sitemap.xml

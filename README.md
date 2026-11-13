@@ -1,5 +1,7 @@
 # Tech MeoW
 
+🌐 **[Read in English](README.en.md)**
+
 Site principal da Tech MeoW e link da bio do Instagram [@tech_meow.oficial](https://www.instagram.com/tech_meow.oficial/): assistência técnica de videogame em Engenho da Rainha, Rio de Janeiro (reparo de PS5, Nintendo Switch, Steam Deck, placa de vídeo e controle), desbloqueio de Switch, curso, loja e os projetos da MeoWDev-MOD.
 
 No ar em **https://techmeow.app/** (hospedado na Vercel, projeto `tech-meow`; cada envio para a branch `main` publica sozinho).
