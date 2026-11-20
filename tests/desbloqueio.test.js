@@ -23,11 +23,19 @@ test("a parcela sem juros vezes o número de parcelas dá o preço (até 2 centa
   assert.ok(reais(DESBLOQUEIO.parcelaTela) * DESBLOQUEIO.parcelas <= Number(DESBLOQUEIO.preco), "a parcela não pode somar mais que o preço");
 });
 
-test("o preço antigo só aparece riscado ou como aviso de que pode voltar", () => {
+test("o preço antigo só aparece como \"de ... por\" (riscado na tela) e é maior que o preço", () => {
+  assert.ok(reais(DESBLOQUEIO.precoAntigo) > Number(DESBLOQUEIO.preco));
   const usos = main.split(DESBLOQUEIO.precoAntigo).length - 1;
-  const riscados = main.split(`<s>${DESBLOQUEIO.precoAntigo}</s>`).length - 1;
-  const aviso = main.includes(`pode voltar a ${DESBLOQUEIO.precoAntigo}`) ? 1 : 0;
-  assert.equal(usos, riscados + aviso);
+  const deSp = (main.match(new RegExp(`\\bde (<s>)?${DESBLOQUEIO.precoAntigo.replace(/[$.]/g, "\\$&")}`, "gi")) || []).length;
+  assert.ok(usos >= 3, "faixa, cartão e chamada final");
+  assert.equal(usos, deSp, "todo uso do preço antigo vem depois de \"de\"");
+  assert.ok(main.includes(`<s>${DESBLOQUEIO.precoAntigo}</s> por apenas`), "riscado no cartão do preço");
+});
+
+test("a escassez é a real: preço vale enquanto durarem os chips (sem contador falso)", () => {
+  assert.match(main, /enquanto durarem/i);
+  assert.match(main, /chip/i);
+  assert.doesNotMatch(main, /restam \d|últimas \d|countdown|cronômetro/i);
 });
 
 test("toda pergunta da tela está no FAQPage, com a mesma resposta", () => {

@@ -971,3 +971,5 @@ Did it not open? It works in Google Chrome, Microsoft Edge and Opera, on a compu
 MeoWGuard · Developed by MeoWDev MOD. Built on <a href="https://github.com/ITotalJustice/sphaira" target="_blank" rel="noopener noreferrer">sphaira</a> (ITotalJustice and contributors), GPLv3 license. Not affiliated with Nintendo.
 @@ 812ea910ee
 See everything about the unlocking
+@@ c25c86ec65
+Was <s>R$490.00</s>, now just

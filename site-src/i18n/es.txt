@@ -971,3 +971,5 @@ Copiar
 MeoWGuard · Developed by MeoWDev MOD. Hecho sobre <a href="https://github.com/ITotalJustice/sphaira" target="_blank" rel="noopener noreferrer">sphaira</a> (ITotalJustice y colaboradores), licencia GPLv3. Sin relación con Nintendo.
 @@ 812ea910ee
 Ver todo sobre el desbloqueo
+@@ c25c86ec65
+De <s>R$ 490,00</s> por solo

@@ -971,3 +971,5 @@ Switch принимает и устанавливает файлы по одно
 MeoWGuard · Developed by MeoWDev MOD. Создано на основе <a href="https://github.com/ITotalJustice/sphaira" target="_blank" rel="noopener noreferrer">sphaira</a> (ITotalJustice и участники), лицензия GPLv3. Не связано с Nintendo.
 @@ 812ea910ee
 Всё о прошивке
+@@ c25c86ec65
+Было <s>490,00 R$</s>, теперь всего

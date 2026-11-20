@@ -247,7 +247,7 @@ const loja = () => JSON.parse(readFileSync(path.join(aqui, "paginas", "home.json
 // Desbloqueio de Switch: preço e vídeo da página /desbloqueio-switch/ e do JSON-LD dela.
 // Na página, {{d:precoTela}} e {{video:id}} viram estes valores. A página inicial e as traduções têm o preço escrito à parte.
 export const DESBLOQUEIO = {
-  preco: "319.90", precoTela: "R$ 319,90", precoAntigo: "R$ 339,90", parcelas: 3, parcelaTela: "R$ 106,63",
+  preco: "319.90", precoTela: "R$ 319,90", precoAntigo: "R$ 490,00", parcelas: 3, parcelaTela: "R$ 106,63",
   video: { id: "PDOh3pps97o", titulo: "Como é feito o desbloqueio do Nintendo Switch OLED: método Kamikaze, passo a passo", data: "2025-11-16T18:51:52-08:00", duracao: "PT10M24S" },
 };
 
@@ -293,11 +293,13 @@ const PAGINAS = [
   {
     corpo: "desbloqueio.html", saida: "desbloqueio-switch/index.html", caminho: "/desbloqueio-switch/", ativo: "desbloqueio",
     zap: "Olá, Tech MeoW! Vim pela página do desbloqueio e quero desbloquear meu Nintendo Switch por R$ 319,90.",
-    imagem: `${SITE}/img/og-desbloqueio.jpg`, imagemAlt: "Desbloqueio de Nintendo Switch no Rio por R$ 319,90 em até 3x sem juros, com 1 ano de garantia e coleta em todo o Rio",
+    // ?v= muda quando a imagem muda: o WhatsApp e o Instagram guardam a miniatura antiga pelo endereço da imagem
+    imagem: `${SITE}/img/og-desbloqueio.jpg?v=${marca("img/og-desbloqueio.jpg")}`,
+    imagemAlt: "Desbloqueio de Nintendo Switch no Rio: de R$ 490,00 por apenas R$ 319,90 em até 3x sem juros, com 1 ano de garantia e suporte vitalício",
     titulo: "Desbloqueio de Nintendo Switch no RJ por R$ 319,90 | Tech MeoW",
-    descricao: "Desbloqueio de Switch V1, V2, Lite e OLED no Rio por R$ 319,90 em até 3x sem juros. Pacote JNX próprio, 1 ano de garantia, suporte vitalício e coleta em todo o RJ.",
+    descricao: "Desbloqueio de Switch V1, V2, Lite e OLED no Rio: de R$ 490,00 por R$ 319,90 em até 3x sem juros. 1 ano de garantia, suporte vitalício e coleta em todo o RJ.",
     keywords: "desbloqueio de Nintendo Switch, desbloqueio de Switch no RJ, desbloquear Switch, desbloqueio Switch Rio de Janeiro, desbloqueio Switch OLED, desbloqueio Switch Lite, desbloqueio Switch V1, desbloqueio Switch V2, Switch desbloqueado, método Kamikaze, kamikaze Switch OLED, pacote JNX, desbloqueio de Switch com garantia, coleta de videogame no Rio, Engenho da Rainha, Zona Norte",
-    og: { titulo: "Desbloqueio de Nintendo Switch no Rio por R$ 319,90", descricao: "Em até 3x sem juros. Pacote JNX feito pela Tech MeoW, 1 ano de garantia, suporte vitalício e coleta em todo o Rio." },
+    og: { titulo: "Desbloqueio de Nintendo Switch: de R$ 490,00 por R$ 319,90", descricao: "Em até 3x sem juros, enquanto durarem os chips. Pacote JNX da Tech MeoW, 1 ano de garantia, suporte vitalício e coleta em todo o Rio." },
     jsonld: (corpo) => {
       const url = `${SITE}/desbloqueio-switch/`;
       const v = DESBLOQUEIO.video;
@@ -312,7 +314,7 @@ const PAGINAS = [
             areaServed: [{ "@type": "City", name: "Rio de Janeiro" }, { "@type": "Country", name: "Brasil" }],
             offers: {
               "@type": "Offer", price: DESBLOQUEIO.preco, priceCurrency: "BRL", availability: "https://schema.org/InStock", url,
-              description: `À vista ou em até ${DESBLOQUEIO.parcelas}x sem juros. Qualquer modelo do Switch 1; o Switch 2 não tem desbloqueio.`,
+              description: `De ${DESBLOQUEIO.precoAntigo} por ${DESBLOQUEIO.precoTela}, à vista ou em até ${DESBLOQUEIO.parcelas}x sem juros, enquanto durarem as unidades de chip de desbloqueio. Qualquer modelo do Switch 1; o Switch 2 não tem desbloqueio.`,
               seller: { "@id": `${SITE}/#loja` },
             },
           },
