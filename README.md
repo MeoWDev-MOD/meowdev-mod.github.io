@@ -13,6 +13,7 @@ O visual é o mesmo do [PS-5 Controle Test](https://techmeow.app/ps5-controle-te
 | Endereço | O que é |
 |---|---|
 | `/` | Início: reparos, **desbloqueio de Switch em destaque**, lançamento do MeoWGuard, projetos, loja, contato e dúvidas |
+| `/desbloqueio-switch/` | Página de venda do desbloqueio de Switch: preço, JNX, apps, método Kamikaze com o vídeo do canal, coleta, dúvidas. Só em português (o serviço é no Rio). Nada sobre jogos no texto nem nas imagens |
 | `/projetos/` | Todos os projetos, com abas (Switch, assistência técnica, quem joga, trabalho) |
 | `/app/` e `/app/acesso/` | Página de venda do MeoWGuard e a página de acesso depois do pagamento |
 | `/MeoWGuard/` | Instalação pelo navegador (WebUSB) para quem usa Mac |
@@ -20,11 +21,11 @@ O visual é o mesmo do [PS-5 Controle Test](https://techmeow.app/ps5-controle-te
 | `/ps5-hdmi-tool/`, `/Control-PS-5/`, `/ps5-controle-test/`, `/Iron-Check/`, `/BancadaSync-Download/` | Os outros projetos, trazidos para dentro do site (cada um com a sua cara) |
 | `/api/...` | Servidor do pagamento e da atualização do app (veja `api/` e `tests/`) |
 
-Atalhos (em `vercel.json`): `/hdmi-tool`, `/iron-check`, `/control-ps5`, `/bancadasync`, `/controle-test`, `/guia`, `/jnx`, `/curso`, `/desbloqueio`, `/reparos`, `/loja` e `/contato`.
+Atalhos (em `vercel.json`): `/hdmi-tool`, `/iron-check`, `/control-ps5`, `/bancadasync`, `/controle-test`, `/guia`, `/jnx`, `/curso`, `/desbloqueio` (vai para `/desbloqueio-switch/`), `/reparos`, `/loja` e `/contato`.
 
 ## Como mexer
 
-As páginas do site principal (`index.html`, `projetos/`, `app/`, `app/acesso/`, `privacidade/`) **são geradas**: não edite esses `index.html` à mão.
+As páginas do site principal (`index.html`, `projetos/`, `app/`, `app/acesso/`, `desbloqueio-switch/`, `privacidade/`) **são geradas**: não edite esses `index.html` à mão.
 
 - Texto e blocos de cada página: `site-src/paginas/*.html`.
 - Lista de projetos (menu, início e `/projetos/` saem dela): `site-src/dados.mjs`.
@@ -33,6 +34,7 @@ As páginas do site principal (`index.html`, `projetos/`, `app/`, `app/acesso/`,
 - Comportamento: `site-src/tm.js` (menu, tema, rolagem suave, entradas, filtros, formulário do WhatsApp, mapa), mais `efeitos.js`, `fundo.js`, `cortina.js`, `cena3d.js` (interposer em 3D), `banners.js` e `consent.js` (anúncios do CRM, lugar `bio-site`, e aviso de cookies; chaves `bio-*`).
 - Depois de mexer, rode **`node site-src/build.mjs`**: ele monta o JavaScript em `js/` e as páginas, com o carimbo de versão no estilo e no script.
 - Dados da loja para o Google (endereço, mapa, telefone, serviços): `site-src/paginas/home.jsonld.json`.
+- Preço do desbloqueio: na página `/desbloqueio-switch/` ele sai de `DESBLOQUEIO` em `site-src/montar-paginas.mjs` (preço, preço antigo riscado, parcelas e o vídeo). Na página inicial, no menu, no `home.jsonld.json` e nas traduções (`site-src/i18n/*.txt`) ele está escrito à parte: mudou o preço, troque nos dois lugares.
 
 ## Projetos trazidos para cá
 
@@ -49,6 +51,7 @@ O comando baixa a versão atual do repositório, troca os endereços antigos (`m
 
 ```
 node --test tests/pagamento.test.js                                   # pagamento e atualização
+node --test tests/desbloqueio.test.js                                 # página do desbloqueio (preço, parcelas, perguntas, WhatsApp)
 python -m http.server 8770                                            # site local
 MSYS_NO_PATHCONV=1 node scripts/conferir-links.mjs http://127.0.0.1:8770   # todo endereço de imagem, script e link interno abre?
 ```

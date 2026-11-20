@@ -33,7 +33,7 @@
     try { var t = localStorage.getItem("tm.theme"); if (t === "light" || t === "dark") d.dataset.theme = t; } catch (e) {}
     try { if (sessionStorage.getItem("ps5.pt")) { sessionStorage.removeItem("ps5.pt"); d.classList.add("pt"); } } catch (e) {} })();
 </script>
-<link rel="stylesheet" href="/tm.css?v=b3a7f5f140">
+<link rel="stylesheet" href="/tm.css?v=a8e4f9f31f">
 <!--i18n:head-->
 <link rel="alternate" hreflang="pt-BR" href="https://techmeow.app/privacidade/">
 <link rel="alternate" hreflang="en" href="https://techmeow.app/en/privacidade/">
@@ -84,6 +84,12 @@ if(matchMedia("(max-width:600px)").matches){s.classList.add("m");document.body.a
   <symbol id="i-light" viewBox="0 0 24 24"><path d="M8 2h8v20H8zM12 7h.01M12 12h.01M12 17h.01"/></symbol>
   <symbol id="i-sys" viewBox="0 0 24 24"><path d="M4 20V8l8-5 8 5v12M9 20v-6h6v6"/></symbol>
   <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v14H6.5A2.5 2.5 0 0 0 4 19.5zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5M9 8h6M9 12h6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6zM8.5 12l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h12v10H2zM14 9h4l3 3v4h-7M6.5 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM17.5 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></symbol>
+  <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0 1 16 0v3M4 15h3v5H5a1 1 0 0 1-1-1zM20 15h-3v5h2a1 1 0 0 0 1-1z"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3 7.5l9-4.5 9 4.5v9L12 21l-9-4.5zM3 7.5l9 4.5 9-4.5M12 12v9"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/></symbol>
   <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.2 21.8l5.1-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></symbol>
   <symbol id="i-ig" viewBox="0 0 24 24"><path d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.7 4.7 0 0 0 12 7.3Zm0 7.8a3.1 3.1 0 1 1 3.1-3.1 3.1 3.1 0 0 1-3.1 3.1Zm6-8a1.1 1.1 0 1 1-1.1-1.1A1.1 1.1 0 0 1 18 7.1ZM21.1 8.2a5.4 5.4 0 0 0-1.5-3.8 5.5 5.5 0 0 0-3.8-1.5c-1.5-.1-6-.1-7.6 0a5.5 5.5 0 0 0-3.8 1.5 5.5 5.5 0 0 0-1.5 3.8c-.1 1.5-.1 6 0 7.6a5.4 5.4 0 0 0 1.5 3.8 5.5 5.5 0 0 0 3.8 1.5c1.5.1 6 .1 7.6 0a5.4 5.4 0 0 0 3.8-1.5 5.5 5.5 0 0 0 1.5-3.8c.1-1.5.1-6 0-7.6Zm-2 9.2a3.1 3.1 0 0 1-1.8 1.8c-1.2.5-4.1.4-5.3.4s-4.2.1-5.3-.4a3.1 3.1 0 0 1-1.8-1.8c-.5-1.2-.4-4.1-.4-5.4s-.1-4.2.4-5.3a3.1 3.1 0 0 1 1.8-1.8c1.2-.5 4.1-.4 5.3-.4s4.2-.1 5.3.4a3.1 3.1 0 0 1 1.8 1.8c.5 1.2.4 4.1.4 5.3s.1 4.2-.4 5.4Z"/></symbol>
   <symbol id="i-yt" viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.7 15V9l5.8 3Z"/></symbol>
@@ -95,7 +101,7 @@ if(matchMedia("(max-width:600px)").matches){s.classList.add("m");document.body.a
     <a class="brand" href="/" aria-label="Tech MeoW, página inicial"><img src="/img/logo-branca.webp" width="400" height="400" alt=""><span>Tech <b>MeoW</b></span></a>
     <nav class="links" id="menuPrincipal" aria-label="Principal">
       <a href="/#reparos" data-sec="reparos">Reparos</a>
-      <a class="hl" href="/#desbloqueio" data-sec="desbloqueio">Desbloqueio <i>R$ 339,90</i></a>
+      <a class="hl" href="/desbloqueio-switch/" data-sec="desbloqueio">Desbloqueio <i>R$ 319,90</i></a>
       <div class="dd">
         <a class="dd-btn" href="/projetos/" aria-haspopup="true" aria-expanded="false" aria-controls="menuProjetos">Projetos<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></a>
         <div class="dd-panel" id="menuProjetos">
@@ -148,10 +154,10 @@ if(matchMedia("(max-width:600px)").matches){s.classList.add("m");document.body.a
   <article class="artigo">
     <span class="kick">Privacidade</span>
     <h1>Privacidade e cookies</h1>
-    <p>Atualizado em 8 de novembro de 2026.</p>
+    <p>Atualizado em 20 de novembro de 2026.</p>
 
     <h2>Resumo</h2>
-    <p>Este site não usa ferramentas de análise de terceiros, como o Google Analytics. O único serviço de fora que pode gravar cookies é o mapa do Google Maps, e só com a sua autorização ou depois do seu clique. O resto do que chamamos de cookies aqui é, na prática, o armazenamento do seu navegador: pequenas informações que ficam no seu aparelho.</p>
+    <p>Este site não usa ferramentas de análise de terceiros, como o Google Analytics. Os únicos serviços de fora que podem gravar cookies são o mapa do Google Maps, só com a sua autorização ou depois do seu clique, e o vídeo do YouTube na página do desbloqueio de Switch, só depois que você clica para tocar. O resto do que chamamos de cookies aqui é, na prática, o armazenamento do seu navegador: pequenas informações que ficam no seu aparelho.</p>
 
     <h2>Sempre ativo (necessário)</h2>
     <p>A sua escolha sobre os cookies (<code>bio.consent</code>), o tema claro ou escuro que você escolheu (<code>tm.theme</code>) e o idioma escolhido (<code>techmeow.lang</code>), que vale para todos os sites de techmeow.app.</p>
@@ -172,7 +178,7 @@ if(matchMedia("(max-width:600px)").matches){s.classList.add("m");document.body.a
     <p>Quando uma página do site abre, ela avisa o CRM da Tech MeoW, só para somar o número de acessos. Vão apenas o caminho da página (sem nada que venha depois do "?") e o site de onde você chegou. O servidor soma também o país e o estado, aproximados pela sua internet, e se o aparelho é celular ou computador. Não usamos cookie para isso, não guardamos o seu IP e não sabemos quem você é. Se o seu navegador estiver com "Não rastrear" ligado, nada é enviado.</p>
 
     <h2>Serviços usados</h2>
-    <p>O site é hospedado na Vercel. As letras são do próprio site, sem Google Fonts. O mapa vem do Google Maps, e a lista e os arquivos dos anúncios vêm da Vercel e do Supabase. Como em qualquer site, esses serviços recebem o seu IP e dados técnicos para entregar o conteúdo. O banco que guarda os códigos da compra é o Redis da Upstash, contratado pela Vercel. WhatsApp, Instagram, YouTube, GitHub, Mercado Livre, Shopee, Kiwify, InfinitePay, Mercado Pago, Google Maps e Waze têm políticas próprias quando você abre os links deles.</p>
+    <p>O site é hospedado na Vercel. As letras são do próprio site, sem Google Fonts. O mapa vem do Google Maps, o vídeo da página do desbloqueio vem do YouTube (endereço sem cookies, youtube-nocookie.com, que só carrega no clique), e a lista e os arquivos dos anúncios vêm da Vercel e do Supabase. Como em qualquer site, esses serviços recebem o seu IP e dados técnicos para entregar o conteúdo. O banco que guarda os códigos da compra é o Redis da Upstash, contratado pela Vercel. WhatsApp, Instagram, YouTube, GitHub, Mercado Livre, Shopee, Kiwify, InfinitePay, Mercado Pago, Google Maps e Waze têm políticas próprias quando você abre os links deles.</p>
     <p>Os outros projetos que moram aqui (PS-5 Controle Test, Control PS-5, PS5 HDMI Tool, Iron Check e BancadaSync) têm a própria página de privacidade, dentro de cada um.</p>
 
     <h2>Seus direitos</h2>
@@ -199,7 +205,7 @@ if(matchMedia("(max-width:600px)").matches){s.classList.add("m");document.body.a
       <nav class="fcol" aria-label="Serviços">
         <h4>Serviços</h4>
         <a href="/#reparos">Reparos</a>
-        <a href="/#desbloqueio">Desbloqueio de Switch</a>
+        <a href="/desbloqueio-switch/">Desbloqueio de Switch</a>
         <a href="/#loja">Loja</a>
         <a href="/#contato">Contato e mapa</a>
       </nav>
@@ -230,6 +236,6 @@ if(matchMedia("(max-width:600px)").matches){s.classList.add("m");document.body.a
 </footer>
 
 <a class="fab" href="https://wa.me/5521966547296?text=Ol%C3%A1%2C%20Tech%20MeoW!%20Vim%20pelo%20site." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg class="ib" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
-<script type="module" src="/js/tm.js?v=7ac03e9ea5"></script>
+<script type="module" src="/js/tm.js?v=da7c6513b7"></script>
 </body>
 </html>

@@ -27,14 +27,14 @@ Tus derechos
 Promoción
 @@ 6bebcda8ba
 Servicio técnico de videojuegos en Río de Janeiro, Brasil | Tech MeoW
-@@ 72d6594723
-Servicio técnico de videojuegos en Engenho da Rainha, Río de Janeiro: PS5, Nintendo Switch y Xbox. Especialistas en desbloqueo de Switch por R$ 339,90.
+@@ 80dd3a20a8
+Servicio técnico de videojuegos en Engenho da Rainha, Río de Janeiro: PS5, Nintendo Switch y Xbox. Especialistas en desbloqueo de Switch por R$ 319,90.
 @@ 955c1c4202
 reparación de PS5, servicio técnico PS5 Río de Janeiro, PS5 sin imagen, cambio del chip HDMI PS5, reparación PS5 Slim, reparación Nintendo Switch, desbloqueo Nintendo Switch, desbloqueo Switch Río de Janeiro, reparación Steam Deck, reparación de tarjeta de video, reparación de control PS5, servicio técnico de videojuegos, Engenho da Rainha, Río de Janeiro, Brasil
 @@ 9c16fbf0e0
 Servicio técnico de videojuegos en Río de Janeiro | Tech MeoW
-@@ 8fa3f239ac
-PS5, Nintendo Switch y Xbox. Especialistas en desbloqueo de Switch por R$ 339,90. Presupuesto por WhatsApp.
+@@ 7c0181736e
+PS5, Nintendo Switch y Xbox. Especialistas en desbloqueo de Switch por R$ 319,90. Presupuesto por WhatsApp.
 @@ 2eac46c6e2
 Nintendo Switch, PS5 y Xbox lado a lado, con el texto Servicio técnico de videojuegos y Especialistas en desbloqueo de Switch
 @@ add208f9df
@@ -59,8 +59,8 @@ Tech MeoW, página de inicio
 Principal
 @@ 98d4c4c3d2
 Reparaciones
-@@ 3754090d22
-Desbloqueo <i>R$ 339,90</i>
+@@ 5acb3b2ffc
+Desbloqueo <i>R$ 319,90</i>
 @@ 2ab47298c1
 Proyectos<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg>
 @@ b77d89ba5a
@@ -139,8 +139,8 @@ Promoción de desbloqueo de Switch
 Nintendo Switch con la app Control PS-5 abierta y un control de PS5 conectado
 @@ 11377aa87c
 Desbloqueo de Nintendo Switch
-@@ 9b8050ddd1
-R$ 339,90
+@@ b68b6f1a23
+R$ 319,90
 @@ 3590c3dc95
 cualquier modelo del Switch 1
 @@ 7842c0613d
@@ -227,8 +227,6 @@ Promoción · Nintendo Switch 1
 <svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Después, usa el control de PS5 en el Switch con <a href="/Control-PS-5/">Control PS-5</a>, la app gratis que hicimos
 @@ 3c572bf01b
 <svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Homebrews en portugués en el paquete <a href="https://github.com/MeoWDev-MOD/JNX" target="_blank" rel="noopener">JNX</a>, también gratis
-@@ 21e66146b0
-Ver lo que viene después
 @@ 69ad2decbc
 El Switch 2 todavía no tiene desbloqueo.
 @@ 191eb4ceb4
@@ -363,8 +361,8 @@ Asunto
 quiero un presupuesto de reparación
 @@ 345c52cab2
 Reparación
-@@ f94cf83622
-quiero el desbloqueo de Nintendo Switch en la promoción de R$ 339,90
+@@ 990a33b192
+quiero el desbloqueo de Nintendo Switch en la promoción de R$ 319,90
 @@ 18ec9d9782
 Desbloqueo
 @@ dd696c646d
@@ -377,8 +375,8 @@ quiero hablar de una alianza
 Alianza
 @@ c90ac71572
 <b>Reparación</b> PS5, Switch, Steam Deck, tarjeta de video o control. Cuéntanos el aparato y la falla; una foto o un video ayudan con el presupuesto.
-@@ f5d160b797
-<b>Desbloqueo de Switch, R$ 339,90</b> Cualquier modelo del Switch 1. Después, puedes usar el control de PS5 en el Switch con Control PS-5, la app gratis que hicimos.
+@@ 4915464e80
+<b>Desbloqueo de Switch, R$ 319,90</b> Cualquier modelo del Switch 1. Después, puedes usar el control de PS5 en el Switch con Control PS-5, la app gratis que hicimos.
 @@ d4362b7b8e
 <b>Interposer Tech MeoW</b> Para el PS5 Slim. También está en Mercado Livre y Shopee, en la tienda de arriba.
 @@ a23dcaceec
@@ -431,8 +429,8 @@ En la Rua Sergio Silva, 50, en Engenho da Rainha, en la Zona Norte de Río de Ja
 De lunes a viernes, de 10 a 18 h. Escríbenos por WhatsApp antes de venir.
 @@ 0ceb59c461
 ¿Qué Switch se pueden desbloquear?
-@@ 7426717f25
-Cualquier modelo del Switch 1: V1, V2, Lite y OLED, por R$ 339,90 en la promoción. El Switch 2 todavía no tiene desbloqueo.
+@@ 5a00016fa6
+Cualquier modelo del Switch 1: V1, V2, Lite y OLED, por R$ 319,90 en la promoción. El Switch 2 todavía no tiene desbloqueo.
 @@ febd6a4136
 Después del desbloqueo, ¿puedo usar un control de PS5 en el Switch?
 @@ e92afda020
@@ -495,8 +493,8 @@ Escribir por WhatsApp
 ¡Hola, Tech MeoW! Vengo del sitio y quiero un sistema a medida para mi empresa.
 @@ c4564ff02e
 ¡Hola, Tech MeoW! Vengo del sitio.
-@@ 49ab5b97f6
-¡Hola, Tech MeoW! Vengo del sitio y quiero el desbloqueo de Nintendo Switch en la promoción de R$ 339,90.
+@@ b81e2491ca
+¡Hola, Tech MeoW! Vengo del sitio y quiero el desbloqueo de Nintendo Switch en la promoción de R$ 319,90.
 @@ f008687ea3
 ¡Hola, Tech MeoW! Vengo del sitio y quiero un presupuesto de reparación de PS5.
 @@ 20b67b8181
@@ -783,10 +781,10 @@ Privacidad y cookies · Tech MeoW
 Lo que el sitio de Tech MeoW guarda en tu navegador y cómo se cuentan los anuncios.
 @@ 8a09f60b05
 Privacidad
-@@ fcacd196d3
-Actualizado el 8 de noviembre de 2026.
-@@ f3c1c47474
-Este sitio no usa herramientas de analítica de terceros, como Google Analytics. El único servicio externo que puede guardar cookies es el mapa de Google Maps, y solo con tu autorización o después de tu clic. El resto de lo que aquí llamamos cookies es, en la práctica, el almacenamiento de tu navegador: pequeñas informaciones que quedan en tu dispositivo.
+@@ 5fc8acb001
+Actualizado el 20 de noviembre de 2026.
+@@ a372db4ae9
+Este sitio no usa herramientas de analítica de terceros, como Google Analytics. Los únicos servicios externos que pueden guardar cookies son el mapa de Google Maps, solo con tu autorización o después de tu clic, y el video de YouTube en la página del desbloqueo de Switch, solo después de que haces clic para reproducirlo. El resto de lo que aquí llamamos cookies es, en la práctica, el almacenamiento de tu navegador: pequeñas informaciones que quedan en tu dispositivo.
 @@ 413a7512a5
 Siempre activo (necesario)
 @@ c2bc73502f
@@ -807,8 +805,8 @@ El pago se hace en InfinitePay, que tiene su propia política de privacidad y re
 Conteo de visitas
 @@ 948225f65a
 Cuando se abre una página del sitio, avisa al CRM de Tech MeoW, solo para sumar el número de visitas. Se envían únicamente la ruta de la página (sin nada de lo que viene después del "?") y el sitio del que llegaste. El servidor suma también el país y el estado, aproximados por tu conexión, y si el dispositivo es celular o computadora. No usamos cookies para esto, no guardamos tu IP y no sabemos quién eres. Si tu navegador tiene activado "No rastrear", no se envía nada.
-@@ d910475480
-El sitio está alojado en Vercel. Las fuentes son del propio sitio, sin Google Fonts. El mapa viene de Google Maps, y la lista y los archivos de los anuncios vienen de Vercel y Supabase. Como en cualquier sitio, estos servicios reciben tu IP y datos técnicos para entregar el contenido. La base de datos que guarda los códigos de la compra es Redis de Upstash, contratado a través de Vercel. WhatsApp, Instagram, YouTube, GitHub, Mercado Livre, Shopee, Kiwify, InfinitePay, Mercado Pago, Google Maps y Waze tienen sus propias políticas cuando abres sus enlaces.
+@@ 2fc640d058
+El sitio está alojado en Vercel. Las fuentes son del propio sitio, sin Google Fonts. El mapa viene de Google Maps, el video de la página del desbloqueo viene de YouTube (la dirección sin cookies, youtube-nocookie.com, que solo carga al hacer clic), y la lista y los archivos de los anuncios vienen de Vercel y Supabase. Como en cualquier sitio, estos servicios reciben tu IP y datos técnicos para entregar el contenido. La base de datos que guarda los códigos de la compra es Redis de Upstash, contratado a través de Vercel. WhatsApp, Instagram, YouTube, GitHub, Mercado Livre, Shopee, Kiwify, InfinitePay, Mercado Pago, Google Maps y Waze tienen sus propias políticas cuando abres sus enlaces.
 @@ 95c5a2af17
 Los otros proyectos alojados aquí (PS-5 Controle Test, Control PS-5, PS5 HDMI Tool, Iron Check y BancadaSync) tienen su propia página de privacidad, dentro de cada uno.
 @@ 2b9c286b1e
@@ -971,3 +969,5 @@ Copiar
 ¿No abrió? Funciona en Google Chrome, Microsoft Edge y Opera, en la computadora. En Mac, también puedes usar la app gratis <a href="https://openmtp.ganeshrvel.com" target="_blank" rel="noopener noreferrer">OpenMTP</a>.
 @@ 552ef009b6
 MeoWGuard · Developed by MeoWDev MOD. Hecho sobre <a href="https://github.com/ITotalJustice/sphaira" target="_blank" rel="noopener noreferrer">sphaira</a> (ITotalJustice y colaboradores), licencia GPLv3. Sin relación con Nintendo.
+@@ 812ea910ee
+Ver todo sobre el desbloqueo

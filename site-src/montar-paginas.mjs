@@ -1,4 +1,4 @@
-// Monta as páginas do site principal (início, projetos, MeoWGuard, acesso e privacidade) a partir de:
+// Monta as páginas do site principal (início, projetos, MeoWGuard, desbloqueio de Switch, acesso e privacidade) a partir de:
 //   site-src/paginas/*.html  o miolo de cada página
 //   site-src/dados.mjs        a lista de projetos (menu, início e /projetos/ saem dela)
 // e deste arquivo, que guarda o que é igual em todas: o topo com o menu, o rodapé, o <head> e os ícones.
@@ -36,6 +36,12 @@ const TRACO = {
   light: "M8 2h8v20H8zM12 7h.01M12 12h.01M12 17h.01",
   sys: "M4 20V8l8-5 8 5v12M9 20v-6h6v6",
   book: "M4 5.5A2.5 2.5 0 0 1 6.5 3H20v14H6.5A2.5 2.5 0 0 0 4 19.5zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5M9 8h6M9 12h6",
+  shield: "M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6zM8.5 12l2.5 2.5 4.5-5",
+  truck: "M2 6h12v10H2zM14 9h4l3 3v4h-7M6.5 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM17.5 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z",
+  headset: "M4 15v-3a8 8 0 0 1 16 0v3M4 15h3v5H5a1 1 0 0 1-1-1zM20 15h-3v5h2a1 1 0 0 0 1-1z",
+  box: "M3 7.5l9-4.5 9 4.5v9L12 21l-9-4.5zM3 7.5l9 4.5 9-4.5M12 12v9",
+  star: "M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z",
+  clock: "M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z",
 };
 const MARCAS = {
   wa: "M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.2 21.8l5.1-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z",
@@ -95,7 +101,7 @@ ${PROJETOS.filter((p) => p.grupo === g.id).map(itemMenu).join("\n")}
     <a class="brand" href="/" aria-label="Tech MeoW, página inicial"><img src="/img/logo-branca.webp" width="400" height="400" alt=""><span>Tech <b>MeoW</b></span></a>
     <nav class="links" id="menuPrincipal" aria-label="Principal">
       <a href="/#reparos" data-sec="reparos">Reparos</a>
-      <a class="hl" href="/#desbloqueio" data-sec="desbloqueio">Desbloqueio <i>R$ 339,90</i></a>
+      <a class="hl" href="/desbloqueio-switch/" data-sec="desbloqueio"${atual("desbloqueio")}>Desbloqueio <i>R$ 319,90</i></a>
       <div class="dd">
         <a class="dd-btn" href="/projetos/" aria-haspopup="true" aria-expanded="false" aria-controls="menuProjetos"${atual("projetos")}>Projetos<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></a>
         <div class="dd-panel" id="menuProjetos">
@@ -151,7 +157,7 @@ function rodape({ fotos = false, legalExtra = "" } = {}) {
       <nav class="fcol" aria-label="Serviços">
         <h4>Serviços</h4>
         <a href="/#reparos">Reparos</a>
-        <a href="/#desbloqueio">Desbloqueio de Switch</a>
+        <a href="/desbloqueio-switch/">Desbloqueio de Switch</a>
         <a href="/#loja">Loja</a>
         <a href="/#contato">Contato e mapa</a>
       </nav>
@@ -231,14 +237,27 @@ function head(p, css, js) {
 // ---------- páginas ----------
 const lerJson = (arq) => JSON.stringify(JSON.parse(readFileSync(path.join(aqui, "paginas", arq), "utf8")), null, 2);
 const absoluto = (href) => (href.startsWith("/") ? SITE + href.split("#")[0] : href);
+const semTags = (s) => s.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
+// Perguntas da página (os <details> da seção de dúvidas) para o FAQPage: a resposta do Google é igual à da tela.
+const perguntas = (corpo) => [...corpo.matchAll(/<details><summary>([\s\S]*?)<\/summary><p>([\s\S]*?)<\/p><\/details>/g)]
+  .map(([, q, r]) => ({ "@type": "Question", name: semTags(q), acceptedAnswer: { "@type": "Answer", text: semTags(r) } }));
+// A loja (endereço, telefone, horário) vem do JSON-LD da página inicial, para não ter dois lugares para manter.
+const loja = () => JSON.parse(readFileSync(path.join(aqui, "paginas", "home.jsonld.json"), "utf8"))["@graph"].find((n) => n["@id"] === `${SITE}/#loja`);
+
+// Desbloqueio de Switch: preço e vídeo da página /desbloqueio-switch/ e do JSON-LD dela.
+// Na página, {{d:precoTela}} e {{video:id}} viram estes valores. A página inicial e as traduções têm o preço escrito à parte.
+export const DESBLOQUEIO = {
+  preco: "319.90", precoTela: "R$ 319,90", precoAntigo: "R$ 339,90", parcelas: 3, parcelaTela: "R$ 106,63",
+  video: { id: "PDOh3pps97o", titulo: "Como é feito o desbloqueio do Nintendo Switch OLED: método Kamikaze, passo a passo", data: "2025-11-16T18:51:52-08:00", duracao: "PT10M24S" },
+};
 
 const PAGINAS = [
   {
     corpo: "home.html", saida: "index.html", caminho: "/", ativo: "inicio", fotos: true,
     titulo: "Assistência técnica de videogame no Rio, RJ | Tech MeoW",
-    descricao: "Assistência técnica de videogame no Engenho da Rainha (RJ): PS5, Nintendo Switch e Xbox. Especialista em desbloqueio de Switch por R$ 339,90.",
+    descricao: "Assistência técnica de videogame no Engenho da Rainha (RJ): PS5, Nintendo Switch e Xbox. Especialista em desbloqueio de Switch por R$ 319,90.",
     keywords: "conserto de PS5, assistência técnica de PS5 no RJ, PS5 sem imagem, troca do CI HDMI do PS5, conserto de PS5 Slim, conserto de Nintendo Switch, desbloqueio de Nintendo Switch, desbloqueio de Switch no RJ, conserto de Steam Deck, reparo de placa de vídeo, conserto de controle de PS5, assistência técnica de videogame, Engenho da Rainha, Zona Norte, Rio de Janeiro",
-    og: { titulo: "Assistência técnica de videogame no Rio | Tech MeoW", descricao: "PS5, Nintendo Switch e Xbox. Especialista em desbloqueio de Switch por R$ 339,90. Orçamento no WhatsApp." },
+    og: { titulo: "Assistência técnica de videogame no Rio | Tech MeoW", descricao: "PS5, Nintendo Switch e Xbox. Especialista em desbloqueio de Switch por R$ 319,90. Orçamento no WhatsApp." },
     jsonld: [lerJson("home.jsonld.json")],
   },
   {
@@ -272,6 +291,51 @@ const PAGINAS = [
     }, null, 2)],
   },
   {
+    corpo: "desbloqueio.html", saida: "desbloqueio-switch/index.html", caminho: "/desbloqueio-switch/", ativo: "desbloqueio",
+    zap: "Olá, Tech MeoW! Vim pela página do desbloqueio e quero desbloquear meu Nintendo Switch por R$ 319,90.",
+    imagem: `${SITE}/img/og-desbloqueio.jpg`, imagemAlt: "Desbloqueio de Nintendo Switch no Rio por R$ 319,90 em até 3x sem juros, com 1 ano de garantia e coleta em todo o Rio",
+    titulo: "Desbloqueio de Nintendo Switch no RJ por R$ 319,90 | Tech MeoW",
+    descricao: "Desbloqueio de Switch V1, V2, Lite e OLED no Rio por R$ 319,90 em até 3x sem juros. Pacote JNX próprio, 1 ano de garantia, suporte vitalício e coleta em todo o RJ.",
+    keywords: "desbloqueio de Nintendo Switch, desbloqueio de Switch no RJ, desbloquear Switch, desbloqueio Switch Rio de Janeiro, desbloqueio Switch OLED, desbloqueio Switch Lite, desbloqueio Switch V1, desbloqueio Switch V2, Switch desbloqueado, método Kamikaze, kamikaze Switch OLED, pacote JNX, desbloqueio de Switch com garantia, coleta de videogame no Rio, Engenho da Rainha, Zona Norte",
+    og: { titulo: "Desbloqueio de Nintendo Switch no Rio por R$ 319,90", descricao: "Em até 3x sem juros. Pacote JNX feito pela Tech MeoW, 1 ano de garantia, suporte vitalício e coleta em todo o Rio." },
+    jsonld: (corpo) => {
+      const url = `${SITE}/desbloqueio-switch/`;
+      const v = DESBLOQUEIO.video;
+      return [JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          loja(),
+          {
+            "@type": "Service", "@id": `${url}#servico`, name: "Desbloqueio de Nintendo Switch", serviceType: "Desbloqueio de videogame",
+            description: "Desbloqueio de qualquer modelo do Nintendo Switch 1 (V1, V2, Lite e OLED, no OLED pelo método Kamikaze) com o pacote JNX, criado pela Tech MeoW. 1 ano de garantia, suporte vitalício e coleta em todo o Rio de Janeiro.",
+            url, image: `${SITE}/img/desbloqueio-900.webp`, provider: { "@id": `${SITE}/#loja` },
+            areaServed: [{ "@type": "City", name: "Rio de Janeiro" }, { "@type": "Country", name: "Brasil" }],
+            offers: {
+              "@type": "Offer", price: DESBLOQUEIO.preco, priceCurrency: "BRL", availability: "https://schema.org/InStock", url,
+              description: `À vista ou em até ${DESBLOQUEIO.parcelas}x sem juros. Qualquer modelo do Switch 1; o Switch 2 não tem desbloqueio.`,
+              seller: { "@id": `${SITE}/#loja` },
+            },
+          },
+          {
+            "@type": "WebPage", "@id": `${url}#pagina`, url, name: "Desbloqueio de Nintendo Switch no Rio de Janeiro", inLanguage: "pt-BR",
+            isPartOf: { "@id": `${SITE}/#site` }, about: { "@id": `${url}#servico` }, primaryImageOfPage: `${SITE}/img/og-desbloqueio.jpg`,
+            breadcrumb: { "@type": "BreadcrumbList", itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Início", item: `${SITE}/` },
+              { "@type": "ListItem", position: 2, name: "Desbloqueio de Nintendo Switch", item: url },
+            ] },
+          },
+          {
+            "@type": "VideoObject", name: v.titulo, description: "No canal da Tech MeoW: como é feito o desbloqueio do Nintendo Switch OLED pelo método Kamikaze, passo a passo.",
+            thumbnailUrl: `${SITE}/img/video-kamikaze.jpg`, uploadDate: v.data, duration: v.duracao, inLanguage: "pt-BR",
+            embedUrl: `https://www.youtube-nocookie.com/embed/${v.id}`, url: `https://www.youtube.com/watch?v=${v.id}`,
+            author: { "@type": "Organization", name: "Tech MeoW", url: "https://www.youtube.com/@techmeow" },
+          },
+          { "@type": "FAQPage", "@id": `${url}#duvidas`, mainEntity: perguntas(corpo) },
+        ],
+      }, null, 2)];
+    },
+  },
+  {
     corpo: "acesso.html", saida: "app/acesso/index.html", caminho: "/app/acesso/", ativo: "app", robots: "noindex,nofollow", scripts: ["/app/acesso/acesso.js"],
     titulo: "Acesso ao MeoWGuard | Tech MeoW",
   },
@@ -293,13 +357,17 @@ export function montar() {
       .replace("{{CARTOES_TODOS}}", [cartao(porId("meowguard"), { filtro: true, destaque: true }), cartoes(PROJETOS.filter((x) => x.id !== "meowguard").map((x) => x.id), { filtro: true })].join("\n"))
       .replace("{{CARTOES_DEPOIS}}", cartoes(["meowguard", "control-ps5", "jnx"]))
       .replace("{{CARTOES_PROJETOS}}", cartoes(["hdmi-tool", "iron-check", "bancadasync", "controle-test"]))
+      .replace(/\{\{d:(\w+)\}\}/g, (m, k) => (k in DESBLOQUEIO ? String(DESBLOQUEIO[k]) : m))
+      .replace(/\{\{video:(\w+)\}\}/g, (m, k) => (k in DESBLOQUEIO.video ? DESBLOQUEIO.video[k] : m))
       .replace(/\{\{zap:([^}]+)\}\}/g, (_, texto) => zap(texto));
     if (/\{\{/.test(corpo)) throw new Error(`${p.corpo}: sobrou marcador sem trocar: ${corpo.match(/\{\{[^}]*\}\}/)[0]}`);
+    const jsonld = typeof p.jsonld === "function" ? p.jsonld(corpo) : p.jsonld;
+    const zapDaPagina = p.zap ? zap(p.zap) : WHATSAPP.padrao;
     const extras = (p.scripts ?? []).map((s) => `<script src="${s}" defer></script>`).join("\n");
     const pagina = `<!doctype html>
 <html lang="pt-BR">
 <head>
-${head(p, css, js)}
+${head({ ...p, jsonld }, css, js)}
 </head>
 <body>
 <a class="skip" href="#conteudo">Ir para o conteúdo</a>
@@ -314,7 +382,7 @@ ${corpo.replace(/\s+$/, "")}
 
 ${rodape({ fotos: p.fotos, legalExtra: p.legalExtra })}
 
-<a class="fab" href="${WHATSAPP.padrao}" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg class="ib" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
+<a class="fab" href="${zapDaPagina}" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg class="ib" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
 ${extras ? extras + "\n" : ""}<script type="module" src="/js/tm.js?v=${js}"></script>
 </body>
 </html>

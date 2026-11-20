@@ -25,14 +25,14 @@ Services used
 Your rights
 @@ 6bebcda8ba
 Video game repair shop in Rio de Janeiro, Brazil | Tech MeoW
-@@ 72d6594723
-Video game repair shop in Engenho da Rainha, Rio de Janeiro: PS5, Nintendo Switch and Xbox. Nintendo Switch unlocking specialists for R$339.90.
+@@ 80dd3a20a8
+Video game repair shop in Engenho da Rainha, Rio de Janeiro: PS5, Nintendo Switch and Xbox. Nintendo Switch unlocking specialists for R$319.90.
 @@ 955c1c4202
 PS5 repair, PS5 repair Rio de Janeiro, PS5 no video, PS5 HDMI chip replacement, PS5 Slim repair, Nintendo Switch repair, Nintendo Switch unlocking, Switch modding Rio de Janeiro, Steam Deck repair, graphics card repair, PS5 controller repair, video game repair shop, Engenho da Rainha, Rio de Janeiro, Brazil
 @@ 9c16fbf0e0
 Video game repair shop in Rio de Janeiro | Tech MeoW
-@@ 8fa3f239ac
-PS5, Nintendo Switch and Xbox. Nintendo Switch unlocking specialists for R$339.90. Quotes on WhatsApp.
+@@ 7c0181736e
+PS5, Nintendo Switch and Xbox. Nintendo Switch unlocking specialists for R$319.90. Quotes on WhatsApp.
 @@ 2eac46c6e2
 Nintendo Switch, PS5 and Xbox side by side, with the text Video game repair and Nintendo Switch unlocking specialists
 @@ add208f9df
@@ -57,8 +57,8 @@ Tech MeoW, home page
 Main
 @@ 98d4c4c3d2
 Repairs
-@@ 3754090d22
-Unlocking <i>R$339.90</i>
+@@ 5acb3b2ffc
+Unlocking <i>R$319.90</i>
 @@ 2ab47298c1
 Projects<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg>
 @@ b77d89ba5a
@@ -137,8 +137,8 @@ Nintendo Switch unlocking promotion
 Nintendo Switch with the Control PS-5 app open and a PS5 controller connected
 @@ 11377aa87c
 Nintendo Switch unlocking
-@@ 9b8050ddd1
-R$339.90
+@@ b68b6f1a23
+R$319.90
 @@ 3590c3dc95
 any Switch 1 model
 @@ 7842c0613d
@@ -225,8 +225,6 @@ Promotion · Nintendo Switch 1
 <svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Afterwards, use the PS5 controller on the Switch with <a href="/Control-PS-5/">Control PS-5</a>, the free app we made
 @@ 3c572bf01b
 <svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Homebrews in Portuguese in the <a href="https://github.com/MeoWDev-MOD/JNX" target="_blank" rel="noopener">JNX</a> pack, also free
-@@ 21e66146b0
-See what comes next
 @@ 69ad2decbc
 The Switch 2 cannot be unlocked yet.
 @@ 191eb4ceb4
@@ -361,8 +359,8 @@ Subject
 I'd like a repair quote
 @@ 345c52cab2
 Repair
-@@ f94cf83622
-I'd like the Nintendo Switch unlocking at the R$339.90 promotion
+@@ 990a33b192
+I'd like the Nintendo Switch unlocking at the R$319.90 promotion
 @@ 18ec9d9782
 Unlocking
 @@ dd696c646d
@@ -375,8 +373,8 @@ I'd like to talk about a partnership
 Partnership
 @@ c90ac71572
 <b>Repair</b> PS5, Switch, Steam Deck, graphics card or controller. Tell us the device and the problem; a photo or video helps with the quote.
-@@ f5d160b797
-<b>Switch unlocking, R$339.90</b> Any Switch 1 model. Afterwards, you can use the PS5 controller on the Switch with Control PS-5, the free app we made.
+@@ 4915464e80
+<b>Switch unlocking, R$319.90</b> Any Switch 1 model. Afterwards, you can use the PS5 controller on the Switch with Control PS-5, the free app we made.
 @@ d4362b7b8e
 <b>Interposer Tech MeoW</b> For the PS5 Slim. Also on Mercado Livre and Shopee, in the store above.
 @@ a23dcaceec
@@ -429,8 +427,8 @@ What are the opening hours?
 Monday to Friday, 10 am to 6 pm. Message us on WhatsApp before coming.
 @@ 0ceb59c461
 Which Switch consoles can be unlocked?
-@@ 7426717f25
-Any Switch 1 model: V1, V2, Lite and OLED, for R$339.90 in the promotion. The Switch 2 cannot be unlocked yet.
+@@ 5a00016fa6
+Any Switch 1 model: V1, V2, Lite and OLED, for R$319.90 in the promotion. The Switch 2 cannot be unlocked yet.
 @@ febd6a4136
 After unlocking, can I use a PS5 controller on the Switch?
 @@ e92afda020
@@ -493,8 +491,8 @@ Hello, Tech MeoW! I came from the website and I'd like to try the Corrida Certa 
 Hello, Tech MeoW! I came from the website and I'd like a custom system for my company.
 @@ c4564ff02e
 Hello, Tech MeoW! I came from the website.
-@@ 49ab5b97f6
-Hello, Tech MeoW! I came from the website and I'd like the Nintendo Switch unlocking at the R$339.90 promotion.
+@@ b81e2491ca
+Hello, Tech MeoW! I came from the website and I'd like the Nintendo Switch unlocking at the R$319.90 promotion.
 @@ f008687ea3
 Hello, Tech MeoW! I came from the website and I'd like a PS5 repair quote.
 @@ 20b67b8181
@@ -781,10 +779,10 @@ Privacy and cookies · Tech MeoW
 What the Tech MeoW website saves in your browser and how ads are counted.
 @@ 8a09f60b05
 Privacy
-@@ fcacd196d3
-Updated on November 8, 2026.
-@@ f3c1c47474
-This website does not use third-party analytics tools such as Google Analytics. The only outside service that may save cookies is the Google Maps map, and only with your permission or after you click. The rest of what we call cookies here is, in practice, your browser's storage: small pieces of information kept on your device.
+@@ 5fc8acb001
+Updated on November 20, 2026.
+@@ a372db4ae9
+This website does not use third-party analytics tools such as Google Analytics. The only outside services that may save cookies are the Google Maps map, only with your permission or after you click, and the YouTube video on the Switch unlocking page, only after you click to play it. The rest of what we call cookies here is, in practice, your browser's storage: small pieces of information kept on your device.
 @@ 413a7512a5
 Always on (necessary)
 @@ c2bc73502f
@@ -805,8 +803,8 @@ Payment takes place on InfinitePay, which has its own privacy policy and receive
 Visit counting
 @@ 948225f65a
 When a page of the website opens, it notifies the Tech MeoW CRM, only to add up the number of visits. Only the page path (without anything after the "?") and the website you came from are sent. The server also adds the country and state, approximated from your internet connection, and whether the device is a phone or a computer. We use no cookie for this, we do not store your IP and we do not know who you are. If your browser has "Do Not Track" turned on, nothing is sent.
-@@ d910475480
-The website is hosted on Vercel. The fonts are served by the website itself, without Google Fonts. The map comes from Google Maps, and the ad list and ad files come from Vercel and Supabase. As with any website, these services receive your IP and technical data to deliver the content. The database that stores the purchase codes is Upstash Redis, provided through Vercel. WhatsApp, Instagram, YouTube, GitHub, Mercado Livre, Shopee, Kiwify, InfinitePay, Mercado Pago, Google Maps and Waze have their own policies when you open their links.
+@@ 2fc640d058
+The website is hosted on Vercel. The fonts are served by the website itself, without Google Fonts. The map comes from Google Maps, the video on the unlocking page comes from YouTube (the cookie-free address, youtube-nocookie.com, loaded only when you click), and the ad list and ad files come from Vercel and Supabase. As with any website, these services receive your IP and technical data to deliver the content. The database that stores the purchase codes is Upstash Redis, provided through Vercel. WhatsApp, Instagram, YouTube, GitHub, Mercado Livre, Shopee, Kiwify, InfinitePay, Mercado Pago, Google Maps and Waze have their own policies when you open their links.
 @@ 95c5a2af17
 The other projects hosted here (PS-5 Controle Test, Control PS-5, PS5 HDMI Tool, Iron Check and BancadaSync) have their own privacy pages, inside each one.
 @@ 2b9c286b1e
@@ -971,3 +969,5 @@ Copy
 Did it not open? It works in Google Chrome, Microsoft Edge and Opera, on a computer. On a Mac, you can also use the free app <a href="https://openmtp.ganeshrvel.com" target="_blank" rel="noopener noreferrer">OpenMTP</a>.
 @@ 552ef009b6
 MeoWGuard · Developed by MeoWDev MOD. Built on <a href="https://github.com/ITotalJustice/sphaira" target="_blank" rel="noopener noreferrer">sphaira</a> (ITotalJustice and contributors), GPLv3 license. Not affiliated with Nintendo.
+@@ 812ea910ee
+See everything about the unlocking

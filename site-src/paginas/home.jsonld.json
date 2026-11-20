@@ -54,7 +54,7 @@
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conserto de Steam Deck" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reparo de placa de vídeo", "description": "Reparo de placa de vídeo (GPU) de computador." } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conserto de controle", "description": "Conserto de controle, como o DualSense do PS5." } },
-          { "@type": "Offer", "price": "339.90", "priceCurrency": "BRL", "itemOffered": { "@type": "Service", "name": "Desbloqueio de Nintendo Switch", "description": "Qualquer modelo do Switch 1: V1, V2, Lite e OLED." } }
+          { "@type": "Offer", "price": "319.90", "priceCurrency": "BRL", "itemOffered": { "@type": "Service", "name": "Desbloqueio de Nintendo Switch", "description": "Qualquer modelo do Switch 1: V1, V2, Lite e OLED." } }
         ]
       },
       "sameAs": ["https://www.instagram.com/tech_meow.oficial/", "https://www.youtube.com/@techmeow", "https://github.com/MeoWDev-MOD"]

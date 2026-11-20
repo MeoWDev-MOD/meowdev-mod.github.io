@@ -246,6 +246,23 @@ if (mapa) {
   if (optionalAllowed()) abrirMapa();
   document.addEventListener("bio-consent", (e) => { if (e.detail?.optional) abrirMapa(); });
 }
+// Vídeo do YouTube (página do desbloqueio): a capa é nossa e o player só entra no clique, já tocando.
+// Sem script, a capa é um link comum para o vídeo no YouTube.
+$$(".yt[data-yt]").forEach((caixa) => {
+  const capa = $(".yt-capa", caixa);
+  capa?.addEventListener("click", (e) => {
+    e.preventDefault();
+    const f = document.createElement("iframe");
+    f.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(caixa.dataset.yt)}?autoplay=1&rel=0&playsinline=1`;
+    f.title = $("b", capa)?.textContent || "Vídeo do YouTube";
+    f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    f.referrerPolicy = "strict-origin-when-cross-origin";
+    f.allowFullscreen = true;
+    capa.remove();
+    caixa.append(f);
+    f.focus();
+  });
+});
 const espacos = [["adProjetos", "adProjetosMidia"], ["adLoja", "adLojaMidia"]]
   .map(([a, b]) => [document.getElementById(a), document.getElementById(b)])
   .filter(([a, b]) => a && b);

@@ -130,7 +130,7 @@
     },
     {
       "source": "/desbloqueio",
-      "destination": "/#desbloqueio",
+      "destination": "/desbloqueio-switch/",
       "permanent": false
     },
     {
